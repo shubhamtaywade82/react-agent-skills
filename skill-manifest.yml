@@ -8,6 +8,9 @@ skills:
   - name: react-architecture
     path: skills/react-architecture/SKILL.md
     triggers: [react architecture, feature architecture, module boundaries, composition]
+  - name: frontend-architecture
+    path: skills/frontend-architecture/SKILL.md
+    triggers: [frontend architecture, module boundaries, dependency direction, feature boundaries]
   - name: react-component-engineering
     path: skills/react-component-engineering/SKILL.md
     triggers: [component, props, reusable component, component API]
@@ -20,6 +23,9 @@ skills:
   - name: react-data-fetching
     path: skills/react-data-fetching/SKILL.md
     triggers: [api, fetch, query, mutation, cache, server state]
+  - name: react-async-ui
+    path: skills/react-async-ui/SKILL.md
+    triggers: [async ui, loading, refresh, mutation state, empty state, retry]
   - name: react-forms-validation
     path: skills/react-forms-validation/SKILL.md
     triggers: [form, validation, field, submit, wizard]
@@ -29,6 +35,9 @@ skills:
   - name: react-testing-engineering
     path: skills/react-testing-engineering/SKILL.md
     triggers: [test, testing, vitest, testing library, integration test]
+  - name: frontend-e2e
+    path: skills/frontend-e2e/SKILL.md
+    triggers: [e2e, end to end, browser test, playwright, cypress, user journey]
   - name: react-accessibility
     path: skills/react-accessibility/SKILL.md
     triggers: [accessibility, a11y, keyboard, focus, screen reader, aria]
@@ -37,16 +46,43 @@ skills:
     triggers: [performance, render, memoization, virtualization, profiling, bundle]
   - name: react-security
     path: skills/react-security/SKILL.md
-    triggers: [security, xss, csrf, token, storage, authorization, html]
+    triggers: [react security, xss, csrf, token, storage, authorization, html]
+  - name: frontend-security
+    path: skills/frontend-security/SKILL.md
+    triggers: [frontend security, security review, supply chain, third party scripts, csrf, xss]
+  - name: browser-security-dom-safety
+    path: skills/browser-security-dom-safety/SKILL.md
+    triggers: [dom security, innerHTML, postMessage, iframe, unsafe url, browser sink]
+  - name: auth-session-boundaries
+    path: skills/auth-session-boundaries/SKILL.md
+    triggers: [authentication, authorization, session, login, logout, refresh token, csrf]
+  - name: react-modern-rendering
+    path: skills/react-modern-rendering/SKILL.md
+    triggers: [suspense, transition, hydration, streaming, react compiler, concurrent rendering]
+  - name: react-server-components
+    path: skills/react-server-components/SKILL.md
+    triggers: [server components, rsc, server client boundary, server action, streamed rendering]
   - name: react-error-resilience
     path: skills/react-error-resilience/SKILL.md
     triggers: [error boundary, error state, loading, empty state, retry, resilience]
   - name: react-design-system
     path: skills/react-design-system/SKILL.md
     triggers: [design system, ui library, component library, theming, tokens]
+  - name: frontend-styling-layout
+    path: skills/frontend-styling-layout/SKILL.md
+    triggers: [css, styling, layout, responsive, theme, animation]
   - name: react-toolchain
     path: skills/react-toolchain/SKILL.md
     triggers: [vite, build, bundler, typescript config, eslint, package, tooling, ci]
+  - name: frontend-environment-configuration
+    path: skills/frontend-environment-configuration/SKILL.md
+    triggers: [environment variables, env, feature flags, runtime config, build config]
+  - name: frontend-dependency-management
+    path: skills/frontend-dependency-management/SKILL.md
+    triggers: [dependency, package, npm, pnpm, yarn, lockfile, upgrade, downgrade]
+  - name: frontend-production
+    path: skills/frontend-production/SKILL.md
+    triggers: [production, deployment, cdn, caching, service worker, release, rollback]
   - name: react-observability
     path: skills/react-observability/SKILL.md
     triggers: [observability, logging, telemetry, metrics, tracing, frontend monitoring]
@@ -62,3 +98,12 @@ skills:
   - name: typescript-runtime-contracts
     path: skills/typescript-runtime-contracts/SKILL.md
     triggers: [json, runtime validation, schema, environment, storage, external input]
+  - name: typescript-async-error-modeling
+    path: skills/typescript-async-error-modeling/SKILL.md
+    triggers: [async errors, cancellation, retry, promise state, error normalization]
+  - name: typescript-public-api-design
+    path: skills/typescript-public-api-design/SKILL.md
+    triggers: [public api, exported type, library api, package boundary, semver]
+  - name: typescript-api-contracts
+    path: skills/typescript-api-contracts/SKILL.md
+    triggers: [api contract, openapi, graphql, rpc, client contract, pagination, error envelope]
