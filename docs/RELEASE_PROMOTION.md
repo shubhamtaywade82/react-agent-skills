@@ -6,7 +6,7 @@ Current target inventory:
 - 52 registered skills
 - 60 reusable patterns
 - 39 core evaluation contracts
-- 30 benchmark cases
+- 31 benchmark cases
 - conditional adapters for Vite, Next.js, Remix, React Router, TanStack Query, Redux, Zustand, Vitest, Testing Library, Playwright, Cypress, Storybook, and MSW
 
 Promotion gates:
