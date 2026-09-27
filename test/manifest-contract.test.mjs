@@ -45,7 +45,7 @@ test("evaluation registry references real, registered skills and complete contra
     entries.push({ id: match[1], path: path[1], skill: skill[1] });
     index += 2;
   }
-  assert.equal(entries.length, 11, "expected complete React/TypeScript evaluation inventory");
+  assert.equal(entries.length, 39, "expected complete core React/TypeScript evaluation inventory");
 
   for (const { id, path, skill } of entries) {
     assert.match(id, /^[a-z0-9-]+$/);
