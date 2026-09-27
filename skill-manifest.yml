@@ -108,45 +108,6 @@ skills:
     path: skills/typescript-api-contracts/SKILL.md
     triggers: [api contract, openapi, graphql, rpc, client contract, pagination, error envelope]
 
-  - name: frontend-e2e
-    path: skills/frontend-e2e/SKILL.md
-    triggers: [e2e, end to end, browser test, user journey]
-  - name: frontend-security
-    path: skills/frontend-security/SKILL.md
-    triggers: [frontend security, supply chain, third party scripts, csrf, xss]
-  - name: browser-security-dom-safety
-    path: skills/browser-security-dom-safety/SKILL.md
-    triggers: [dom security, innerHTML, postMessage, iframe, unsafe url]
-  - name: auth-session-boundaries
-    path: skills/auth-session-boundaries/SKILL.md
-    triggers: [authentication, authorization, session, login, logout, refresh token]
-  - name: react-modern-rendering
-    path: skills/react-modern-rendering/SKILL.md
-    triggers: [suspense, transition, hydration, streaming, react compiler]
-  - name: react-server-components
-    path: skills/react-server-components/SKILL.md
-    triggers: [server components, rsc, server client boundary, server action]
-  - name: frontend-styling-layout
-    path: skills/frontend-styling-layout/SKILL.md
-    triggers: [css, styling, layout, responsive, theme, animation]
-  - name: frontend-environment-configuration
-    path: skills/frontend-environment-configuration/SKILL.md
-    triggers: [environment variables, env, feature flags, runtime config]
-  - name: frontend-dependency-management
-    path: skills/frontend-dependency-management/SKILL.md
-    triggers: [dependency, package, npm, pnpm, yarn, lockfile, upgrade]
-  - name: frontend-production
-    path: skills/frontend-production/SKILL.md
-    triggers: [production, deployment, cdn, caching, service worker, release]
-  - name: typescript-async-error-modeling
-    path: skills/typescript-async-error-modeling/SKILL.md
-    triggers: [async errors, cancellation, retry, promise state, error normalization]
-  - name: typescript-public-api-design
-    path: skills/typescript-public-api-design/SKILL.md
-    triggers: [public api, exported type, library api, package boundary, semver]
-  - name: typescript-api-contracts
-    path: skills/typescript-api-contracts/SKILL.md
-    triggers: [api contract, openapi, graphql, rpc, client contract, pagination]
   - name: typescript-module-design
     path: skills/typescript-module-design/SKILL.md
     triggers: [module design, exports, import graph, dependency cycles, package boundary]
