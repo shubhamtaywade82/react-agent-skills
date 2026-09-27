@@ -11,6 +11,9 @@ skills:
   - name: frontend-architecture
     path: skills/frontend-architecture/SKILL.md
     triggers: [frontend architecture, module boundaries, dependency direction, feature boundaries]
+  - name: frontend-browser-platform
+    path: skills/frontend-browser-platform/SKILL.md
+    triggers: [browser api, dom, events, storage, url, workers, lifecycle]
   - name: react-component-engineering
     path: skills/react-component-engineering/SKILL.md
     triggers: [component, props, reusable component, component API]
