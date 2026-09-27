@@ -1,0 +1,32 @@
+id: agent-workflow-contract
+coverage: process-level
+version: 1
+title: Agent Workflow Contract
+category: react-typescript
+source: react-agent-skills-core-v1
+skills:
+  - agent-workflow
+patterns: []
+prompt: |
+  Inspect a React and TypeScript repository, select one primary skill plus necessary secondary skills, make a bounded behavior change, and report only verified evidence.
+constraints:
+  required_boundary: agent-workflow
+checks:
+  - functional
+  - tests
+  - contract
+  - scope_control
+cases:
+  - name: routing
+    input: Select a primary skill and only concrete secondary constraints after repository inspection.
+    expected:
+      routing: one primary plus evidence-based secondary skills
+  - name: verification
+    input: Complete the change and report the actual typecheck, test, lint, and build evidence available from the repository.
+    expected:
+      verification: no unrun command is claimed as passed
+grading:
+  functional: The task is implemented at the correct boundary.
+  tests: Relevant behavior is verified.
+  contract: Routing and evidence reporting follow the agent contract.
+  scope_control: The change remains bounded to the request.
