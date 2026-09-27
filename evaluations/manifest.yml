@@ -1,0 +1,37 @@
+version: 1
+schema: docs/EVAL_SCHEMA.md
+category: react-typescript
+evaluations:
+  - id: typescript-core-contract
+    path: evaluations/react-typescript/typescript-core-contract.yml
+    skill: typescript-core-engineering
+  - id: typescript-type-design-contract
+    path: evaluations/react-typescript/typescript-type-design-contract.yml
+    skill: typescript-type-design
+  - id: typescript-runtime-contracts
+    path: evaluations/react-typescript/typescript-runtime-contracts.yml
+    skill: typescript-runtime-contracts
+  - id: react-component-contract
+    path: evaluations/react-typescript/react-component-contract.yml
+    skill: react-component-engineering
+  - id: react-hooks-effects-contract
+    path: evaluations/react-typescript/react-hooks-effects-contract.yml
+    skill: react-hooks-effects
+  - id: react-state-management-contract
+    path: evaluations/react-typescript/react-state-management-contract.yml
+    skill: react-state-management
+  - id: react-data-fetching-contract
+    path: evaluations/react-typescript/react-data-fetching-contract.yml
+    skill: react-data-fetching
+  - id: react-testing-contract
+    path: evaluations/react-typescript/react-testing-contract.yml
+    skill: react-testing-engineering
+  - id: react-accessibility-contract
+    path: evaluations/react-typescript/react-accessibility-contract.yml
+    skill: react-accessibility
+  - id: react-performance-contract
+    path: evaluations/react-typescript/react-performance-contract.yml
+    skill: react-performance
+  - id: react-architecture-contract
+    path: evaluations/react-typescript/react-architecture-contract.yml
+    skill: react-architecture
