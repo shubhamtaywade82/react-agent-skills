@@ -1,0 +1,49 @@
+version: 1
+source:
+  repository: shubhamtaywade82/ruby-agent-skills
+  ref: 3ce8a2bbfef174d83c161ff7399d47742289c4e6
+destination:
+  repository: shubhamtaywade82/react-agent-skills
+
+skills:
+  typescript-core-engineering:
+    action: migrate
+    target: [typescript-core-engineering]
+  typescript-type-design:
+    action: migrate
+    target: [typescript-type-design]
+  typescript-runtime-contracts:
+    action: migrate
+    target: [typescript-runtime-contracts]
+  react-component-engineering:
+    action: migrate
+    target: [react-component-engineering]
+  react-state-effects:
+    action: split
+    target: [react-hooks-effects, react-state-management]
+  react-data-fetching:
+    action: migrate
+    target: [react-data-fetching]
+  react-testing-engineering:
+    action: migrate-and-extend
+    target: [react-testing-engineering, frontend-e2e]
+  react-accessibility-performance:
+    action: split
+    target: [react-accessibility, react-performance]
+  react-architecture:
+    action: migrate
+    target: [react-architecture]
+
+patterns:
+  canonical_react_typescript: 24
+  cross_cutting_stack_minimality_adapters: 4
+  migration_policy: preserve_names_first
+
+evaluations:
+  source_count: 9
+  split_evaluations:
+    - source: react-state-effects
+      target: [react-hooks-effects, react-state-management]
+    - source: react-accessibility-performance
+      target: [react-accessibility, react-performance]
+  policy: preserve_difficulty_and_contract
