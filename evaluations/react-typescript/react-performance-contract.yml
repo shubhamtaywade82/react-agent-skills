@@ -1,0 +1,35 @@
+id: react-performance-contract
+coverage: static-only
+version: 1
+title: React Performance Contract
+category: react-typescript
+source: ruby-agent-skills/react-accessibility-performance-v1
+skills:
+  - react-performance
+patterns:
+  - react-render-performance-budget
+  - react-memoization-evidence-gate
+prompt: |
+  Investigate a slow React surface under a realistic workload and apply only evidence-backed render optimizations.
+  Inspect the repository and existing profiling/build setup before changing memoization, virtualization, or component boundaries.
+constraints:
+  required_boundary: react-performance
+checks:
+  - functional
+  - tests
+  - contract
+  - scope_control
+cases:
+  - name: measurement
+    input: Identify the render bottleneck and establish a measurable performance budget before changing code.
+    expected:
+      react-render-performance-budget: profiling or workload evidence drives the change
+  - name: optimization-gate
+    input: Evaluate a proposed memoization change that has no measured benefit.
+    expected:
+      react-memoization-evidence-gate: optimization is rejected or narrowed without evidence
+grading:
+  functional: The resulting behavior remains correct.
+  tests: Verification covers behavior and the relevant regression boundary.
+  contract: Performance work is measurable and evidence-driven.
+  scope_control: No broad memoization or dependency replacement is introduced without evidence.
