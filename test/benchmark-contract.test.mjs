@@ -12,7 +12,7 @@ test("benchmark corpus is non-trivial and references registered skills", async (
     /^  - id: ([A-Za-z0-9-]+)\n    skill: ([A-Za-z0-9-]+)\n    checks: ([^\n]+)\n    prompt: ([^\n]+)$/gm
   )];
 
-  assert.ok(cases.length >= 24, "expected a substantial frontend benchmark corpus");
+  assert.equal(cases.length, 31, "expected complete frontend benchmark corpus");
   const ids = new Set();
   for (const [, id, skill, checks, prompt] of cases) {
     assert.equal(ids.has(id), false, `duplicate benchmark id: ${id}`);
