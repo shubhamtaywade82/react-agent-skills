@@ -35,3 +35,88 @@ evaluations:
   - id: react-architecture-contract
     path: evaluations/react-typescript/react-architecture-contract.yml
     skill: react-architecture
+
+  - id: react-async-ui-contract
+    path: evaluations/react-typescript/react-async-ui.yml
+    skill: react-async-ui
+  - id: typescript-async-error-modeling-contract
+    path: evaluations/react-typescript/typescript-async-error-modeling.yml
+    skill: typescript-async-error-modeling
+  - id: typescript-public-api-design-contract
+    path: evaluations/react-typescript/typescript-public-api-design.yml
+    skill: typescript-public-api-design
+  - id: typescript-api-contracts-contract
+    path: evaluations/react-typescript/typescript-api-contracts.yml
+    skill: typescript-api-contracts
+  - id: typescript-module-design-contract
+    path: evaluations/react-typescript/typescript-module-design.yml
+    skill: typescript-module-design
+  - id: typescript-configuration-contract
+    path: evaluations/react-typescript/typescript-configuration.yml
+    skill: typescript-configuration
+  - id: typescript-migration-contract
+    path: evaluations/react-typescript/typescript-migration.yml
+    skill: typescript-migration
+  - id: frontend-architecture-contract
+    path: evaluations/react-typescript/frontend-architecture.yml
+    skill: frontend-architecture
+  - id: frontend-browser-platform-contract
+    path: evaluations/react-typescript/frontend-browser-platform.yml
+    skill: frontend-browser-platform
+  - id: frontend-styling-layout-contract
+    path: evaluations/react-typescript/frontend-styling-layout.yml
+    skill: frontend-styling-layout
+  - id: frontend-e2e-contract
+    path: evaluations/react-typescript/frontend-e2e.yml
+    skill: frontend-e2e
+  - id: frontend-environment-configuration-contract
+    path: evaluations/react-typescript/frontend-environment-configuration.yml
+    skill: frontend-environment-configuration
+  - id: frontend-dependency-management-contract
+    path: evaluations/react-typescript/frontend-dependency-management.yml
+    skill: frontend-dependency-management
+  - id: frontend-production-contract
+    path: evaluations/react-typescript/frontend-production.yml
+    skill: frontend-production
+  - id: frontend-security-contract
+    path: evaluations/react-typescript/frontend-security.yml
+    skill: frontend-security
+  - id: browser-security-dom-safety-contract
+    path: evaluations/react-typescript/browser-security-dom-safety.yml
+    skill: browser-security-dom-safety
+  - id: auth-session-boundaries-contract
+    path: evaluations/react-typescript/auth-session-boundaries.yml
+    skill: auth-session-boundaries
+  - id: react-modern-rendering-contract
+    path: evaluations/react-typescript/react-modern-rendering.yml
+    skill: react-modern-rendering
+  - id: react-server-components-contract
+    path: evaluations/react-typescript/react-server-components.yml
+    skill: react-server-components
+  - id: react-forms-validation-contract
+    path: evaluations/react-typescript/react-forms-validation.yml
+    skill: react-forms-validation
+  - id: react-routing-contract-v2
+    path: evaluations/react-typescript/react-routing.yml
+    skill: react-routing
+  - id: react-error-resilience-contract
+    path: evaluations/react-typescript/react-error-resilience.yml
+    skill: react-error-resilience
+  - id: react-security-contract
+    path: evaluations/react-typescript/react-security.yml
+    skill: react-security
+  - id: react-design-system-contract
+    path: evaluations/react-typescript/react-design-system.yml
+    skill: react-design-system
+  - id: react-toolchain-contract
+    path: evaluations/react-typescript/react-toolchain.yml
+    skill: react-toolchain
+  - id: react-observability-contract
+    path: evaluations/react-typescript/react-observability.yml
+    skill: react-observability
+  - id: react-review-contract
+    path: evaluations/react-typescript/react-review.yml
+    skill: react-review
+  - id: agent-workflow-contract
+    path: evaluations/react-typescript/agent-workflow.yml
+    skill: agent-workflow

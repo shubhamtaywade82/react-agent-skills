@@ -2,7 +2,7 @@
 
 ## Status
 
-Design baseline for the split from \`ruby-agent-skills\`.
+Implemented taxonomy and migration target for the split from `ruby-agent-skills`.
 
 Source inventory audited at commit \`3ce8a2bbfef174d83c161ff7399d47742289c4e6\`.
 
@@ -252,3 +252,12 @@ shared integration contract
 \`\`\`
 
 The integration layer should be represented as composition guidance, not by duplicating Rails skills inside this pack.
+
+
+## Implemented inventory
+
+At the current expansion branch, the destination registers 52 skills, 60 reusable patterns, 39 core React/TypeScript evaluation contracts, and 31 benchmark cases. Nine audited source skill snapshots are preserved under `docs/source-lineage/react-typescript/skills/` so provenance is explicit.
+
+The 24 canonical React/TypeScript patterns and four stack-minimality adapters from the audited source are preserved. The additional patterns are destination-native coverage for browser, security, production, testing, and TypeScript module/configuration concerns.
+
+The pack is therefore designed as a complete core-plus-adapter skill system, while correctness claims remain gated by the executable benchmark/evaluation verifier and CI evidence.

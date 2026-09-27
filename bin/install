@@ -1,0 +1,55 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+ROOT="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/.." && pwd)"
+TARGET="${HOME}/.local/share/agent-skills/react-agent-skills"
+
+usage() {
+  cat <<'USAGE'
+Usage: bash bin/install [--target PATH]
+
+Install the React + TypeScript skill pack into PATH.
+Default: ~/.local/share/agent-skills/react-agent-skills
+
+The installed directory contains AGENTS.md, the skill manifest/router,
+skills, patterns, evaluations, benchmarks, and documentation.
+USAGE
+}
+
+while [[ $# -gt 0 ]]; do
+  case "$1" in
+    --target)
+      [[ $# -ge 2 ]] || { echo "--target requires a path" >&2; exit 2; }
+      TARGET="$2"
+      shift 2
+      ;;
+    -h|--help)
+      usage
+      exit 0
+      ;;
+    *)
+      echo "Unknown argument: $1" >&2
+      usage >&2
+      exit 2
+      ;;
+  esac
+done
+
+STAGING="${TARGET}.tmp.$$"
+rm -rf "$STAGING"
+mkdir -p "$STAGING"
+
+cp "$ROOT/AGENTS.md" "$STAGING/AGENTS.md"
+cp "$ROOT/skill-manifest.yml" "$STAGING/skill-manifest.yml"
+cp -R "$ROOT/router" "$STAGING/router"
+cp -R "$ROOT/skills" "$STAGING/skills"
+cp -R "$ROOT/patterns" "$STAGING/patterns"
+cp -R "$ROOT/evaluations" "$STAGING/evaluations"
+cp -R "$ROOT/benchmarks" "$STAGING/benchmarks"
+cp -R "$ROOT/docs" "$STAGING/docs"
+
+rm -rf "$TARGET"
+mkdir -p "$(dirname -- "$TARGET")"
+mv "$STAGING" "$TARGET"
+
+echo "Installed react-agent-skills at $TARGET"

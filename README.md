@@ -28,6 +28,10 @@ This repository turns React/TypeScript knowledge into executable guidance an age
 - language/compiler discipline
 - type and domain modeling
 - runtime contracts for untrusted data
+- async error/cancellation modeling
+- public API and module boundary design
+- typed API contracts and compatibility
+- compiler configuration and incremental migration
 
 ## Agent operating loop
 
@@ -47,9 +51,17 @@ This repository turns React/TypeScript knowledge into executable guidance an age
       ↓
     Report observed evidence
 
+## Inventory
+
+The current expansion contains 52 registered skills, 60 reusable patterns, 39 core React/TypeScript evaluation contracts, and 31 benchmark cases. Nine audited source skill snapshots are preserved for provenance.
+
 ## Installation
 
-Clone the repository and expose AGENTS.md plus skills/ to the coding agent's skill/context mechanism.
+Use the included installer or expose AGENTS.md plus the skill pack to the coding agent's skill/context mechanism.
+
+    bash bin/install --target ~/.local/share/agent-skills/react-agent-skills
+
+See [Agent integration](docs/AGENT_INTEGRATION.md) for repository-local and custom-agent setup.
 
 The pack is framework-aware rather than framework-dependent. The agent must resolve whether the target uses Vite, Next.js, Remix, React Router, or another runtime before applying framework-specific assumptions.
 
@@ -63,9 +75,11 @@ Choose one primary skill based on the dominant boundary, then compose only secon
 
 Run:
 
+    node --test test/manifest-contract.test.mjs test/benchmark-contract.test.mjs test/benchmark-runner.test.mjs test/install-contract.test.mjs
     node scripts/validate.mjs
+    node scripts/validate-benchmarks.mjs
 
-GitHub Actions runs the same structural validator on pushes and pull requests.
+GitHub Actions runs these structural, benchmark, and installer checks on pushes and pull requests.
 
 ## Non-negotiables
 
@@ -104,3 +118,6 @@ The planned split from `ruby-agent-skills` is documented in:
 - [Migration plan](docs/MIGRATION_PLAN.md)
 - [Migration map](docs/MIGRATION_MAP.yml)
 - [Full-stack composition](docs/FULLSTACK_COMPOSITION.md)
+- [Agent integration](docs/AGENT_INTEGRATION.md)
+- [Benchmark schema](docs/BENCHMARK_SCHEMA.md)
+- [Benchmark runner](docs/BENCHMARK_RUNNER.md)
