@@ -34,51 +34,79 @@ for (const dir of dirs) {
   if (!names.has(dir)) errors.push("Unregistered skill directory: " + dir);
 }
 
-async function validateRegistry(path, entryPattern, label) {
+async function validateRegistry(path, label, rootPattern) {
   const registry = await readFile(new URL(path, root), "utf8");
-  const registryEntries = [...registry.matchAll(entryPattern)];
-  const registered = new Set();
+  const lines = registry.split(/\r?\n/);
+  const entries = [];
 
-  for (const [, name, filePath] of registryEntries) {
-    if (registered.has(name)) errors.push("Duplicate " + label + ": " + name);
-    registered.add(name);
+  for (let index = 0; index < lines.length; index += 1) {
+    const nameMatch = lines[index].match(rootPattern.name);
+    if (!nameMatch) continue;
+    const pathMatch = lines[index + 1]?.match(rootPattern.path);
+    if (!pathMatch) {
+      errors.push(`Missing path for ${label}: ${nameMatch[1]}`);
+      continue;
+    }
+    entries.push({ name: nameMatch[1], path: pathMatch[1] });
+    index += 1;
+  }
+
+  const registered = new Set();
+  for (const entry of entries) {
+    if (registered.has(entry.name)) errors.push("Duplicate " + label + ": " + entry.name);
+    registered.add(entry.name);
     try {
-      const content = await readFile(new URL(filePath, root), "utf8");
-      if (!content.trim()) errors.push("Empty " + label + " file: " + filePath);
+      const content = await readFile(new URL(entry.path, root), "utf8");
+      if (!content.trim()) errors.push("Empty " + label + " file: " + entry.path);
     } catch {
-      errors.push("Missing " + label + " file: " + filePath);
+      errors.push("Missing " + label + " file: " + entry.path);
     }
   }
 
-  if (!registryEntries.length) errors.push("No " + label + " entries registered in " + path);
-  return registryEntries;
+  if (!entries.length) errors.push("No " + label + " entries registered in " + path);
+  return entries;
 }
 
 const patternEntries = await validateRegistry(
   "patterns/PATTERN_MANIFEST.yml",
-  /^  - name: ([A-Za-z0-9-]+)\n    path: (patterns\/[^\n]+)$/gm,
-  "pattern"
+  "pattern",
+  {
+    name: /^  - name: ([A-Za-z0-9-]+)$/,
+    path: /^    path: (patterns\/[^\s]+)$/
+  }
 );
 
 const evaluationManifest = await readFile(new URL("evaluations/manifest.yml", root), "utf8").catch(() => "");
 if (evaluationManifest) {
-  const evaluationEntries = [...evaluationManifest.matchAll(
-    /^  - id: ([A-Za-z0-9-]+)\n    path: ([^\n]+)\n    skill: ([A-Za-z0-9-]+)$/gm
-  )];
+  const lines = evaluationManifest.split(/\r?\n/);
+  const evaluationEntries = [];
+
+  for (let index = 0; index < lines.length; index += 1) {
+    const id = lines[index].match(/^  - id: ([A-Za-z0-9-]+)$/);
+    if (!id) continue;
+    const path = lines[index + 1]?.match(/^    path: (.+)$/);
+    const skill = lines[index + 2]?.match(/^    skill: ([A-Za-z0-9-]+)$/);
+    if (!path || !skill) {
+      errors.push("Incomplete evaluation: " + id[1]);
+      continue;
+    }
+    evaluationEntries.push({ id: id[1], path: path[1], skill: skill[1] });
+    index += 2;
+  }
 
   const evaluationIds = new Set();
-  for (const [, id, path, skill] of evaluationEntries) {
-    if (evaluationIds.has(id)) errors.push("Duplicate evaluation: " + id);
-    evaluationIds.add(id);
-    if (!names.has(skill)) errors.push("Unregistered skill for evaluation " + id + ": " + skill);
+  for (const entry of evaluationEntries) {
+    if (evaluationIds.has(entry.id)) errors.push("Duplicate evaluation: " + entry.id);
+    evaluationIds.add(entry.id);
+    if (!names.has(entry.skill)) errors.push("Unregistered skill for evaluation " + entry.id + ": " + entry.skill);
 
     try {
-      const content = await readFile(new URL(path, root), "utf8");
+      const content = await readFile(new URL(entry.path, root), "utf8");
       for (const required of ["id:", "version:", "prompt:", "checks:"]) {
-        if (!content.includes(required)) errors.push(path + ": missing " + required);
+        if (!content.includes(required)) errors.push(entry.path + ": missing " + required);
       }
     } catch {
-      errors.push("Missing evaluation file: " + path);
+      errors.push("Missing evaluation file: " + entry.path);
     }
   }
 
