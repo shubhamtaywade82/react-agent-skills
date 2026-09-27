@@ -13,6 +13,9 @@ Review for concrete failure modes and maintainability without rewarding superfic
 - auditing an existing feature;
 - preparing a refactor for merge/release.
 
+## Repository inspection
+Inspect the target diff, changed files, package/runtime configuration, tests, CI checks, dependency changes, and affected user-facing boundaries before forming review findings.
+
 ## Review order
 1. Correctness and contract preservation.
 2. Security and trust boundaries.
