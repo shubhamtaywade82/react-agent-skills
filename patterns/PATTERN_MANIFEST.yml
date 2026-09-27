@@ -1,1 +1,66 @@
 version: 1\nsource: ruby-agent-skills/react-typescript\npatterns:\n  - name: react-accessible-interaction\n    path: patterns/react-typescript/react-accessible-interaction.md\n  - name: react-async-ui-state\n    path: patterns/react-typescript/react-async-ui-state.md\n  - name: react-component-boundary\n    path: patterns/react-typescript/react-component-boundary.md\n  - name: react-composition-over-boolean-props\n    path: patterns/react-typescript/react-composition-over-boolean-props.md\n  - name: react-context-scope\n    path: patterns/react-typescript/react-context-scope.md\n  - name: react-controlled-input\n    path: patterns/react-typescript/react-controlled-input.md\n  - name: react-effect-synchronization\n    path: patterns/react-typescript/react-effect-synchronization.md\n  - name: react-focus-management\n    path: patterns/react-typescript/react-focus-management.md\n  - name: react-hook-dependency\n    path: patterns/react-typescript/react-hook-dependency.md\n  - name: react-memoization-evidence-gate\n    path: patterns/react-typescript/react-memoization-evidence-gate.md\n  - name: react-network-mock-boundary\n    path: patterns/react-typescript/react-network-mock-boundary.md\n  - name: react-optimistic-rollback\n    path: patterns/react-typescript/react-optimistic-rollback.md\n  - name: react-query-key-cache\n    path: patterns/react-typescript/react-query-key-cache.md\n  - name: react-reducer-state-machine\n    path: patterns/react-typescript/react-reducer-state-machine.md\n  - name: react-render-performance-budget\n    path: patterns/react-typescript/react-render-performance-budget.md\n  - name: react-server-state-boundary\n    path: patterns/react-typescript/react-server-state-boundary.md\n  - name: react-state-ownership\n    path: patterns/react-typescript/react-state-ownership.md\n  - name: react-user-interaction-test\n    path: patterns/react-typescript/react-user-interaction-test.md\n  - name: typescript-async-error-normalization\n    path: patterns/react-typescript/typescript-async-error-normalization.md\n  - name: typescript-branded-identifier\n    path: patterns/react-typescript/typescript-branded-identifier.md\n  - name: typescript-discriminated-union\n    path: patterns/react-typescript/typescript-discriminated-union.md\n  - name: typescript-generic-result\n    path: patterns/react-typescript/typescript-generic-result.md\n  - name: typescript-public-api-boundary\n    path: patterns/react-typescript/typescript-public-api-boundary.md\n  - name: typescript-runtime-schema-boundary\n    path: patterns/react-typescript/typescript-runtime-schema-boundary.md\n  - name: react-derived-state-in-render\n    path: patterns/stack-minimality/react-derived-state-in-render.md\n  - name: react-local-state-before-context\n    path: patterns/stack-minimality/react-local-state-before-context.md\n  - name: react-native-before-dependency\n    path: patterns/stack-minimality/react-native-before-dependency.md\n  - name: typescript-type-before-wrapper\n    path: patterns/stack-minimality/typescript-type-before-wrapper.md\n
+
+  - name: typescript-async-state-machine
+    path: patterns/typescript/typescript-async-state-machine.md
+  - name: typescript-error-cause
+    path: patterns/typescript/typescript-error-cause.md
+  - name: typescript-export-surface
+    path: patterns/typescript/typescript-export-surface.md
+  - name: typescript-api-runtime-envelope
+    path: patterns/typescript/typescript-api-runtime-envelope.md
+  - name: typescript-api-pagination-contract
+    path: patterns/typescript/typescript-api-pagination-contract.md
+  - name: typescript-module-cycle-boundary
+    path: patterns/typescript/typescript-module-cycle-boundary.md
+  - name: typescript-config-isolated-change
+    path: patterns/typescript/typescript-config-isolated-change.md
+  - name: typescript-migration-no-suppression
+    path: patterns/typescript/typescript-migration-no-suppression.md
+  - name: react-async-refresh-preserves-data
+    path: patterns/react/react-async-refresh-preserves-data.md
+  - name: react-transition-boundary
+    path: patterns/react/react-transition-boundary.md
+  - name: react-hydration-stability
+    path: patterns/react/react-hydration-stability.md
+  - name: react-server-client-boundary
+    path: patterns/react/react-server-client-boundary.md
+  - name: react-route-auth-boundary
+    path: patterns/react/react-route-auth-boundary.md
+  - name: react-form-server-error
+    path: patterns/react/react-form-server-error.md
+  - name: frontend-browser-listener-cleanup
+    path: patterns/react/frontend-browser-listener-cleanup.md
+  - name: frontend-storage-schema
+    path: patterns/react/frontend-storage-schema.md
+  - name: frontend-url-input-validation
+    path: patterns/frontend/frontend-url-input-validation.md
+  - name: browser-postmessage-origin
+    path: patterns/frontend/browser-postmessage-origin.md
+  - name: browser-worker-lifecycle
+    path: patterns/frontend/browser-worker-lifecycle.md
+  - name: browser-url-navigation-contract
+    path: patterns/frontend/browser-url-navigation-contract.md
+  - name: security-html-sanitization-boundary
+    path: patterns/frontend/security-html-sanitization-boundary.md
+  - name: security-open-redirect-boundary
+    path: patterns/frontend/security-open-redirect-boundary.md
+  - name: security-token-storage
+    path: patterns/frontend/security-token-storage.md
+  - name: production-asset-cache
+    path: patterns/frontend/production-asset-cache.md
+  - name: production-service-worker-rollout
+    path: patterns/frontend/production-service-worker-rollout.md
+  - name: production-runtime-config
+    path: patterns/frontend/production-runtime-config.md
+  - name: dependency-platform-before-library
+    path: patterns/frontend/dependency-platform-before-library.md
+  - name: dependency-upgrade-isolation
+    path: patterns/frontend/dependency-upgrade-isolation.md
+  - name: e2e-event-driven-wait
+    path: patterns/frontend/e2e-event-driven-wait.md
+  - name: storybook-state-matrix
+    path: patterns/frontend/storybook-state-matrix.md
+  - name: react-observability-safe-context
+    path: patterns/frontend/react-observability-safe-context.md
+  - name: react-error-boundary-recovery
+    path: patterns/frontend/react-error-boundary-recovery.md
