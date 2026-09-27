@@ -35,12 +35,19 @@ skills:
     target: [react-architecture]
 
 patterns:
-  canonical_react_typescript: 24
+  canonical_react_typescript_source: 24
   cross_cutting_stack_minimality_adapters: 4
+  destination_total: 60
   migration_policy: preserve_names_first
+  destination_extensions:
+    - TypeScript async/module/configuration/migration patterns
+    - React rendering and server/client boundary patterns
+    - browser/security/session patterns
+    - production/dependency/E2E/observability patterns
 
 evaluations:
   source_count: 9
+  destination_count: 39
   split_evaluations:
     - source: react-state-effects
       target: [react-hooks-effects, react-state-management]
