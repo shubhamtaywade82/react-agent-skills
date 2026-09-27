@@ -1,0 +1,31 @@
+id: react-review-contract
+coverage: static-review
+version: 1
+title: React Review Contract
+category: react-typescript
+source: react-agent-skills-core-v1
+skills:
+  - react-review
+prompt: |
+  Review a React and TypeScript change for correctness, contract drift, accessibility, security, performance, and scope without rewriting unrelated code.
+constraints:
+  required_boundary: react-review
+checks:
+  - functional
+  - tests
+  - contract
+  - scope_control
+cases:
+  - name: regression
+    input: Identify a behavior regression caused by duplicated derived state or stale async updates.
+    expected:
+      review: review identifies the owning domain and required correction
+  - name: scope
+    input: Identify unrelated cleanup that should remain outside the change.
+    expected:
+      scope_control: review preserves a bounded change
+grading:
+  functional: Review catches user-visible correctness risks.
+  tests: Review checks verification quality.
+  contract: Review checks public and runtime contracts.
+  scope_control: Review rejects unrelated cleanup.
