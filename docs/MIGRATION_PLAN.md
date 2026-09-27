@@ -265,3 +265,27 @@ The split is complete only when:
 - \`ruby-agent-skills\` frontend skills are deprecated only after verified equivalence;
 - destination CI is green;
 - all claims are backed by executed validation/evaluation evidence.
+
+## Current implementation status — 2026-09-28
+
+| Phase | Status | Evidence |
+| --- | --- | --- |
+| 0 — taxonomy lock | complete | TAXONOMY.md, MIGRATION_MAP.yml |
+| 1 — destination baseline | complete | manifest, routing, validator, CI |
+| 2 — source skill migration/split | coverage preserved and expanded | source lineage snapshots + split target skills |
+| 3 — canonical pattern migration | complete for migration unit | 24 canonical patterns + 4 stack-minimality patterns + expanded destination patterns |
+| 4 — evaluation migration/split | complete for source evaluation unit | 11 destination React/TypeScript evaluations |
+| 5 — missing core frontend domains | complete on expansion branch | browser, security, production, styling, async UI, TypeScript API/module/config/migration skills |
+| 6 — conditional ecosystem adapters | implemented | Vite, Next.js, Remix, React Router, TanStack Query, Redux, Zustand, Vitest, Testing Library, Playwright, Cypress, Storybook, MSW |
+| 7 — frontend benchmark system | implemented as provider-neutral foundation | 30 benchmark cases, schema, validator, runner, CI smoke tests |
+| 8 — full-stack composition | documented | FULLSTACK_COMPOSITION.md |
+| 9 — Ruby frontend deprecation | intentionally not started | source removal waits for independent CI/evaluation evidence |
+
+### Current integrity gates
+
+- The destination is the authoritative frontend skill library for new work.
+- The Ruby pack remains untouched for backend ownership.
+- Source React/TypeScript skill snapshots are preserved for auditability.
+- The pattern and evaluation registries are validated in CI.
+- The benchmark runner records agent execution evidence but does not treat process exit code as correctness.
+- Ruby-pack frontend deprecation remains a separate follow-up release after destination verification.

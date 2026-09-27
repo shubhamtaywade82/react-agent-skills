@@ -1,0 +1,34 @@
+id: react-forms-validation-contract
+coverage: static-only
+version: 1
+title: React Forms Validation Contract
+category: react-typescript
+source: react-agent-skills-core-v1
+skills:
+  - react-forms-validation
+patterns:
+  - react-controlled-input
+  - react-form-server-error
+prompt: |
+  Implement an accessible form with client validation, server field errors, submission state, and safe retry behavior.
+constraints:
+  required_boundary: react-forms-validation
+checks:
+  - functional
+  - tests
+  - accessibility
+  - contract
+cases:
+  - name: field-state
+    input: Keep controlled field values and validation errors consistent during user editing.
+    expected:
+      react-controlled-input: ownership is explicit
+  - name: server-errors
+    input: Map structured server validation errors back into the form.
+    expected:
+      react-form-server-error: field and form errors remain recoverable
+grading:
+  functional: Submission and recovery behavior are correct.
+  tests: Validation and server-error paths are covered.
+  accessibility: Labels and error associations remain usable.
+  contract: Client and server validation semantics are explicit.
