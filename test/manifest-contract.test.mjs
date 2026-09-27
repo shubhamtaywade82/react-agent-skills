@@ -7,7 +7,7 @@ const root = new URL("..", import.meta.url);
 test("pattern registry is present and every registered pattern is real", async () => {
   const manifest = await readFile(new URL("patterns/PATTERN_MANIFEST.yml", root), "utf8");
   const entries = [...manifest.matchAll(/^  - name: ([A-Za-z0-9-]+)\n    path: (patterns\/[^\n]+)$/gm)];
-  assert.ok(entries.length >= 28, "expected migrated React/TypeScript pattern inventory");
+  assert.ok(entries.length >= 60, "expected migrated React/TypeScript pattern inventory");
 
   for (const [, name, path] of entries) {
     assert.match(name, /^[a-z0-9-]+$/);
