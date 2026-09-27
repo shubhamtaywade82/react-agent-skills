@@ -1,0 +1,33 @@
+id: frontend-e2e-contract
+coverage: browser-level
+version: 1
+title: Frontend E2E Contract
+category: react-typescript
+source: react-agent-skills-core-v1
+skills:
+  - frontend-e2e
+patterns:
+  - e2e-event-driven-wait
+prompt: |
+  Add a deterministic browser test for a critical user workflow without arbitrary sleeps or implementation-detail assertions.
+constraints:
+  required_boundary: frontend-e2e
+checks:
+  - functional
+  - tests
+  - accessibility
+  - scope_control
+cases:
+  - name: user-workflow
+    input: Exercise a critical user path through the real page and assert the visible result.
+    expected:
+      behavior: user-visible workflow succeeds
+  - name: timing
+    input: Replace fixed waiting with an event-driven browser synchronization.
+    expected:
+      e2e-event-driven-wait: no arbitrary sleep
+grading:
+  functional: The user workflow completes correctly.
+  tests: The test is deterministic and isolated.
+  accessibility: User-facing interactions use resilient accessible semantics where possible.
+  scope_control: E2E coverage remains focused on a critical path.
