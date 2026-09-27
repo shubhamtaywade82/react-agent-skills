@@ -256,7 +256,7 @@ The integration layer should be represented as composition guidance, not by dupl
 
 ## Implemented inventory
 
-At the current expansion branch, the destination registers 52 skills, 60 reusable patterns, 39 core React/TypeScript evaluation contracts, and 30 benchmark cases. Nine audited source skill snapshots are preserved under `docs/source-lineage/react-typescript/skills/` so provenance is explicit.
+At the current expansion branch, the destination registers 52 skills, 60 reusable patterns, 39 core React/TypeScript evaluation contracts, and 31 benchmark cases. Nine audited source skill snapshots are preserved under `docs/source-lineage/react-typescript/skills/` so provenance is explicit.
 
 The 24 canonical React/TypeScript patterns and four stack-minimality adapters from the audited source are preserved. The additional patterns are destination-native coverage for browser, security, production, testing, and TypeScript module/configuration concerns.
 
