@@ -94,3 +94,13 @@ GitHub Actions runs the same structural validator on pushes and pull requests.
 ## Scope
 
 This is engineering guidance for coding agents. It does not replace product requirements, security review, framework-specific documentation, or repository inspection.
+
+## Split architecture
+
+The planned split from `ruby-agent-skills` is documented in:
+
+- [Skill taxonomy](docs/TAXONOMY.md)
+- [Source inventory](docs/SOURCE_INVENTORY.md)
+- [Migration plan](docs/MIGRATION_PLAN.md)
+- [Migration map](docs/MIGRATION_MAP.yml)
+- [Full-stack composition](docs/FULLSTACK_COMPOSITION.md)
