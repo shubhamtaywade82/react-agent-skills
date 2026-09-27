@@ -117,3 +117,6 @@ evaluations:
   - id: react-review-contract
     path: evaluations/react-typescript/react-review.yml
     skill: react-review
+  - id: agent-workflow-contract
+    path: evaluations/react-typescript/agent-workflow.yml
+    skill: agent-workflow
