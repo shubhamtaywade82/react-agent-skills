@@ -4,41 +4,61 @@ description: Production-grade React + TypeScript engineering skills for AI codin
 skills:
   - name: agent-workflow
     path: skills/agent-workflow/SKILL.md
+    triggers: [agent workflow, repository change, implementation, refactor, verification]
   - name: react-architecture
     path: skills/react-architecture/SKILL.md
+    triggers: [react architecture, feature architecture, module boundaries, composition]
   - name: react-component-engineering
     path: skills/react-component-engineering/SKILL.md
+    triggers: [component, props, reusable component, component API]
   - name: react-hooks-effects
     path: skills/react-hooks-effects/SKILL.md
+    triggers: [hook, useEffect, effect, useMemo, useCallback, synchronization]
   - name: react-state-management
     path: skills/react-state-management/SKILL.md
+    triggers: [state, context, reducer, state management, store]
   - name: react-data-fetching
     path: skills/react-data-fetching/SKILL.md
+    triggers: [api, fetch, query, mutation, cache, server state]
   - name: react-forms-validation
     path: skills/react-forms-validation/SKILL.md
+    triggers: [form, validation, field, submit, wizard]
   - name: react-routing
     path: skills/react-routing/SKILL.md
+    triggers: [routing, route, navigation, url state, deep link]
   - name: react-testing-engineering
     path: skills/react-testing-engineering/SKILL.md
+    triggers: [test, testing, vitest, testing library, integration test]
   - name: react-accessibility
     path: skills/react-accessibility/SKILL.md
+    triggers: [accessibility, a11y, keyboard, focus, screen reader, aria]
   - name: react-performance
     path: skills/react-performance/SKILL.md
+    triggers: [performance, render, memoization, virtualization, profiling, bundle]
   - name: react-security
     path: skills/react-security/SKILL.md
+    triggers: [security, xss, csrf, token, storage, authorization, html]
   - name: react-error-resilience
     path: skills/react-error-resilience/SKILL.md
+    triggers: [error boundary, error state, loading, empty state, retry, resilience]
   - name: react-design-system
     path: skills/react-design-system/SKILL.md
+    triggers: [design system, ui library, component library, theming, tokens]
   - name: react-toolchain
     path: skills/react-toolchain/SKILL.md
+    triggers: [vite, build, bundler, typescript config, eslint, package, tooling, ci]
   - name: react-observability
     path: skills/react-observability/SKILL.md
+    triggers: [observability, logging, telemetry, metrics, tracing, frontend monitoring]
   - name: react-review
     path: skills/react-review/SKILL.md
+    triggers: [code review, review, audit, cleanup, technical debt]
   - name: typescript-core-engineering
     path: skills/typescript-core-engineering/SKILL.md
+    triggers: [typescript, compiler, tsconfig, narrowing, generics, modules]
   - name: typescript-type-design
     path: skills/typescript-type-design/SKILL.md
+    triggers: [type design, union, generic, branded type, public API]
   - name: typescript-runtime-contracts
     path: skills/typescript-runtime-contracts/SKILL.md
+    triggers: [json, runtime validation, schema, environment, storage, external input]
