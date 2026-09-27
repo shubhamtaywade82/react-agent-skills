@@ -1,0 +1,128 @@
+version: 1
+schema: docs/BENCHMARK_SCHEMA.md
+category: react-typescript
+cases:
+  - id: ts-public-contract
+    skill: typescript-public-api-design
+    checks: functional,tests,contract,scope_control
+    prompt: Design a stable exported API without leaking transport or implementation details.
+  - id: ts-runtime-boundary
+    skill: typescript-runtime-contracts
+    checks: functional,tests,contract,security
+    prompt: Validate an untrusted JSON response before turning it into domain data.
+  - id: ts-async-error
+    skill: typescript-async-error-modeling
+    checks: functional,tests,contract,scope_control
+    prompt: Model concurrent async success failure cancellation and stale-response states.
+  - id: ts-api-compatibility
+    skill: typescript-api-contracts
+    checks: functional,tests,contract,security
+    prompt: Add a versioned API response contract with explicit error and pagination semantics.
+  - id: ts-module-boundary
+    skill: typescript-module-design
+    checks: functional,tests,contract,scope_control
+    prompt: Break a circular import without widening the public module surface.
+  - id: ts-config-change
+    skill: typescript-configuration
+    checks: functional,tests,contract,scope_control
+    prompt: Tighten TypeScript configuration for one project without weakening repository-wide strictness.
+  - id: ts-migration-slice
+    skill: typescript-migration
+    checks: functional,tests,contract,scope_control
+    prompt: Convert one JavaScript feature to strict TypeScript without introducing broad suppression.
+  - id: react-component-api
+    skill: react-component-engineering
+    checks: functional,tests,accessibility,scope_control
+    prompt: Refactor a boolean-prop-heavy component into an explicit composable API.
+  - id: react-effects-race
+    skill: react-hooks-effects
+    checks: functional,tests,contract,scope_control
+    prompt: Remove derived state from an effect and prevent stale asynchronous results from winning.
+  - id: react-local-state
+    skill: react-state-management
+    checks: functional,tests,contract,scope_control
+    prompt: Move feature-local state out of a global provider and preserve behavior.
+  - id: react-server-state
+    skill: react-data-fetching
+    checks: functional,tests,contract,security
+    prompt: Implement query identity invalidation and failed optimistic mutation rollback.
+  - id: react-async-ui
+    skill: react-async-ui
+    checks: functional,tests,accessibility,scope_control
+    prompt: Distinguish initial loading refresh empty error retry and mutation states in the UI.
+  - id: react-form-validation
+    skill: react-forms-validation
+    checks: functional,tests,accessibility,contract
+    prompt: Implement an accessible multi-field form with client validation and server error recovery.
+  - id: react-routing-contract
+    skill: react-routing
+    checks: functional,tests,contract,security
+    prompt: Add deep-linkable URL state and preserve back forward and unauthorized navigation semantics.
+  - id: react-a11y-dialog
+    skill: react-accessibility
+    checks: functional,tests,accessibility,scope_control
+    prompt: Implement dialog keyboard semantics accessible naming focus entry and focus restoration.
+  - id: react-render-budget
+    skill: react-performance
+    checks: functional,tests,performance,scope_control
+    prompt: Investigate an expensive render and apply only measured optimization.
+  - id: react-error-recovery
+    skill: react-error-resilience
+    checks: functional,tests,contract,scope_control
+    prompt: Design recoverable loading error empty and retry states around a failed feature request.
+  - id: frontend-browser-api
+    skill: frontend-browser-platform
+    checks: functional,tests,security,scope_control
+    prompt: Integrate a browser API with feature detection cleanup and a non-support fallback.
+  - id: frontend-dom-security
+    skill: browser-security-dom-safety
+    checks: functional,tests,security,scope_control
+    prompt: Trace attacker-controlled HTML and URL input to safe DOM sinks.
+  - id: frontend-auth-session
+    skill: auth-session-boundaries
+    checks: functional,tests,security,contract
+    prompt: Handle expired sessions refresh races unauthorized responses and logout cleanup.
+  - id: frontend-e2e
+    skill: frontend-e2e
+    checks: functional,tests,accessibility,scope_control
+    prompt: Add a deterministic end-to-end test for a critical user workflow without arbitrary sleeps.
+  - id: frontend-production-release
+    skill: frontend-production
+    checks: functional,tests,contract,scope_control
+    prompt: Harden a production build and release path against stale assets and configuration drift.
+  - id: frontend-style-system
+    skill: frontend-styling-layout
+    checks: functional,tests,accessibility,scope_control
+    prompt: Fix a responsive layout while preserving tokens focus visibility and reduced-motion behavior.
+  - id: frontend-dependency-review
+    skill: frontend-dependency-management
+    checks: functional,tests,security,scope_control
+    prompt: Evaluate whether a new dependency is justified versus an existing platform primitive.
+  - id: react-modern-rendering
+    skill: react-modern-rendering
+    checks: functional,tests,contract,performance
+    prompt: Diagnose a hydration or Suspense regression without breaking rendering boundaries.
+  - id: react-server-component-boundary
+    skill: react-server-components
+    checks: functional,tests,security,contract
+    prompt: Move privileged data access behind a server component boundary without leaking it to the client.
+  - id: adapter-selection-vite
+    skill: vite
+    checks: functional,tests,contract,scope_control
+    prompt: Apply a Vite-specific env and build change only after repository evidence confirms Vite.
+  - id: adapter-selection-query
+    skill: tanstack-query
+    checks: functional,tests,contract,scope_control
+    prompt: Fix a TanStack Query cache key and invalidation bug using the repository's configured query client.
+  - id: adapter-selection-playwright
+    skill: playwright
+    checks: functional,tests,accessibility,scope_control
+    prompt: Stabilize a Playwright workflow using user-facing locators network control and diagnostic traces.
+  - id: adapter-selection-testing-library
+    skill: testing-library
+    checks: functional,tests,accessibility,scope_control
+    prompt: Replace implementation-detail assertions with realistic Testing Library interactions.
+  - id: fullstack-api-boundary
+    skill: typescript-api-contracts
+    checks: functional,tests,contract,security
+    prompt: Change a Rails API response and React consumer together while preserving an explicit shared boundary contract.
