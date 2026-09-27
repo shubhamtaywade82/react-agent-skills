@@ -1,0 +1,31 @@
+id: frontend-architecture-contract
+coverage: static-only
+version: 1
+title: Frontend Architecture Contract
+category: react-typescript
+source: react-agent-skills-core-v1
+skills:
+  - frontend-architecture
+prompt: |
+  Reorganize a frontend so feature modules have explicit dependency direction without introducing global escape-hatch state.
+constraints:
+  required_boundary: frontend-architecture
+checks:
+  - functional
+  - tests
+  - contract
+  - scope_control
+cases:
+  - name: dependency-direction
+    input: Move a feature-specific dependency behind its owning module boundary.
+    expected:
+      contract: dependency direction is explicit
+  - name: global-state-restraint
+    input: Remove a global store used only by one feature.
+    expected:
+      scope_control: state ownership is narrowed without broad rewrite
+grading:
+  functional: User-visible behavior remains correct.
+  tests: Feature behavior is covered.
+  contract: Module ownership and direction are explicit.
+  scope_control: The migration is bounded.
