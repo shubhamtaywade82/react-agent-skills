@@ -1,0 +1,31 @@
+id: frontend-environment-configuration-contract
+coverage: static-only
+version: 1
+title: Frontend Environment Configuration Contract
+category: react-typescript
+source: react-agent-skills-core-v1
+skills:
+  - frontend-environment-configuration
+prompt: |
+  Move client configuration behind a validated boundary and keep server secrets out of client-delivered code.
+constraints:
+  required_boundary: frontend-environment-configuration
+checks:
+  - functional
+  - tests
+  - contract
+  - security
+cases:
+  - name: public-config
+    input: Expose only an explicitly public client setting through the repository's normal configuration mechanism.
+    expected:
+      contract: client-visible configuration is deliberate
+  - name: invalid-config
+    input: Fail clearly when required client configuration is missing or malformed.
+    expected:
+      verification: invalid configuration is tested
+grading:
+  functional: Configuration reaches the correct runtime boundary.
+  tests: Missing and malformed configuration are covered.
+  contract: Build-time versus runtime semantics are explicit.
+  security: Server-only secrets do not enter client assets.
