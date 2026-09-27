@@ -1,0 +1,44 @@
+version: 1
+name: react-agent-skills
+description: Production-grade React + TypeScript engineering skills for AI coding agents.
+skills:
+  - name: agent-workflow
+    path: skills/agent-workflow/SKILL.md
+  - name: react-architecture
+    path: skills/react-architecture/SKILL.md
+  - name: react-component-engineering
+    path: skills/react-component-engineering/SKILL.md
+  - name: react-hooks-effects
+    path: skills/react-hooks-effects/SKILL.md
+  - name: react-state-management
+    path: skills/react-state-management/SKILL.md
+  - name: react-data-fetching
+    path: skills/react-data-fetching/SKILL.md
+  - name: react-forms-validation
+    path: skills/react-forms-validation/SKILL.md
+  - name: react-routing
+    path: skills/react-routing/SKILL.md
+  - name: react-testing-engineering
+    path: skills/react-testing-engineering/SKILL.md
+  - name: react-accessibility
+    path: skills/react-accessibility/SKILL.md
+  - name: react-performance
+    path: skills/react-performance/SKILL.md
+  - name: react-security
+    path: skills/react-security/SKILL.md
+  - name: react-error-resilience
+    path: skills/react-error-resilience/SKILL.md
+  - name: react-design-system
+    path: skills/react-design-system/SKILL.md
+  - name: react-toolchain
+    path: skills/react-toolchain/SKILL.md
+  - name: react-observability
+    path: skills/react-observability/SKILL.md
+  - name: react-review
+    path: skills/react-review/SKILL.md
+  - name: typescript-core-engineering
+    path: skills/typescript-core-engineering/SKILL.md
+  - name: typescript-type-design
+    path: skills/typescript-type-design/SKILL.md
+  - name: typescript-runtime-contracts
+    path: skills/typescript-runtime-contracts/SKILL.md
