@@ -12,9 +12,10 @@ jobs:
       - uses: actions/setup-node@v5
         with:
           node-version: 22
-      - run: node --test test/manifest-contract.test.mjs test/benchmark-contract.test.mjs test/install-contract.test.mjs
+      - run: node --test test/manifest-contract.test.mjs test/benchmark-contract.test.mjs test/benchmark-runner.test.mjs test/install-contract.test.mjs
       - run: node scripts/validate.mjs
       - run: node scripts/validate-benchmarks.mjs
+      - run: node scripts/benchmark-runner.mjs --help
       - run: bash -n bin/install
       - run: bash bin/install --help
       - run: rm -rf "$RUNNER_TEMP/react-agent-skills" && bash bin/install --target "$RUNNER_TEMP/react-agent-skills" && test -f "$RUNNER_TEMP/react-agent-skills/AGENTS.md" && test -f "$RUNNER_TEMP/react-agent-skills/skill-manifest.yml"
