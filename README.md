@@ -53,7 +53,7 @@ This repository turns React/TypeScript knowledge into executable guidance an age
 
 ## Inventory
 
-The current expansion contains 52 registered skills, 60 reusable patterns, 39 core React/TypeScript evaluation contracts, and 30 benchmark cases. Nine audited source skill snapshots are preserved for provenance.
+The current expansion contains 52 registered skills, 60 reusable patterns, 39 core React/TypeScript evaluation contracts, and 31 benchmark cases. Nine audited source skill snapshots are preserved for provenance.
 
 ## Installation
 
