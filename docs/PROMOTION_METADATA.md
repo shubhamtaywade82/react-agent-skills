@@ -9,7 +9,7 @@ Release candidate inventory:
 - skills: 52
 - reusable patterns: 60
 - core evaluations: 39
-- benchmark cases: 30
+- benchmark cases: 31
 - conditional adapters: 13
 
 Verification already completed on the release candidate:
