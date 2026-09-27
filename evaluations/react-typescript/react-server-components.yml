@@ -1,0 +1,33 @@
+id: react-server-components-contract
+coverage: server-client-boundary
+version: 1
+title: React Server Components Contract
+category: react-typescript
+source: react-agent-skills-core-v1
+skills:
+  - react-server-components
+patterns:
+  - react-server-client-boundary
+prompt: |
+  Move privileged data access behind a server component boundary and pass only intentional serializable data into the client.
+constraints:
+  required_boundary: react-server-components
+checks:
+  - functional
+  - tests
+  - security
+  - contract
+cases:
+  - name: server-only
+    input: Prevent a server-only dependency from entering a client bundle.
+    expected:
+      react-server-client-boundary: server-only import remains server-side
+  - name: serialization
+    input: Pass the minimal serializable view data to an interactive child.
+    expected:
+      contract: cross-boundary props are intentional
+grading:
+  functional: The feature still renders and interacts correctly.
+  tests: Server rendering and client behavior are covered.
+  security: Privileged data and secrets remain on the server.
+  contract: Server/client boundaries are explicit.
