@@ -12,7 +12,7 @@ jobs:
       - uses: actions/setup-node@v5
         with:
           node-version: 22
-      - run: node --test test/manifest-contract.test.mjs test/benchmark-contract.test.mjs test/benchmark-runner.test.mjs test/install-contract.test.mjs
+      - run: node --test test/*.test.mjs
       - run: node scripts/validate.mjs
       - run: node scripts/validate-benchmarks.mjs
       - run: node scripts/validate-fixtures.mjs
