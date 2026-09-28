@@ -147,3 +147,63 @@ evaluations:
   - id: frontend-formatting-contract
     path: evaluations/react-typescript/frontend-formatting.yml
     skill: frontend-formatting
+  - id: frontend-monorepo-contract
+    path: evaluations/react-typescript/frontend-monorepo.yml
+    skill: frontend-monorepo
+  - id: typescript-package-publishing-contract
+    path: evaluations/react-typescript/typescript-package-publishing.yml
+    skill: typescript-package-publishing
+  - id: frontend-generated-code-contract
+    path: evaluations/react-typescript/frontend-generated-code.yml
+    skill: frontend-generated-code
+  - id: frontend-internationalization-contract
+    path: evaluations/react-typescript/frontend-internationalization.yml
+    skill: frontend-internationalization
+  - id: frontend-offline-pwa-contract
+    path: evaluations/react-typescript/frontend-offline-pwa.yml
+    skill: frontend-offline-pwa
+  - id: frontend-realtime-contract
+    path: evaluations/react-typescript/frontend-realtime.yml
+    skill: frontend-realtime
+  - id: frontend-web-performance-contract
+    path: evaluations/react-typescript/frontend-web-performance.yml
+    skill: frontend-web-performance
+  - id: frontend-test-reliability-contract
+    path: evaluations/react-typescript/frontend-test-reliability.yml
+    skill: frontend-test-reliability
+  - id: frontend-visual-testing-contract
+    path: evaluations/react-typescript/frontend-visual-testing.yml
+    skill: frontend-visual-testing
+  - id: frontend-rendering-strategies-contract
+    path: evaluations/react-typescript/frontend-rendering-strategies.yml
+    skill: frontend-rendering-strategies
+  - id: frontend-supply-chain-contract
+    path: evaluations/react-typescript/frontend-supply-chain.yml
+    skill: frontend-supply-chain
+  - id: frontend-documentation-contract
+    path: evaluations/react-typescript/frontend-documentation.yml
+    skill: frontend-documentation
+  - id: frontend-codemod-migration-contract
+    path: evaluations/react-typescript/frontend-codemod-migration.yml
+    skill: frontend-codemod-migration
+  - id: react-accessibility-widgets-contract
+    path: evaluations/react-typescript/react-accessibility-widgets.yml
+    skill: react-accessibility-widgets
+  - id: frontend-storage-contract
+    path: evaluations/react-typescript/frontend-storage.yml
+    skill: frontend-storage
+  - id: frontend-messaging-contract
+    path: evaluations/react-typescript/frontend-messaging.yml
+    skill: frontend-messaging
+  - id: frontend-workers-contract
+    path: evaluations/react-typescript/frontend-workers.yml
+    skill: frontend-workers
+  - id: frontend-networking-contract
+    path: evaluations/react-typescript/frontend-networking.yml
+    skill: frontend-networking
+  - id: browser-authentication-contract
+    path: evaluations/react-typescript/browser-authentication.yml
+    skill: browser-authentication
+  - id: browser-media-contract
+    path: evaluations/react-typescript/browser-media.yml
+    skill: browser-media

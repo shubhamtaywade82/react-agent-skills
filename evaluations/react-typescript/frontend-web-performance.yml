@@ -1,0 +1,8 @@
+id: frontend-web-performance-contract
+version: 1
+prompt: Diagnose a performance regression using Web Vitals and browser trace evidence before optimizing.
+checks:
+  - repository evidence
+  - functional behavior
+  - focused tests
+  - scope control

@@ -1,0 +1,8 @@
+id: typescript-package-publishing-contract
+version: 1
+prompt: Publish a TypeScript package with aligned exports, declarations, peer dependencies and consumer compatibility.
+checks:
+  - repository evidence
+  - functional behavior
+  - focused tests
+  - scope control
