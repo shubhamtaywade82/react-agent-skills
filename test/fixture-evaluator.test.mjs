@@ -3,7 +3,7 @@ import { mkdtemp, readFile, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { test } from "node:test";
-import { collectSnapshot, evaluateScope, parseFixtureManifest } from "../scripts/fixture-evaluator.mjs";
+import { calculateScore, collectSnapshot, evaluateScope, parseFixtureManifest } from "../scripts/fixture-evaluator.mjs";
 
 test("fixture manifest parser returns fixture cases", () => {
   const manifest = JSON.stringify({
@@ -33,4 +33,18 @@ test("fixture evaluator reports forbidden writes", async () => {
   const result = evaluateScope(before, after, ["allowed.txt"]);
   assert.equal(result.allowed, false);
   assert.deepEqual(result.forbidden, ["unexpected.txt"]);
+});
+
+test("score keeps safety and scope explicit", () => {
+  const score = calculateScore({
+    executionOk: true,
+    correctness: { verifiers_passed: 1, verifiers_total: 1 },
+    scopeOk: true,
+    safetyOk: false,
+    recoveryOk: false,
+    multiTurn: false
+  });
+  assert.equal(score.dimensions.correctness, 100);
+  assert.equal(score.dimensions.safety, 0);
+  assert.ok(score.total < 100);
 });
