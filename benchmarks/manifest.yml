@@ -142,3 +142,23 @@ cases:
     skill: react-server-security
     checks: functional,tests,security,dependency
     prompt: Harden an RSC server-function boundary against unauthorized input and accidental client disclosure.
+  - id: ts-version-migration
+    skill: typescript-version-migration
+    checks: functional,tests,contract,scope_control
+    prompt: Upgrade TypeScript in a real repository while preserving module semantics and avoiding broad suppression.
+  - id: ts-build-architecture
+    skill: typescript-build-architecture
+    checks: functional,tests,build,scope_control
+    prompt: Repair a TypeScript project-reference build graph and verify clean and incremental builds.
+  - id: eslint-flat-config
+    skill: eslint
+    checks: functional,tests,tooling,scope_control
+    prompt: Migrate lint configuration to an explicit flat config without widening lint scope.
+  - id: typescript-eslint-typed-lint
+    skill: typescript-eslint
+    checks: functional,tests,contract,tooling
+    prompt: Enable typed linting with correct project discovery and useful rule scope.
+  - id: frontend-formatting
+    skill: frontend-formatting
+    checks: functional,tests,scope_control,determinism
+    prompt: Establish one deterministic formatter contract without unrelated source churn.
