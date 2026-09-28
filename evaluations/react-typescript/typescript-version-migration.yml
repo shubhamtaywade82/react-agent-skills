@@ -1,0 +1,8 @@
+id: typescript-version-migration-contract
+version: 1
+prompt: Migrate a repository to a newer TypeScript release without broad suppression or runtime module breakage.
+checks:
+  - compiler compatibility
+  - module semantics
+  - tooling compatibility
+  - tests and build
