@@ -5,6 +5,18 @@ skills:
   - name: agent-workflow
     path: skills/agent-workflow/SKILL.md
     triggers: [agent workflow, repository change, implementation, refactor, verification]
+  - name: agent-tool-capabilities
+    path: skills/agent-tool-capabilities/SKILL.md
+    triggers: [agent tools, tool capabilities, agent runtime, capability manifest]
+  - name: frontend-repository-archetypes
+    path: skills/frontend-repository-archetypes/SKILL.md
+    triggers: [repository archetype, repo classification, frontend architecture, monorepo detection]
+  - name: frontend-risk-classification
+    path: skills/frontend-risk-classification/SKILL.md
+    triggers: [risk classification, blast radius, change risk, verification level]
+  - name: frontend-debugging
+    path: skills/frontend-debugging/SKILL.md
+    triggers: [debugging, browser debugging, console error, hydration bug, network bug, runtime regression]
   - name: react-architecture
     path: skills/react-architecture/SKILL.md
     triggers: [react architecture, feature architecture, module boundaries, composition]

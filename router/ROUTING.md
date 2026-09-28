@@ -33,6 +33,9 @@ Route by the dominant engineering boundary, then compose only real secondary con
 | Test architecture | react-testing-engineering | frontend-e2e, data-fetching, accessibility |
 | Observability | react-observability | error-resilience, security, production |
 | Code review | react-review | owning domain skills |
+| Unknown/new repository | frontend-repository-archetypes | agent-tool-capabilities, frontend-risk-classification |
+| Runtime/browser regression | frontend-debugging | frontend-e2e, react-error-resilience, browser-security-dom-safety |
+| High-impact change planning | frontend-risk-classification | owning domain skills, testing, production |
 
 ## Conditional adapter routing
 
