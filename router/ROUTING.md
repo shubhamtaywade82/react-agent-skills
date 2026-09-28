@@ -68,3 +68,9 @@ Route by the dominant engineering boundary, then compose only real secondary con
 5. Keep UI state, server state, synchronization, runtime validation, and browser trust as separate concerns.
 6. Cross-boundary Rails/API work must compose with ruby-agent-skills; do not duplicate Rails backend guidance here.
 7. Security and accessibility are implementation constraints, not post-hoc cleanup.
+
+| TypeScript major migration | typescript-version-migration | typescript-core-engineering, typescript-configuration, dependency-management, testing |
+| TypeScript build graph | typescript-build-architecture | typescript-configuration, module-design, dependency-management |
+| ESLint configuration | eslint | typescript-eslint, react-toolchain |
+| Typed linting | typescript-eslint | eslint, typescript-configuration, monorepo |
+| Formatting contract | frontend-formatting | eslint, toolchain |
