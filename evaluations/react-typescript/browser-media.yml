@@ -1,0 +1,8 @@
+id: browser-media-contract
+version: 1
+prompt: Integrate a browser media API with explicit permission, capability detection and track cleanup.
+checks:
+  - repository evidence
+  - functional behavior
+  - security/accessibility where relevant
+  - focused tests
