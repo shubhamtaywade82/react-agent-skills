@@ -162,3 +162,83 @@ cases:
     skill: frontend-formatting
     checks: functional,tests,scope_control,determinism
     prompt: Establish one deterministic formatter contract without unrelated source churn.
+  - id: frontend-monorepo
+    skill: frontend-monorepo
+    checks: functional,tests,contract,scope_control
+    prompt: Apply frontend-monorepo guidance to a repository-backed change and verify the relevant contract.
+  - id: typescript-package-publishing
+    skill: typescript-package-publishing
+    checks: functional,tests,contract,scope_control
+    prompt: Apply typescript-package-publishing guidance to a repository-backed change and verify the relevant contract.
+  - id: frontend-generated-code
+    skill: frontend-generated-code
+    checks: functional,tests,contract,scope_control
+    prompt: Apply frontend-generated-code guidance to a repository-backed change and verify the relevant contract.
+  - id: frontend-internationalization
+    skill: frontend-internationalization
+    checks: functional,tests,contract,scope_control
+    prompt: Apply frontend-internationalization guidance to a repository-backed change and verify the relevant contract.
+  - id: frontend-offline-pwa
+    skill: frontend-offline-pwa
+    checks: functional,tests,contract,scope_control
+    prompt: Apply frontend-offline-pwa guidance to a repository-backed change and verify the relevant contract.
+  - id: frontend-realtime
+    skill: frontend-realtime
+    checks: functional,tests,contract,scope_control
+    prompt: Apply frontend-realtime guidance to a repository-backed change and verify the relevant contract.
+  - id: frontend-web-performance
+    skill: frontend-web-performance
+    checks: functional,tests,contract,scope_control
+    prompt: Apply frontend-web-performance guidance to a repository-backed change and verify the relevant contract.
+  - id: frontend-test-reliability
+    skill: frontend-test-reliability
+    checks: functional,tests,contract,scope_control
+    prompt: Apply frontend-test-reliability guidance to a repository-backed change and verify the relevant contract.
+  - id: frontend-visual-testing
+    skill: frontend-visual-testing
+    checks: functional,tests,contract,scope_control
+    prompt: Apply frontend-visual-testing guidance to a repository-backed change and verify the relevant contract.
+  - id: frontend-rendering-strategies
+    skill: frontend-rendering-strategies
+    checks: functional,tests,contract,scope_control
+    prompt: Apply frontend-rendering-strategies guidance to a repository-backed change and verify the relevant contract.
+  - id: frontend-supply-chain
+    skill: frontend-supply-chain
+    checks: functional,tests,contract,scope_control
+    prompt: Apply frontend-supply-chain guidance to a repository-backed change and verify the relevant contract.
+  - id: frontend-documentation
+    skill: frontend-documentation
+    checks: functional,tests,contract,scope_control
+    prompt: Apply frontend-documentation guidance to a repository-backed change and verify the relevant contract.
+  - id: frontend-codemod-migration
+    skill: frontend-codemod-migration
+    checks: functional,tests,contract,scope_control
+    prompt: Apply frontend-codemod-migration guidance to a repository-backed change and verify the relevant contract.
+  - id: react-accessibility-widgets
+    skill: react-accessibility-widgets
+    checks: functional,tests,contract,scope_control
+    prompt: Apply react-accessibility-widgets guidance to a repository-backed change and verify the relevant contract.
+  - id: frontend-storage
+    skill: frontend-storage
+    checks: functional,tests,contract,scope_control
+    prompt: Apply frontend-storage guidance to a repository-backed change and verify the relevant contract.
+  - id: frontend-messaging
+    skill: frontend-messaging
+    checks: functional,tests,contract,scope_control
+    prompt: Apply frontend-messaging guidance to a repository-backed change and verify the relevant contract.
+  - id: frontend-workers
+    skill: frontend-workers
+    checks: functional,tests,contract,scope_control
+    prompt: Apply frontend-workers guidance to a repository-backed change and verify the relevant contract.
+  - id: frontend-networking
+    skill: frontend-networking
+    checks: functional,tests,contract,scope_control
+    prompt: Apply frontend-networking guidance to a repository-backed change and verify the relevant contract.
+  - id: browser-authentication
+    skill: browser-authentication
+    checks: functional,tests,contract,scope_control
+    prompt: Apply browser-authentication guidance to a repository-backed change and verify the relevant contract.
+  - id: browser-media
+    skill: browser-media
+    checks: functional,tests,contract,scope_control
+    prompt: Apply browser-media guidance to a repository-backed change and verify the relevant contract.
