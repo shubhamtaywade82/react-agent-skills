@@ -1,0 +1,8 @@
+id: typescript-build-architecture-contract
+version: 1
+prompt: Introduce or repair a TypeScript project-reference build graph while preserving runtime package resolution.
+checks:
+  - acyclic graph
+  - declarations
+  - clean/incremental builds
+  - package runtime compatibility
