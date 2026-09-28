@@ -354,3 +354,7 @@ cases:
     skill: new-relic-frontend
     checks: functional,tests,contract,adapter_scope
     prompt: Apply the new-relic-frontend adapter only after repository evidence confirms the dependency or platform and preserve configured semantics.
+  - id: agent-fixture-evaluation
+    skill: agent-evaluation-engineering
+    checks: correctness,scope,safety,execution
+    prompt: Evaluate an AI agent against a disposable frontend fixture using independent verifiers and scope controls.
