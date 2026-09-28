@@ -167,6 +167,32 @@
       "verifiers": [
         "node verify.mjs"
       ]
+    },
+    {
+      "id": "fullstack-rails-react-contract",
+      "skill": "typescript-api-contracts",
+      "mode": "single_turn",
+      "prompt": "Update the React consumer for a Rails API response envelope while keeping transport parsing separate from the UI domain model.",
+      "files": {
+        "src/api.mjs": "export function decodeUser(response) {\n  return response;\n}\n",
+        "src/view.mjs": "export function renderUser(user) {\n  return user.displayName;\n}\n",
+        "verify.mjs": "import assert from \"node:assert/strict\";\nimport { decodeUser } from \"./src/api.mjs\";\nimport { renderUser } from \"./src/view.mjs\";\n\nconst transport = {\n  data: { id: \"u-1\", display_name: \"Ada\" },\n  meta: { request_id: \"r-1\" }\n};\nconst user = decodeUser(transport);\nassert.deepEqual(user, { id: \"u-1\", displayName: \"Ada\" });\nassert.equal(renderUser(user), \"Ada\");\nassert.equal(\"meta\" in user, false);\nassert.equal(\"data\" in user, false);\n"
+      },
+      "allowed_paths": [
+        "src/api.mjs",
+        "src/view.mjs"
+      ],
+      "must_exist": [
+        "src/api.mjs",
+        "src/view.mjs",
+        "verify.mjs"
+      ],
+      "verifiers": [
+        "node verify.mjs"
+      ],
+      "forbidden_content": [
+        "return response;"
+      ]
     }
   ]
 }
