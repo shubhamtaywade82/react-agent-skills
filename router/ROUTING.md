@@ -126,3 +126,7 @@ Route by the dominant engineering boundary, then compose only real secondary con
 | new-relic-frontend adapter | new-relic-frontend | platform/deployment/observability evidence |
 
 | Agent evaluation design | agent-evaluation-engineering | fixture-evaluator, benchmark-runner, testing |
+
+| Agent scoring | agent-behavior-scoring | agent-evaluation-engineering, fixtures |
+| Multi-turn agent evaluation | agent-multi-turn-evaluations | agent-evaluation-engineering, testing |
+| Adversarial agent evaluation | agent-adversarial-evaluations | frontend-security, browser-security-dom-safety, fixtures |
