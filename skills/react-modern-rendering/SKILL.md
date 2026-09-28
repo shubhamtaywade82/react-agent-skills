@@ -27,3 +27,7 @@ Check render ownership, server/client boundaries, fallback UX, hydration correct
 
 ## Verification
 Run SSR and hydration or framework-specific tests where applicable, plus typecheck, component tests, and production build.
+
+## React 19 integration
+
+When React 19.x is confirmed, compose with `react-19-modern-apis` for version-specific Activity, ViewTransition, Fragment Refs, browser(), cacheSignal and resource API guidance.

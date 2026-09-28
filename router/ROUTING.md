@@ -17,8 +17,12 @@ Route by the dominant engineering boundary, then compose only real secondary con
 | E2E workflow | frontend-e2e | routing, auth-session, data-fetching, accessibility |
 | Accessibility | react-accessibility | component, styling, frontend-e2e, testing |
 | Performance | react-performance | architecture, data-fetching, toolchain, modern-rendering |
-| Rendering/Suspense/hydration | react-modern-rendering | server-components, performance, toolchain, e2e |
-| Server Components/client boundary | react-server-components | modern-rendering, api-contracts, security, framework adapter |
+| Rendering/Suspense/hydration | react-modern-rendering | react-19-modern-apis, server-components, performance, toolchain, e2e |
+| React 19 APIs | react-19-modern-apis | modern-rendering, toolchain, testing |
+| React Actions/forms | react-actions-forms | forms-validation, async-ui, accessibility, testing |
+| Compiler optimization | react-compiler | performance, toolchain, testing |
+| Server Components/client boundary | react-server-components | modern-rendering, react-server-security, api-contracts, security, framework adapter |
+| RSC/server-function security | react-server-security | server-components, frontend-security, runtime-contracts, dependency-management |
 | Security audit | frontend-security | browser-security-dom-safety, auth-session, api-contracts |
 | Authentication/session | auth-session-boundaries | routing, data-fetching, frontend-security, e2e |
 | Styling/layout | frontend-styling-layout | accessibility, design-system, performance |

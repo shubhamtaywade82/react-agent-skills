@@ -45,3 +45,7 @@ Inspect form library conventions, schema validation, field components, API error
 
 ## Verification
 Accessible form tests, validation tests, API error mapping tests, typecheck, and integration tests.
+
+## React 19 Actions
+
+When React 19 Actions are supported, compose with `react-actions-forms` for useActionState, useFormStatus, useOptimistic and form action lifecycle semantics.

@@ -27,3 +27,7 @@ Trace every server and client import boundary and every value crossing it.
 
 ## Verification
 Run framework-specific build and type checks that enforce server/client constraints. Exercise server rendering, client hydration, and boundary-specific tests.
+
+## Security composition
+
+RSC architecture and RSC security are separate concerns. For server functions, serialization, dependency patching or secret-disclosure reviews, compose with `react-server-security`.

@@ -1,0 +1,8 @@
+id: react-actions-forms-contract
+version: 1
+prompt: Implement a React 19 async form action with explicit pending, validation failure, success and retry behavior.
+checks:
+  - state lifecycle
+  - server validation
+  - accessibility
+  - duplicate submission handling

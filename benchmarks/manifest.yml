@@ -126,3 +126,19 @@ cases:
     skill: typescript-api-contracts
     checks: functional,tests,contract,security
     prompt: Change a Rails API response and React consumer together while preserving an explicit shared boundary contract.
+  - id: react-19-modern-apis
+    skill: react-19-modern-apis
+    checks: functional,tests,contract,version_awareness
+    prompt: Add a supported React 19 modern API only after verifying repository version and renderer support.
+  - id: react-actions-forms
+    skill: react-actions-forms
+    checks: functional,tests,accessibility,contract
+    prompt: Implement a React 19 async form action with pending validation failure success and retry semantics.
+  - id: react-compiler-adoption
+    skill: react-compiler
+    checks: functional,tests,performance,scope_control
+    prompt: Remove unjustified manual memoization in a compiler-enabled component while preserving referential contracts.
+  - id: react-server-security
+    skill: react-server-security
+    checks: functional,tests,security,dependency
+    prompt: Harden an RSC server-function boundary against unauthorized input and accidental client disclosure.
