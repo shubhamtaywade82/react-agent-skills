@@ -291,3 +291,6 @@ evaluations:
   - id: new-relic-frontend-contract
     path: evaluations/react-typescript/new-relic-frontend.yml
     skill: new-relic-frontend
+  - id: agent-evaluation-engineering-contract
+    path: evaluations/react-typescript/agent-evaluation-engineering.yml
+    skill: agent-evaluation-engineering
