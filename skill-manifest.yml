@@ -171,3 +171,15 @@ skills:
   - name: msw
     path: skills/msw/SKILL.md
     triggers: [msw, mock service worker, network handler, request mock]
+  - name: react-19-modern-apis
+    path: skills/react-19-modern-apis/SKILL.md
+    triggers: [react 19, viewtransition, fragment refs, activity, browser, cacheSignal, modern react]
+  - name: react-actions-forms
+    path: skills/react-actions-forms/SKILL.md
+    triggers: [useActionState, useFormStatus, useOptimistic, form action, react actions]
+  - name: react-compiler
+    path: skills/react-compiler/SKILL.md
+    triggers: [react compiler, use memo, use no memo, compiler diagnostics]
+  - name: react-server-security
+    path: skills/react-server-security/SKILL.md
+    triggers: [rsc security, server component security, server functions, react server security]
