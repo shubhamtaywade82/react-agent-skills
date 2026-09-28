@@ -48,3 +48,7 @@ Run repository-standard typecheck/lint/test/build commands and a production buil
 ## Source foundation
 - Vite: https://vite.dev/guide/
 - TypeScript TSConfig: https://www.typescriptlang.org/tsconfig/
+
+## Lint and format ownership
+
+Compose with `eslint` for ESLint configuration and with `typescript-eslint` for typed linting. Compose with `frontend-formatting` for Prettier/Biome selection and formatting scope. Do not duplicate their detailed policies here.

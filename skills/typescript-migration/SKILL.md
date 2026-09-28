@@ -27,3 +27,7 @@ Check runtime equivalence, type strictness trend, scope, and removal of temporar
 
 ## Verification
 Run typecheck, tests, lint, build, and migration-specific metrics or error counts where available.
+
+## Version-aware migration
+
+For TypeScript major-version upgrades, compose with `typescript-version-migration` so release-specific deprecations and module/tooling compatibility are treated as first-class migration constraints.

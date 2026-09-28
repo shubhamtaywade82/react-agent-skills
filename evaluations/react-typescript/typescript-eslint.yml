@@ -1,0 +1,8 @@
+id: typescript-eslint-contract
+version: 1
+prompt: Enable typed linting only where TypeScript project information improves defect detection without creating workspace resolution failures.
+checks:
+  - parser/compiler compatibility
+  - project service scope
+  - representative lint
+  - CI parity
