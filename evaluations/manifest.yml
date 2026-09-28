@@ -207,3 +207,54 @@ evaluations:
   - id: browser-media-contract
     path: evaluations/react-typescript/browser-media.yml
     skill: browser-media
+  - id: apollo-contract
+    path: evaluations/react-typescript/apollo.yml
+    skill: apollo
+  - id: urql-contract
+    path: evaluations/react-typescript/urql.yml
+    skill: urql
+  - id: swr-contract
+    path: evaluations/react-typescript/swr.yml
+    skill: swr
+  - id: rtk-query-contract
+    path: evaluations/react-typescript/rtk-query.yml
+    skill: rtk-query
+  - id: trpc-contract
+    path: evaluations/react-typescript/trpc.yml
+    skill: trpc
+  - id: graphql-codegen-contract
+    path: evaluations/react-typescript/graphql-codegen.yml
+    skill: graphql-codegen
+  - id: openapi-tooling-contract
+    path: evaluations/react-typescript/openapi-tooling.yml
+    skill: openapi-tooling
+  - id: jotai-contract
+    path: evaluations/react-typescript/jotai.yml
+    skill: jotai
+  - id: mobx-contract
+    path: evaluations/react-typescript/mobx.yml
+    skill: mobx
+  - id: xstate-contract
+    path: evaluations/react-typescript/xstate.yml
+    skill: xstate
+  - id: react-hook-form-contract
+    path: evaluations/react-typescript/react-hook-form.yml
+    skill: react-hook-form
+  - id: tanstack-form-contract
+    path: evaluations/react-typescript/tanstack-form.yml
+    skill: tanstack-form
+  - id: zod-contract
+    path: evaluations/react-typescript/zod.yml
+    skill: zod
+  - id: valibot-contract
+    path: evaluations/react-typescript/valibot.yml
+    skill: valibot
+  - id: arktype-contract
+    path: evaluations/react-typescript/arktype.yml
+    skill: arktype
+  - id: yup-contract
+    path: evaluations/react-typescript/yup.yml
+    skill: yup
+  - id: vitest-browser-contract
+    path: evaluations/react-typescript/vitest-browser.yml
+    skill: vitest-browser
