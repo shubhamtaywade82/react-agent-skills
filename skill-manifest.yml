@@ -198,3 +198,63 @@ skills:
   - name: frontend-formatting
     path: skills/frontend-formatting/SKILL.md
     triggers: [formatting, prettier, biome, formatter]
+  - name: frontend-monorepo
+    path: skills/frontend-monorepo/SKILL.md
+    triggers: [frontend monorepo,workspaces,pnpm,nx,turborepo,package graph]
+  - name: typescript-package-publishing
+    path: skills/typescript-package-publishing/SKILL.md
+    triggers: [package publishing,exports,declarations,esm,cjs,semver]
+  - name: frontend-generated-code
+    path: skills/frontend-generated-code/SKILL.md
+    triggers: [generated code,OpenAPI,GraphQL,SDK generation,codegen]
+  - name: frontend-internationalization
+    path: skills/frontend-internationalization/SKILL.md
+    triggers: [i18n,localization,pluralization,RTL,timezone,currency]
+  - name: frontend-offline-pwa
+    path: skills/frontend-offline-pwa/SKILL.md
+    triggers: [offline,PWA,service worker,background sync,offline queue]
+  - name: frontend-realtime
+    path: skills/frontend-realtime/SKILL.md
+    triggers: [WebSocket,SSE,realtime,streaming,reconnect]
+  - name: frontend-web-performance
+    path: skills/frontend-web-performance/SKILL.md
+    triggers: [web vitals,LCP,INP,CLS,performance trace]
+  - name: frontend-test-reliability
+    path: skills/frontend-test-reliability/SKILL.md
+    triggers: [flaky tests,test reliability,retries,sharding,determinism]
+  - name: frontend-visual-testing
+    path: skills/frontend-visual-testing/SKILL.md
+    triggers: [visual regression,screenshot baseline,visual testing]
+  - name: frontend-rendering-strategies
+    path: skills/frontend-rendering-strategies/SKILL.md
+    triggers: [CSR,SSR,SSG,ISR,streaming,prerendering]
+  - name: frontend-supply-chain
+    path: skills/frontend-supply-chain/SKILL.md
+    triggers: [supply chain,SBOM,provenance,lockfile,dependency security]
+  - name: frontend-documentation
+    path: skills/frontend-documentation/SKILL.md
+    triggers: [frontend documentation,README,ADR,changelog,Storybook docs]
+  - name: frontend-codemod-migration
+    path: skills/frontend-codemod-migration/SKILL.md
+    triggers: [codemod,migration,large refactor,automated transform]
+  - name: react-accessibility-widgets
+    path: skills/react-accessibility-widgets/SKILL.md
+    triggers: [ARIA widget,dialog,menu,combobox,tabs,listbox,grid]
+  - name: frontend-storage
+    path: skills/frontend-storage/SKILL.md
+    triggers: [localStorage,IndexedDB,Cache Storage,storage migration]
+  - name: frontend-messaging
+    path: skills/frontend-messaging/SKILL.md
+    triggers: [postMessage,BroadcastChannel,MessageChannel,iframe messaging]
+  - name: frontend-workers
+    path: skills/frontend-workers/SKILL.md
+    triggers: [Web Worker,SharedWorker,worker messages,worker lifecycle]
+  - name: frontend-networking
+    path: skills/frontend-networking/SKILL.md
+    triggers: [fetch,HTTP,CORS,timeout,retry,request cancellation]
+  - name: browser-authentication
+    path: skills/browser-authentication/SKILL.md
+    triggers: [browser authentication,session,refresh,login,logout,MFA]
+  - name: browser-media
+    path: skills/browser-media/SKILL.md
+    triggers: [camera,microphone,MediaDevices,MediaRecorder,autoplay]
