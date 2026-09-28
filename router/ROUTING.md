@@ -74,3 +74,23 @@ Route by the dominant engineering boundary, then compose only real secondary con
 | ESLint configuration | eslint | typescript-eslint, react-toolchain |
 | Typed linting | typescript-eslint | eslint, typescript-configuration, monorepo |
 | Formatting contract | frontend-formatting | eslint, toolchain |
+| frontend-monorepo | frontend-monorepo | relevant core ownership, testing |
+| typescript-package-publishing | typescript-package-publishing | relevant core ownership, testing |
+| frontend-generated-code | frontend-generated-code | relevant core ownership, testing |
+| frontend-internationalization | frontend-internationalization | relevant core ownership, testing |
+| frontend-offline-pwa | frontend-offline-pwa | relevant core ownership, testing |
+| frontend-realtime | frontend-realtime | relevant core ownership, testing |
+| frontend-web-performance | frontend-web-performance | relevant core ownership, testing |
+| frontend-test-reliability | frontend-test-reliability | relevant core ownership, testing |
+| frontend-visual-testing | frontend-visual-testing | relevant core ownership, testing |
+| frontend-rendering-strategies | frontend-rendering-strategies | relevant core ownership, testing |
+| frontend-supply-chain | frontend-supply-chain | relevant core ownership, testing |
+| frontend-documentation | frontend-documentation | relevant core ownership, testing |
+| frontend-codemod-migration | frontend-codemod-migration | relevant core ownership, testing |
+| react-accessibility-widgets | react-accessibility-widgets | relevant core ownership, testing |
+| frontend-storage | frontend-storage | relevant core ownership, testing |
+| frontend-messaging | frontend-messaging | relevant core ownership, testing |
+| frontend-workers | frontend-workers | relevant core ownership, testing |
+| frontend-networking | frontend-networking | relevant core ownership, testing |
+| browser-authentication | browser-authentication | relevant core ownership, testing |
+| browser-media | browser-media | relevant core ownership, testing |
