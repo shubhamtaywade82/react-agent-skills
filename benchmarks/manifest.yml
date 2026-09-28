@@ -310,3 +310,47 @@ cases:
     skill: vitest-browser
     checks: functional,tests,contract,adapter_scope
     prompt: Apply the vitest-browser adapter only after repository evidence confirms the dependency and preserve its configured semantics.
+  - id: adapter-biome
+    skill: biome
+    checks: functional,tests,contract,adapter_scope
+    prompt: Apply the biome adapter only after repository evidence confirms the dependency or platform and preserve configured semantics.
+  - id: adapter-vercel
+    skill: vercel
+    checks: functional,tests,contract,adapter_scope
+    prompt: Apply the vercel adapter only after repository evidence confirms the dependency or platform and preserve configured semantics.
+  - id: adapter-netlify
+    skill: netlify
+    checks: functional,tests,contract,adapter_scope
+    prompt: Apply the netlify adapter only after repository evidence confirms the dependency or platform and preserve configured semantics.
+  - id: adapter-cloudflare
+    skill: cloudflare
+    checks: functional,tests,contract,adapter_scope
+    prompt: Apply the cloudflare adapter only after repository evidence confirms the dependency or platform and preserve configured semantics.
+  - id: adapter-aws-frontend
+    skill: aws-frontend
+    checks: functional,tests,contract,adapter_scope
+    prompt: Apply the aws-frontend adapter only after repository evidence confirms the dependency or platform and preserve configured semantics.
+  - id: adapter-docker-kubernetes-frontend
+    skill: docker-kubernetes-frontend
+    checks: functional,tests,contract,adapter_scope
+    prompt: Apply the docker-kubernetes-frontend adapter only after repository evidence confirms the dependency or platform and preserve configured semantics.
+  - id: adapter-github-pages
+    skill: github-pages
+    checks: functional,tests,contract,adapter_scope
+    prompt: Apply the github-pages adapter only after repository evidence confirms the dependency or platform and preserve configured semantics.
+  - id: adapter-sentry
+    skill: sentry
+    checks: functional,tests,contract,adapter_scope
+    prompt: Apply the sentry adapter only after repository evidence confirms the dependency or platform and preserve configured semantics.
+  - id: adapter-opentelemetry-frontend
+    skill: opentelemetry-frontend
+    checks: functional,tests,contract,adapter_scope
+    prompt: Apply the opentelemetry-frontend adapter only after repository evidence confirms the dependency or platform and preserve configured semantics.
+  - id: adapter-datadog-frontend
+    skill: datadog-frontend
+    checks: functional,tests,contract,adapter_scope
+    prompt: Apply the datadog-frontend adapter only after repository evidence confirms the dependency or platform and preserve configured semantics.
+  - id: adapter-new-relic-frontend
+    skill: new-relic-frontend
+    checks: functional,tests,contract,adapter_scope
+    prompt: Apply the new-relic-frontend adapter only after repository evidence confirms the dependency or platform and preserve configured semantics.
