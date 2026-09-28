@@ -120,3 +120,15 @@ evaluations:
   - id: agent-workflow-contract
     path: evaluations/react-typescript/agent-workflow.yml
     skill: agent-workflow
+  - id: react-19-modern-apis-contract
+    path: evaluations/react-typescript/react-19-modern-apis.yml
+    skill: react-19-modern-apis
+  - id: react-actions-forms-contract
+    path: evaluations/react-typescript/react-actions-forms.yml
+    skill: react-actions-forms
+  - id: react-compiler-contract
+    path: evaluations/react-typescript/react-compiler.yml
+    skill: react-compiler
+  - id: react-server-security-contract
+    path: evaluations/react-typescript/react-server-security.yml
+    skill: react-server-security
