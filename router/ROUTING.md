@@ -112,3 +112,15 @@ Route by the dominant engineering boundary, then compose only real secondary con
 | arktype adapter | arktype | relevant core skill, testing, runtime-contracts |
 | yup adapter | yup | relevant core skill, testing, runtime-contracts |
 | vitest-browser adapter | vitest-browser | relevant core skill, testing, runtime-contracts |
+
+| biome adapter | biome | platform/deployment/observability evidence |
+| vercel adapter | vercel | platform/deployment/observability evidence |
+| netlify adapter | netlify | platform/deployment/observability evidence |
+| cloudflare adapter | cloudflare | platform/deployment/observability evidence |
+| aws-frontend adapter | aws-frontend | platform/deployment/observability evidence |
+| docker-kubernetes-frontend adapter | docker-kubernetes-frontend | platform/deployment/observability evidence |
+| github-pages adapter | github-pages | platform/deployment/observability evidence |
+| sentry adapter | sentry | platform/deployment/observability evidence |
+| opentelemetry-frontend adapter | opentelemetry-frontend | platform/deployment/observability evidence |
+| datadog-frontend adapter | datadog-frontend | platform/deployment/observability evidence |
+| new-relic-frontend adapter | new-relic-frontend | platform/deployment/observability evidence |
