@@ -26,3 +26,7 @@ Compare effective configuration across dev, test, and production paths.
 
 ## Verification
 Run repository typecheck, build, declaration generation if applicable, and affected test suites.
+
+## Build-graph composition
+
+For project references, composite projects, incremental builds and declaration boundaries, compose with `typescript-build-architecture`. Keep compiler configuration focused on options while build ownership remains explicit.
