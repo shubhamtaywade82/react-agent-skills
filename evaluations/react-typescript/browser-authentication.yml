@@ -1,0 +1,8 @@
+id: browser-authentication-contract
+version: 1
+prompt: Implement browser session lifecycle handling without exposing credentials or confusing authentication with authorization.
+checks:
+  - repository evidence
+  - functional behavior
+  - security/accessibility where relevant
+  - focused tests
