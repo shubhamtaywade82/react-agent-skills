@@ -124,3 +124,5 @@ Route by the dominant engineering boundary, then compose only real secondary con
 | opentelemetry-frontend adapter | opentelemetry-frontend | platform/deployment/observability evidence |
 | datadog-frontend adapter | datadog-frontend | platform/deployment/observability evidence |
 | new-relic-frontend adapter | new-relic-frontend | platform/deployment/observability evidence |
+
+| Agent evaluation design | agent-evaluation-engineering | fixture-evaluator, benchmark-runner, testing |
