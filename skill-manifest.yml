@@ -342,3 +342,6 @@ skills:
   - name: new-relic-frontend
     path: skills/new-relic-frontend/SKILL.md
     triggers: [New Relic,browser monitoring,SPA telemetry]
+  - name: agent-evaluation-engineering
+    path: skills/agent-evaluation-engineering/SKILL.md
+    triggers: [agent evaluation,benchmark,evaluation harness,fixture benchmark,agent scoring]
