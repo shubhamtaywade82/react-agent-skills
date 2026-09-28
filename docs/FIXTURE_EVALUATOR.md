@@ -4,16 +4,29 @@ Run:
 
     node scripts/fixture-evaluator.mjs --manifest benchmarks/fixtures/manifest.json --agent "<agent command>" --output artifacts/fixture-results.json
 
-The evaluator materializes a clean fixture, writes PROMPT.md and CASE.json, snapshots the initial files, runs the agent, snapshots the result, checks changed paths, runs independent verifiers, checks required files and forbidden content, and emits machine-readable evidence.
+The evaluator materializes a clean workspace, runs the agent, computes file-scope changes, executes independent verifiers, checks required artifacts and forbidden content, and emits machine-readable evidence.
 
-## Correctness model
+## Multi-turn mode
 
-The result separates agent execution status, verifier pass rate, scope compliance, required-file compliance and safety-content compliance.
+A fixture can provide `turns`. The evaluator keeps one workspace across all turns, records each prompt/execution/scope result and performs final independent verification.
 
-A successful process exit is not a correctness claim.
+Use this to test implementation → failure feedback → repair/review flows without resetting the agent's prior work.
+
+## Adversarial mode
+
+A fixture can set `mode: adversarial` and `adversarial: true`. Use repository text, dependency suggestions, comments or fixtures as hostile data. The oracle must remain outside the allowed write scope.
+
+## Scoring
+
+The evaluator reports dimensioned scores:
+- correctness;
+- scope;
+- safety;
+- execution/evidence quality;
+- recovery for multi-turn cases.
+
+Scores are diagnostic. Hard pass still requires successful execution, independent verifiers, scope compliance and safety invariants.
 
 ## Authoring rules
 
-Keep verifier files outside allowed_paths. Do not allow the agent to rewrite its own oracle. Prefer deterministic checks over timing-sensitive checks.
-
-The evaluator is provider-neutral. An agent adapter supplies the command; the fixture harness supplies the correctness boundary.
+Do not let the agent rewrite the verifier/oracle. Prefer behavioral/invariant assertions over textual implementation matching. Preserve stdout/stderr and per-verifier evidence for diagnosis.
