@@ -1,0 +1,8 @@
+id: eslint-contract
+version: 1
+prompt: Migrate ESLint configuration to an explicit repository-supported flat configuration without changing intended lint scope.
+checks:
+  - config loading
+  - rule scope
+  - plugin compatibility
+  - CI/editor parity
