@@ -94,3 +94,21 @@ Route by the dominant engineering boundary, then compose only real secondary con
 | frontend-networking | frontend-networking | relevant core ownership, testing |
 | browser-authentication | browser-authentication | relevant core ownership, testing |
 | browser-media | browser-media | relevant core ownership, testing |
+
+| apollo adapter | apollo | relevant core skill, testing, runtime-contracts |
+| urql adapter | urql | relevant core skill, testing, runtime-contracts |
+| swr adapter | swr | relevant core skill, testing, runtime-contracts |
+| rtk-query adapter | rtk-query | relevant core skill, testing, runtime-contracts |
+| trpc adapter | trpc | relevant core skill, testing, runtime-contracts |
+| graphql-codegen adapter | graphql-codegen | relevant core skill, testing, runtime-contracts |
+| openapi-tooling adapter | openapi-tooling | relevant core skill, testing, runtime-contracts |
+| jotai adapter | jotai | relevant core skill, testing, runtime-contracts |
+| mobx adapter | mobx | relevant core skill, testing, runtime-contracts |
+| xstate adapter | xstate | relevant core skill, testing, runtime-contracts |
+| react-hook-form adapter | react-hook-form | relevant core skill, testing, runtime-contracts |
+| tanstack-form adapter | tanstack-form | relevant core skill, testing, runtime-contracts |
+| zod adapter | zod | relevant core skill, testing, runtime-contracts |
+| valibot adapter | valibot | relevant core skill, testing, runtime-contracts |
+| arktype adapter | arktype | relevant core skill, testing, runtime-contracts |
+| yup adapter | yup | relevant core skill, testing, runtime-contracts |
+| vitest-browser adapter | vitest-browser | relevant core skill, testing, runtime-contracts |
