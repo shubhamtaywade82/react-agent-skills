@@ -45,3 +45,8 @@ Inspect telemetry provider, naming conventions, correlation IDs, sampling, redac
 
 ## Verification
 Event contract tests, redaction checks, and production configuration review.
+
+
+## Backend/platform composition
+
+Compose with Sentry, OpenTelemetry, Datadog or New Relic adapters only when repository evidence confirms them. Keep telemetry privacy, release correlation, source maps and PII handling separate from core React observability semantics.
