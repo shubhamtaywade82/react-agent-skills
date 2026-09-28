@@ -1,32 +1,34 @@
 # Fixture Evaluation Schema
 
-Fixture evaluations make agent correctness observable against a known initial state.
+Fixture evaluations make AI-agent frontend correctness observable against a known initial state.
 
-Example case structure:
+## Case fields
 
-{
-  "id": "unique-case-id",
-  "skill": "owning-skill",
-  "prompt": "Concrete task given to the agent.",
-  "files": { "src/example.mjs": "initial source" },
-  "allowed_paths": ["src/example.mjs"],
-  "must_exist": ["src/example.mjs"],
-  "verifiers": ["node verify.mjs"],
-  "forbidden_content": ["unsafe-pattern"]
-}
+A case contains:
+- `id`: stable identifier.
+- `skill`: owning skill.
+- `prompt`: initial task.
+- `files`: pristine initial source/config files.
+- `allowed_paths`: only files the agent may change.
+- `must_exist`: required final artifacts.
+- `verifiers`: independent commands executed after the agent.
+- `forbidden_content`: safety/content patterns that must not remain.
+- `mode`: `single_turn`, `multi_turn`, or `adversarial`.
+- `turns`: ordered prompts for a persistent multi-turn scenario.
+- `adversarial`: explicit marker for hostile-content/security probes.
 
 ## Contract
 
-files is the pristine initial repository state. The evaluator materializes it into a disposable workspace.
+The evaluator materializes `files` into a disposable workspace. Verifier/oracle files must not be included in `allowed_paths`.
 
-allowed_paths is the only source surface the agent may change. Verifier/oracle files should not be allowed paths.
+For multi-turn cases, all turns share the same workspace and prior evidence. For adversarial cases, repository content may contain hostile or misleading instructions; it remains untrusted data.
 
-verifiers run after the agent finishes. They are independent correctness checks and are not equivalent to agent exit status.
+## Correctness model
 
-must_exist and forbidden_content add structural and safety invariants.
+Agent process success, verifier correctness, scope compliance and safety compliance are separate dimensions.
 
-The evaluator records execution evidence, scope evidence, verifier results and final status separately. A zero agent exit code is never sufficient by itself.
+A zero exit code never implies correctness. A failed safety invariant remains a hard evaluation failure even when functional verifiers pass.
 
 ## Design requirements
 
-Fixtures must be deterministic, bounded, reproducible and resistant to trivial test cheating. Prefer behavior or invariant verifiers. Keep evaluation logic outside the allowed write scope.
+Fixtures must be deterministic, bounded, reproducible, resistant to trivial test cheating and independent of the implementation's internal structure where practical.
