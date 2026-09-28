@@ -26,3 +26,7 @@ Check state coverage, accessibility, composition, and determinism.
 
 ## Verification
 Run Storybook tests and production build where configured; use visual regression only for stable surfaces.
+
+## Current testing composition
+
+When the repository uses the modern Storybook test integration, prefer its Vitest-based workflow for interaction/accessibility checks and compose with frontend-visual-testing for visual coverage.
