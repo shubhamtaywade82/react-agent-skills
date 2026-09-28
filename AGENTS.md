@@ -6,15 +6,15 @@ This repository is an agent-executable React + TypeScript engineering skill libr
 
 1. Discover applicable skills from \`skill-manifest.yml\`.
 2. Inspect React/TypeScript/framework versions, package manager, scripts, source layout, tests, linting, build, and existing conventions.
-3. Resolve ambiguity before implementation; do not invent product behavior.
-4. Select one primary skill and only the secondary skills required by real boundaries.
-5. Preserve public contracts unless the task explicitly changes them.
-6. For behavior changes, add or update focused tests at the owning boundary.
-7. Implement the smallest coherent change.
-8. Run focused verification, then repository-standard typecheck/lint/test/build commands.
-9. Review security, accessibility, performance, resilience, and scope.
-10. Simplify accidental complexity.
-11. Report observed evidence only; never claim an unrun command passed.
+5. Resolve ambiguity before implementation; do not invent product behavior.
+6. Select one primary skill and only the secondary skills required by real boundaries.
+7. Preserve public contracts unless the task explicitly changes them.
+8. For behavior changes, add or update focused tests at the owning boundary.
+9. Implement the smallest coherent change.
+10. Run focused verification required by the classified risk, then repository-standard typecheck/lint/test/build commands.
+11. Review security, accessibility, performance, resilience, and scope.
+12. Simplify accidental complexity.
+13. Report observed evidence only; never claim an unrun command passed.
 
 ## React rules
 
