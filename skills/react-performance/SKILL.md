@@ -49,3 +49,7 @@ Profiler/devtools evidence, bundle analysis, targeted benchmarks, interaction te
 ## Source foundation
 - React memo: https://react.dev/reference/react/memo
 - React performance guidance: https://react.dev/learn
+
+## Compiler-aware memoization
+
+In compiler-enabled repositories, prefer React Compiler optimization for new code. Manual memo/useMemo/useCallback are explicit escape hatches for measured or semantically required referential stability; compose with `react-compiler` before adding or removing them.
