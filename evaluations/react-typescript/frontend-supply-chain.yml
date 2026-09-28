@@ -1,0 +1,8 @@
+id: frontend-supply-chain-contract
+version: 1
+prompt: Review a frontend dependency change for lockfile, transitive, install-script and provenance risk.
+checks:
+  - repository evidence
+  - functional behavior
+  - security/accessibility where relevant
+  - focused tests
