@@ -258,3 +258,36 @@ evaluations:
   - id: vitest-browser-contract
     path: evaluations/react-typescript/vitest-browser.yml
     skill: vitest-browser
+  - id: biome-contract
+    path: evaluations/react-typescript/biome.yml
+    skill: biome
+  - id: vercel-contract
+    path: evaluations/react-typescript/vercel.yml
+    skill: vercel
+  - id: netlify-contract
+    path: evaluations/react-typescript/netlify.yml
+    skill: netlify
+  - id: cloudflare-contract
+    path: evaluations/react-typescript/cloudflare.yml
+    skill: cloudflare
+  - id: aws-frontend-contract
+    path: evaluations/react-typescript/aws-frontend.yml
+    skill: aws-frontend
+  - id: docker-kubernetes-frontend-contract
+    path: evaluations/react-typescript/docker-kubernetes-frontend.yml
+    skill: docker-kubernetes-frontend
+  - id: github-pages-contract
+    path: evaluations/react-typescript/github-pages.yml
+    skill: github-pages
+  - id: sentry-contract
+    path: evaluations/react-typescript/sentry.yml
+    skill: sentry
+  - id: opentelemetry-frontend-contract
+    path: evaluations/react-typescript/opentelemetry-frontend.yml
+    skill: opentelemetry-frontend
+  - id: datadog-frontend-contract
+    path: evaluations/react-typescript/datadog-frontend.yml
+    skill: datadog-frontend
+  - id: new-relic-frontend-contract
+    path: evaluations/react-typescript/new-relic-frontend.yml
+    skill: new-relic-frontend
