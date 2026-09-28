@@ -124,3 +124,14 @@ Route by the dominant engineering boundary, then compose only real secondary con
 | opentelemetry-frontend adapter | opentelemetry-frontend | platform/deployment/observability evidence |
 | datadog-frontend adapter | datadog-frontend | platform/deployment/observability evidence |
 | new-relic-frontend adapter | new-relic-frontend | platform/deployment/observability evidence |
+
+| tailwindcss adapter | tailwindcss | styling/runtime/config evidence |
+| css-modules adapter | css-modules | styling/runtime/config evidence |
+| styled-components adapter | styled-components | styling/runtime/config evidence |
+| emotion adapter | emotion | styling/runtime/config evidence |
+| vanilla-extract adapter | vanilla-extract | styling/runtime/config evidence |
+| tanstack-start adapter | tanstack-start | styling/runtime/config evidence |
+| astro-react adapter | astro-react | styling/runtime/config evidence |
+| rsbuild adapter | rsbuild | styling/runtime/config evidence |
+| rspack adapter | rspack | styling/runtime/config evidence |
+| prettier adapter | prettier | styling/runtime/config evidence |
