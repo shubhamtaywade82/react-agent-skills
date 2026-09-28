@@ -183,3 +183,18 @@ skills:
   - name: react-server-security
     path: skills/react-server-security/SKILL.md
     triggers: [rsc security, server component security, server functions, react server security]
+  - name: typescript-version-migration
+    path: skills/typescript-version-migration/SKILL.md
+    triggers: [typescript 6, typescript 7, ts migration, compiler upgrade]
+  - name: typescript-build-architecture
+    path: skills/typescript-build-architecture/SKILL.md
+    triggers: [project references, tsc build, incremental build, declaration build]
+  - name: eslint
+    path: skills/eslint/SKILL.md
+    triggers: [eslint, eslint 10, flat config, lint configuration]
+  - name: typescript-eslint
+    path: skills/typescript-eslint/SKILL.md
+    triggers: [typescript eslint, typed linting, projectService, parser]
+  - name: frontend-formatting
+    path: skills/frontend-formatting/SKILL.md
+    triggers: [formatting, prettier, biome, formatter]
