@@ -1,0 +1,8 @@
+id: react-19-modern-apis-contract
+version: 1
+prompt: Verify installed React version and renderer support before implementing a React 19 modern API.
+checks:
+  - version evidence
+  - renderer compatibility
+  - observable behavior tests
+  - supported fallback
