@@ -1,0 +1,8 @@
+id: frontend-formatting-contract
+version: 1
+prompt: Establish or repair one deterministic formatter contract without reformatting unrelated source or generated files.
+checks:
+  - formatter selection
+  - scope
+  - deterministic output
+  - semantic diff hygiene
