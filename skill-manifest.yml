@@ -258,3 +258,54 @@ skills:
   - name: browser-media
     path: skills/browser-media/SKILL.md
     triggers: [camera,microphone,MediaDevices,MediaRecorder,autoplay]
+  - name: apollo
+    path: skills/apollo/SKILL.md
+    triggers: [apollo,GraphQL client,Apollo cache]
+  - name: urql
+    path: skills/urql/SKILL.md
+    triggers: [urql,GraphQL exchange,urql cache]
+  - name: swr
+    path: skills/swr/SKILL.md
+    triggers: [SWR,cache key,revalidation,mutation]
+  - name: rtk-query
+    path: skills/rtk-query/SKILL.md
+    triggers: [RTK Query,endpoint,tags,Redux Toolkit Query]
+  - name: trpc
+    path: skills/trpc/SKILL.md
+    triggers: [tRPC,typed procedures,router,transformer]
+  - name: graphql-codegen
+    path: skills/graphql-codegen/SKILL.md
+    triggers: [GraphQL Code Generator,generated types,codegen]
+  - name: openapi-tooling
+    path: skills/openapi-tooling/SKILL.md
+    triggers: [OpenAPI,generated client,OpenAPI generator]
+  - name: jotai
+    path: skills/jotai/SKILL.md
+    triggers: [Jotai,atoms,derived atom]
+  - name: mobx
+    path: skills/mobx/SKILL.md
+    triggers: [MobX,observable,action,computed]
+  - name: xstate
+    path: skills/xstate/SKILL.md
+    triggers: [XState,state machine,actor,event]
+  - name: react-hook-form
+    path: skills/react-hook-form/SKILL.md
+    triggers: [React Hook Form,form resolver,register]
+  - name: tanstack-form
+    path: skills/tanstack-form/SKILL.md
+    triggers: [TanStack Form,field validation,form]
+  - name: zod
+    path: skills/zod/SKILL.md
+    triggers: [Zod,schema,parse,safeParse]
+  - name: valibot
+    path: skills/valibot/SKILL.md
+    triggers: [Valibot,runtime schema,validation]
+  - name: arktype
+    path: skills/arktype/SKILL.md
+    triggers: [ArkType,runtime validation,types]
+  - name: yup
+    path: skills/yup/SKILL.md
+    triggers: [Yup,schema,resolver,validation]
+  - name: vitest-browser
+    path: skills/vitest-browser/SKILL.md
+    triggers: [Vitest Browser Mode,browser tests,provider]
