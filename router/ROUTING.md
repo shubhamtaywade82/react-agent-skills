@@ -112,3 +112,26 @@ Route by the dominant engineering boundary, then compose only real secondary con
 | arktype adapter | arktype | relevant core skill, testing, runtime-contracts |
 | yup adapter | yup | relevant core skill, testing, runtime-contracts |
 | vitest-browser adapter | vitest-browser | relevant core skill, testing, runtime-contracts |
+
+| biome adapter | biome | platform/deployment/observability evidence |
+| vercel adapter | vercel | platform/deployment/observability evidence |
+| netlify adapter | netlify | platform/deployment/observability evidence |
+| cloudflare adapter | cloudflare | platform/deployment/observability evidence |
+| aws-frontend adapter | aws-frontend | platform/deployment/observability evidence |
+| docker-kubernetes-frontend adapter | docker-kubernetes-frontend | platform/deployment/observability evidence |
+| github-pages adapter | github-pages | platform/deployment/observability evidence |
+| sentry adapter | sentry | platform/deployment/observability evidence |
+| opentelemetry-frontend adapter | opentelemetry-frontend | platform/deployment/observability evidence |
+| datadog-frontend adapter | datadog-frontend | platform/deployment/observability evidence |
+| new-relic-frontend adapter | new-relic-frontend | platform/deployment/observability evidence |
+
+| tailwindcss adapter | tailwindcss | styling/runtime/config evidence |
+| css-modules adapter | css-modules | styling/runtime/config evidence |
+| styled-components adapter | styled-components | styling/runtime/config evidence |
+| emotion adapter | emotion | styling/runtime/config evidence |
+| vanilla-extract adapter | vanilla-extract | styling/runtime/config evidence |
+| tanstack-start adapter | tanstack-start | styling/runtime/config evidence |
+| astro-react adapter | astro-react | styling/runtime/config evidence |
+| rsbuild adapter | rsbuild | styling/runtime/config evidence |
+| rspack adapter | rspack | styling/runtime/config evidence |
+| prettier adapter | prettier | styling/runtime/config evidence |

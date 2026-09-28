@@ -309,3 +309,66 @@ skills:
   - name: vitest-browser
     path: skills/vitest-browser/SKILL.md
     triggers: [Vitest Browser Mode,browser tests,provider]
+  - name: biome
+    path: skills/biome/SKILL.md
+    triggers: [biome,format,linter,biome.json]
+  - name: vercel
+    path: skills/vercel/SKILL.md
+    triggers: [Vercel,deployment,preview,vercel.json]
+  - name: netlify
+    path: skills/netlify/SKILL.md
+    triggers: [Netlify,deployment,redirects,netlify.toml]
+  - name: cloudflare
+    path: skills/cloudflare/SKILL.md
+    triggers: [Cloudflare Workers,Cloudflare Pages,wrangler,edge]
+  - name: aws-frontend
+    path: skills/aws-frontend/SKILL.md
+    triggers: [AWS frontend,S3,CloudFront,Lambda]
+  - name: docker-kubernetes-frontend
+    path: skills/docker-kubernetes-frontend/SKILL.md
+    triggers: [Docker,Kubernetes,frontend container,rollout]
+  - name: github-pages
+    path: skills/github-pages/SKILL.md
+    triggers: [GitHub Pages,static deployment,base path]
+  - name: sentry
+    path: skills/sentry/SKILL.md
+    triggers: [Sentry,frontend monitoring,source maps,PII]
+  - name: opentelemetry-frontend
+    path: skills/opentelemetry-frontend/SKILL.md
+    triggers: [OpenTelemetry,browser tracing,spans]
+  - name: datadog-frontend
+    path: skills/datadog-frontend/SKILL.md
+    triggers: [Datadog RUM,browser monitoring,privacy]
+  - name: new-relic-frontend
+    path: skills/new-relic-frontend/SKILL.md
+    triggers: [New Relic,browser monitoring,SPA telemetry]
+  - name: tailwindcss
+    path: skills/tailwindcss/SKILL.md
+    triggers: [tailwindcss,Tailwind CSS,utility classes]
+  - name: css-modules
+    path: skills/css-modules/SKILL.md
+    triggers: [CSS Modules,module css,scoped styles]
+  - name: styled-components
+    path: skills/styled-components/SKILL.md
+    triggers: [styled-components,ThemeProvider,styled]
+  - name: emotion
+    path: skills/emotion/SKILL.md
+    triggers: [Emotion,CSS-in-JS,ThemeProvider]
+  - name: vanilla-extract
+    path: skills/vanilla-extract/SKILL.md
+    triggers: [vanilla-extract,typed CSS,style recipes]
+  - name: tanstack-start
+    path: skills/tanstack-start/SKILL.md
+    triggers: [TanStack Start,route server function,SSR]
+  - name: astro-react
+    path: skills/astro-react/SKILL.md
+    triggers: [Astro React,islands,client directive]
+  - name: rsbuild
+    path: skills/rsbuild/SKILL.md
+    triggers: [Rsbuild,rsbuild config,bundler]
+  - name: rspack
+    path: skills/rspack/SKILL.md
+    triggers: [Rspack,rspack config,bundler]
+  - name: prettier
+    path: skills/prettier/SKILL.md
+    triggers: [Prettier,prettier config,formatting]
