@@ -291,3 +291,33 @@ evaluations:
   - id: new-relic-frontend-contract
     path: evaluations/react-typescript/new-relic-frontend.yml
     skill: new-relic-frontend
+  - id: tailwindcss-contract
+    path: evaluations/react-typescript/tailwindcss.yml
+    skill: tailwindcss
+  - id: css-modules-contract
+    path: evaluations/react-typescript/css-modules.yml
+    skill: css-modules
+  - id: styled-components-contract
+    path: evaluations/react-typescript/styled-components.yml
+    skill: styled-components
+  - id: emotion-contract
+    path: evaluations/react-typescript/emotion.yml
+    skill: emotion
+  - id: vanilla-extract-contract
+    path: evaluations/react-typescript/vanilla-extract.yml
+    skill: vanilla-extract
+  - id: tanstack-start-contract
+    path: evaluations/react-typescript/tanstack-start.yml
+    skill: tanstack-start
+  - id: astro-react-contract
+    path: evaluations/react-typescript/astro-react.yml
+    skill: astro-react
+  - id: rsbuild-contract
+    path: evaluations/react-typescript/rsbuild.yml
+    skill: rsbuild
+  - id: rspack-contract
+    path: evaluations/react-typescript/rspack.yml
+    skill: rspack
+  - id: prettier-contract
+    path: evaluations/react-typescript/prettier.yml
+    skill: prettier
