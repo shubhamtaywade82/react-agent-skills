@@ -1,0 +1,8 @@
+id: jotai-contract
+version: 1
+prompt: Refactor Jotai atom ownership without turning local state into hidden global state.
+checks:
+  - repository evidence
+  - functional behavior
+  - focused tests
+  - adapter-specific contract
