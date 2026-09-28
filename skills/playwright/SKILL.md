@@ -27,3 +27,7 @@ Check isolation, diagnostics, browser coverage, and critical-path assertions.
 
 ## Verification
 Run focused Playwright specs and the repository's configured browser projects and CI command.
+
+## Browser quality composition
+
+Compose with frontend-test-reliability and frontend-visual-testing for flaky-test isolation and screenshot state control.
