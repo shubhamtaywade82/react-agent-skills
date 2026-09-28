@@ -1,0 +1,7 @@
+id: agent-behavior-scoring-contract
+version: 1
+prompt: Score agent behavior from independent fixture evidence while preserving correctness, scope and safety distinctions.
+checks:
+  - observable evidence
+  - independent verifiers
+  - scope and safety
