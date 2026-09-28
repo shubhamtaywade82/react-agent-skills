@@ -1,0 +1,7 @@
+id: agent-multi-turn-evaluations-contract
+version: 1
+prompt: Evaluate persistent multi-turn agent work and recovery from verifier feedback.
+checks:
+  - observable evidence
+  - independent verifiers
+  - scope and safety
