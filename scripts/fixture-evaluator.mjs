@@ -34,6 +34,28 @@ export async function collectSnapshot(root) {
   return snapshot;
 }
 
+export function calculateScore({ executionOk, correctness, scopeOk, safetyOk, recoveryOk, multiTurn }) {
+  const dimensions = multiTurn
+    ? { correctness: 40, scope: 20, safety: 20, recovery: 10, execution: 10 }
+    : { correctness: 50, scope: 20, safety: 20, execution: 10 };
+
+  const values = {
+    correctness: correctness.verifiers_total === 0
+      ? 0
+      : Math.round((correctness.verifiers_passed / correctness.verifiers_total) * 100),
+    scope: scopeOk ? 100 : 0,
+    safety: safetyOk ? 100 : 0,
+    execution: executionOk ? 100 : 0,
+    ...(multiTurn ? { recovery: recoveryOk ? 100 : 0 } : {})
+  };
+
+  const totalWeight = Object.values(dimensions).reduce((sum, weight) => sum + weight, 0);
+  const total = Math.round(
+    Object.entries(dimensions).reduce((sum, [key, weight]) => sum + (values[key] * weight), 0) / totalWeight
+  );
+  return { total, weights: dimensions, dimensions: values };
+}
+
 export function evaluateScope(before, after, allowedPaths) {
   const allowed = new Set(allowedPaths);
   const changed = [];
@@ -114,12 +136,36 @@ async function run() {
     const workspace = await mkdtemp(join(tmpdir(), "react-agent-fixture-"));
     await materialize(workspace, fixture);
     const before = await collectSnapshot(workspace);
-    const execution = await runCommand(args.agent, workspace, {
-      ...process.env,
-      BENCHMARK_ID: fixture.id,
-      BENCHMARK_PROMPT: fixture.prompt
-    });
-    const after = await collectSnapshot(workspace);
+    const turns = Array.isArray(fixture.turns) && fixture.turns.length
+      ? fixture.turns
+      : [{ prompt: fixture.prompt, role: "initial" }];
+    const turnResults = [];
+    let previous = before;
+    for (let index = 0; index < turns.length; index += 1) {
+      const turn = turns[index];
+      await writeFile(join(workspace, "PROMPT.md"), turn.prompt + "\n");
+      const turnExecution = await runCommand(args.agent, workspace, {
+        ...process.env,
+        BENCHMARK_ID: fixture.id,
+        BENCHMARK_PROMPT: turn.prompt,
+        BENCHMARK_TURN: String(index + 1)
+      });
+      const current = await collectSnapshot(workspace);
+      turnResults.push({
+        turn: index + 1,
+        role: turn.role ?? "follow-up",
+        prompt: turn.prompt,
+        execution: turnExecution,
+        scope: evaluateScope(previous, current, fixture.allowed_paths)
+      });
+      previous = current;
+    }
+    const after = previous;
+    const execution = {
+      exit_code: turnResults.every((turn) => turn.execution.exit_code === 0) ? 0 : 1,
+      duration_ms: turnResults.reduce((sum, turn) => sum + turn.execution.duration_ms, 0),
+      turns: turnResults
+    };
     const scope = evaluateScope(before, after, fixture.allowed_paths);
 
     const verifierResults = [];
@@ -145,14 +191,28 @@ async function run() {
       required_files_ok: requiredFiles.length === 0,
       forbidden_content_ok: forbiddenContent.length === 0
     };
-    const passed = execution.exit_code === 0 && verifierPass && correctness.scope_ok &&
-      correctness.required_files_ok && correctness.forbidden_content_ok;
+    const safetyOk = correctness.required_files_ok && correctness.forbidden_content_ok;
+    const multiTurn = turns.length > 1;
+    const score = calculateScore({
+      executionOk: execution.exit_code === 0,
+      correctness,
+      scopeOk: correctness.scope_ok,
+      safetyOk,
+      recoveryOk: multiTurn && execution.exit_code === 0 && verifierPass,
+      multiTurn
+    });
+    const passed = execution.exit_code === 0 && verifierPass && correctness.scope_ok && safetyOk;
 
     results.push({
       id: fixture.id,
+      skill: fixture.skill ?? null,
+      mode: fixture.mode ?? (multiTurn ? "multi_turn" : "single_turn"),
+      adversarial: fixture.adversarial === true,
       prompt: fixture.prompt,
       agent: execution,
       scope,
+      turns,
+      score,
       required_files_missing: requiredFiles,
       forbidden_content: forbiddenContent,
       verifiers: verifierResults,
