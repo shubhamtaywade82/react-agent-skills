@@ -1,0 +1,8 @@
+id: frontend-codemod-migration-contract
+version: 1
+prompt: Apply a codemod migration incrementally and verify the semantic result rather than trusting the transform.
+checks:
+  - repository evidence
+  - functional behavior
+  - security/accessibility where relevant
+  - focused tests
