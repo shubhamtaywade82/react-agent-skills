@@ -1,0 +1,8 @@
+id: frontend-networking-contract
+version: 1
+prompt: Harden a browser API client with abort, timeout, retry and response validation semantics.
+checks:
+  - repository evidence
+  - functional behavior
+  - security/accessibility where relevant
+  - focused tests
