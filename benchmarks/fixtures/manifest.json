@@ -1,0 +1,92 @@
+{
+  "version": 1,
+  "schema": "docs/FIXTURE_EVALUATION_SCHEMA.md",
+  "cases": [
+    {
+      "id": "ts-runtime-boundary-fixture",
+      "skill": "typescript-runtime-contracts",
+      "prompt": "Harden a JSON runtime boundary so malformed user data is rejected before domain use.",
+      "files": {
+        "src/user.mjs": "export function parseUser(input) {\n  return JSON.parse(input);\n}\n",
+        "verify.mjs": "import assert from \"node:assert/strict\";\nimport { parseUser } from \"./src/user.mjs\";\n\nconst valid = parseUser('{\"id\":\"u-1\",\"name\":\"Ada\"}');\nassert.equal(valid.id, \"u-1\");\nassert.equal(valid.name, \"Ada\");\n\nassert.throws(() => parseUser('{\"id\":42,\"name\":\"Ada\"}'));\nassert.throws(() => parseUser('{\"name\":\"Ada\"}'));\n"
+      },
+      "allowed_paths": [
+        "src/user.mjs"
+      ],
+      "must_exist": [
+        "src/user.mjs"
+      ],
+      "verifiers": [
+        "node verify.mjs"
+      ],
+      "forbidden_content": [
+        "console\\\\.log\\\\(",
+        "eval\\\\("
+      ]
+    },
+    {
+      "id": "frontend-dom-safety-fixture",
+      "skill": "browser-security-dom-safety",
+      "prompt": "Replace an unsafe HTML sink with a safe DOM text update while preserving the displayed value.",
+      "files": {
+        "src/render.mjs": "export function renderMessage(element, message) {\n  element.innerHTML = message;\n}\n",
+        "verify.mjs": "import assert from \"node:assert/strict\";\nimport { readFile } from \"node:fs/promises\";\n\nconst source = await readFile(\"src/render.mjs\", \"utf8\");\nassert.equal(/\\.innerHTML\\\\s*=/.test(source), false);\nassert.equal(/\\.textContent\\\\s*=/.test(source), true);\n"
+      },
+      "allowed_paths": [
+        "src/render.mjs"
+      ],
+      "must_exist": [
+        "src/render.mjs"
+      ],
+      "verifiers": [
+        "node verify.mjs"
+      ],
+      "forbidden_content": [
+        "innerHTML\\\\s*="
+      ]
+    },
+    {
+      "id": "typescript-async-stale-fixture",
+      "skill": "typescript-async-error-modeling",
+      "prompt": "Prevent an older asynchronous response from overwriting a newer request result.",
+      "files": {
+        "src/search.mjs": "export async function latestSearch(fetcher, first, second) {\n  const firstResult = await fetcher(first);\n  const secondResult = await fetcher(second);\n  return secondResult || firstResult;\n}\n",
+        "verify.mjs": "import assert from \"node:assert/strict\";\nimport { latestSearch } from \"./src/search.mjs\";\n\nlet resolveFirst;\nlet resolveSecond;\nconst first = new Promise((resolve) => { resolveFirst = resolve; });\nconst second = new Promise((resolve) => { resolveSecond = resolve; });\nconst resultPromise = latestSearch((query) => query === \"first\" ? first : second, \"first\", \"second\");\n\nresolveSecond(\"new\");\nresolveFirst(\"old\");\n\nassert.equal(await resultPromise, \"new\");\n"
+      },
+      "allowed_paths": [
+        "src/search.mjs"
+      ],
+      "must_exist": [
+        "src/search.mjs"
+      ],
+      "verifiers": [
+        "node verify.mjs"
+      ],
+      "forbidden_content": [
+        "setTimeout\\\\(",
+        "sleep\\\\("
+      ]
+    },
+    {
+      "id": "frontend-api-contract-fixture",
+      "skill": "typescript-api-contracts",
+      "prompt": "Keep a transport response mapping explicit so UI code receives a stable domain shape.",
+      "files": {
+        "src/api.mjs": "export function toUser(response) {\n  return response;\n}\n",
+        "verify.mjs": "import assert from \"node:assert/strict\";\nimport { toUser } from \"./src/api.mjs\";\n\nconst user = toUser({ data: { id: \"u-1\", display_name: \"Ada\" }, meta: { trace_id: \"t-1\" } });\nassert.deepEqual(user, { id: \"u-1\", displayName: \"Ada\" });\nassert.equal(\"meta\" in user, false);\nassert.equal(\"data\" in user, false);\n"
+      },
+      "allowed_paths": [
+        "src/api.mjs"
+      ],
+      "must_exist": [
+        "src/api.mjs"
+      ],
+      "verifiers": [
+        "node verify.mjs"
+      ],
+      "forbidden_content": [
+        "return response;"
+      ]
+    }
+  ]
+}
