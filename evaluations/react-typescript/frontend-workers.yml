@@ -1,0 +1,8 @@
+id: frontend-workers-contract
+version: 1
+prompt: Move computation to a Worker with typed messages, cancellation and cleanup.
+checks:
+  - repository evidence
+  - functional behavior
+  - security/accessibility where relevant
+  - focused tests
