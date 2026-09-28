@@ -256,8 +256,8 @@ The integration layer should be represented as composition guidance, not by dupl
 
 ## Implemented inventory
 
-At the current expansion branch, the destination registers 52 skills, 60 reusable patterns, 39 core React/TypeScript evaluation contracts, and 31 benchmark cases. Nine audited source skill snapshots are preserved under `docs/source-lineage/react-typescript/skills/` so provenance is explicit.
+At the current expansion branch, the destination registers **117 skills**, **60 reusable patterns**, **100 evaluation contracts**, and **92 benchmark cases**. Coverage now includes the agent operating layer, modern React/TypeScript, browser/platform engineering, production/observability, conditional ecosystem adapters, and executable agent-evaluation infrastructure. Nine audited source skill snapshots are preserved under `docs/source-lineage/react-typescript/skills/` so provenance is explicit.
 
 The 24 canonical React/TypeScript patterns and four stack-minimality adapters from the audited source are preserved. The additional patterns are destination-native coverage for browser, security, production, testing, and TypeScript module/configuration concerns.
 
-The pack is therefore designed as a complete core-plus-adapter skill system, while correctness claims remain gated by the executable benchmark/evaluation verifier and CI evidence.
+The pack is therefore a core-plus-adapter skill system with an executable evaluation layer. Domain completeness means the relevant engineering surface is represented; correctness claims remain gated by executable verifier evidence and CI.
