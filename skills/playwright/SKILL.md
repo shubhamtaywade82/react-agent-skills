@@ -31,3 +31,12 @@ Run focused Playwright specs and the repository's configured browser projects an
 ## Browser quality composition
 
 Compose with frontend-test-reliability and frontend-visual-testing for flaky-test isolation and screenshot state control.
+
+
+## High-confidence browser workflow
+
+Use repository fixtures and browser contexts to isolate tests. Prefer semantic/user-facing locators and web-first assertions over CSS/XPath selectors or arbitrary sleeps.
+
+For failures, retain trace/video/screenshot artifacts when configured. Use network interception only for deterministic boundaries; do not replace the system under test wholesale.
+
+Verify viewport/browser projects when compatibility is part of the product contract.
