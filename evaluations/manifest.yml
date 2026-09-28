@@ -132,3 +132,18 @@ evaluations:
   - id: react-server-security-contract
     path: evaluations/react-typescript/react-server-security.yml
     skill: react-server-security
+  - id: typescript-version-migration-contract
+    path: evaluations/react-typescript/typescript-version-migration.yml
+    skill: typescript-version-migration
+  - id: typescript-build-architecture-contract
+    path: evaluations/react-typescript/typescript-build-architecture.yml
+    skill: typescript-build-architecture
+  - id: eslint-contract
+    path: evaluations/react-typescript/eslint.yml
+    skill: eslint
+  - id: typescript-eslint-contract
+    path: evaluations/react-typescript/typescript-eslint.yml
+    skill: typescript-eslint
+  - id: frontend-formatting-contract
+    path: evaluations/react-typescript/frontend-formatting.yml
+    skill: frontend-formatting
