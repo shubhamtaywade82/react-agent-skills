@@ -37,7 +37,9 @@ This repository turns React/TypeScript knowledge into executable guidance an age
 
     Task
       ↓
-    Inspect repository + runtime
+    Inspect agent capabilities + repository archetype
+      ↓
+    Classify change risk
       ↓
     Route primary skill + real secondary constraints
       ↓
@@ -53,7 +55,7 @@ This repository turns React/TypeScript knowledge into executable guidance an age
 
 ## Inventory
 
-The current expansion contains 52 registered skills, 60 reusable patterns, 39 core React/TypeScript evaluation contracts, and 31 benchmark cases. Nine audited source skill snapshots are preserved for provenance.
+The current expansion contains 117 registered skills, 60 reusable patterns, 100 evaluation contracts, and 92 benchmark cases. This includes core React/TypeScript skills, agent operating controls, browser/production domains, conditional ecosystem adapters, and executable agent-evaluation infrastructure.
 
 ## Installation
 
@@ -62,6 +64,8 @@ Use the included installer or expose AGENTS.md plus the skill pack to the coding
     bash bin/install --target ~/.local/share/agent-skills/react-agent-skills
 
 See [Agent integration](docs/AGENT_INTEGRATION.md) for repository-local and custom-agent setup.
+
+See [Coverage matrix](docs/COVERAGE_MATRIX.md) for the implemented domain, adapter, security, production, and evaluation coverage.
 
 The pack is framework-aware rather than framework-dependent. The agent must resolve whether the target uses Vite, Next.js, Remix, React Router, or another runtime before applying framework-specific assumptions.
 
