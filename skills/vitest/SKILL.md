@@ -26,3 +26,7 @@ Check isolation, deterministic setup, coverage meaning, and mock boundary qualit
 
 ## Verification
 Run focused Vitest tests, full test suite, coverage when configured, and typecheck.
+
+## Browser Mode
+
+When Vitest Browser Mode is configured, compose with `vitest-browser` for real-browser semantics. Keep Browser Mode cases focused and deterministic.

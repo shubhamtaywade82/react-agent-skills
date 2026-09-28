@@ -242,3 +242,71 @@ cases:
     skill: browser-media
     checks: functional,tests,contract,scope_control
     prompt: Apply browser-media guidance to a repository-backed change and verify the relevant contract.
+  - id: adapter-apollo
+    skill: apollo
+    checks: functional,tests,contract,adapter_scope
+    prompt: Apply the apollo adapter only after repository evidence confirms the dependency and preserve its configured semantics.
+  - id: adapter-urql
+    skill: urql
+    checks: functional,tests,contract,adapter_scope
+    prompt: Apply the urql adapter only after repository evidence confirms the dependency and preserve its configured semantics.
+  - id: adapter-swr
+    skill: swr
+    checks: functional,tests,contract,adapter_scope
+    prompt: Apply the swr adapter only after repository evidence confirms the dependency and preserve its configured semantics.
+  - id: adapter-rtk-query
+    skill: rtk-query
+    checks: functional,tests,contract,adapter_scope
+    prompt: Apply the rtk-query adapter only after repository evidence confirms the dependency and preserve its configured semantics.
+  - id: adapter-trpc
+    skill: trpc
+    checks: functional,tests,contract,adapter_scope
+    prompt: Apply the trpc adapter only after repository evidence confirms the dependency and preserve its configured semantics.
+  - id: adapter-graphql-codegen
+    skill: graphql-codegen
+    checks: functional,tests,contract,adapter_scope
+    prompt: Apply the graphql-codegen adapter only after repository evidence confirms the dependency and preserve its configured semantics.
+  - id: adapter-openapi-tooling
+    skill: openapi-tooling
+    checks: functional,tests,contract,adapter_scope
+    prompt: Apply the openapi-tooling adapter only after repository evidence confirms the dependency and preserve its configured semantics.
+  - id: adapter-jotai
+    skill: jotai
+    checks: functional,tests,contract,adapter_scope
+    prompt: Apply the jotai adapter only after repository evidence confirms the dependency and preserve its configured semantics.
+  - id: adapter-mobx
+    skill: mobx
+    checks: functional,tests,contract,adapter_scope
+    prompt: Apply the mobx adapter only after repository evidence confirms the dependency and preserve its configured semantics.
+  - id: adapter-xstate
+    skill: xstate
+    checks: functional,tests,contract,adapter_scope
+    prompt: Apply the xstate adapter only after repository evidence confirms the dependency and preserve its configured semantics.
+  - id: adapter-react-hook-form
+    skill: react-hook-form
+    checks: functional,tests,contract,adapter_scope
+    prompt: Apply the react-hook-form adapter only after repository evidence confirms the dependency and preserve its configured semantics.
+  - id: adapter-tanstack-form
+    skill: tanstack-form
+    checks: functional,tests,contract,adapter_scope
+    prompt: Apply the tanstack-form adapter only after repository evidence confirms the dependency and preserve its configured semantics.
+  - id: adapter-zod
+    skill: zod
+    checks: functional,tests,contract,adapter_scope
+    prompt: Apply the zod adapter only after repository evidence confirms the dependency and preserve its configured semantics.
+  - id: adapter-valibot
+    skill: valibot
+    checks: functional,tests,contract,adapter_scope
+    prompt: Apply the valibot adapter only after repository evidence confirms the dependency and preserve its configured semantics.
+  - id: adapter-arktype
+    skill: arktype
+    checks: functional,tests,contract,adapter_scope
+    prompt: Apply the arktype adapter only after repository evidence confirms the dependency and preserve its configured semantics.
+  - id: adapter-yup
+    skill: yup
+    checks: functional,tests,contract,adapter_scope
+    prompt: Apply the yup adapter only after repository evidence confirms the dependency and preserve its configured semantics.
+  - id: adapter-vitest-browser
+    skill: vitest-browser
+    checks: functional,tests,contract,adapter_scope
+    prompt: Apply the vitest-browser adapter only after repository evidence confirms the dependency and preserve its configured semantics.
