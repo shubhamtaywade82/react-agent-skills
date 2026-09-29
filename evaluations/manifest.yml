@@ -321,3 +321,15 @@ evaluations:
   - id: prettier-contract
     path: evaluations/react-typescript/prettier.yml
     skill: prettier
+  - id: agent-evaluation-engineering-contract
+    path: evaluations/react-typescript/agent-evaluation-engineering.yml
+    skill: agent-evaluation-engineering
+  - id: agent-behavior-scoring-contract
+    path: evaluations/react-typescript/agent-behavior-scoring.yml
+    skill: agent-behavior-scoring
+  - id: agent-multi-turn-evaluations-contract
+    path: evaluations/react-typescript/agent-multi-turn-evaluations.yml
+    skill: agent-multi-turn-evaluations
+  - id: agent-adversarial-evaluations-contract
+    path: evaluations/react-typescript/agent-adversarial-evaluations.yml
+    skill: agent-adversarial-evaluations
