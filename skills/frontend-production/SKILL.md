@@ -28,3 +28,7 @@ Check build reproducibility, artifact integrity, runtime observability, cache se
 
 ## Verification
 Run production-mode build, smoke tests, deployment-equivalent checks, and artifact inspection. Confirm CI release gates remain meaningful.
+
+## Platform composition
+
+Compose with the detected deployment adapter (Vercel, Netlify, Cloudflare, AWS, Docker/Kubernetes, or GitHub Pages). Verify artifact structure, environment separation, caching, source-map policy, rollback and runtime configuration at the actual platform boundary.
