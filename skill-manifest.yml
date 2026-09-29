@@ -372,3 +372,15 @@ skills:
   - name: prettier
     path: skills/prettier/SKILL.md
     triggers: [Prettier,prettier config,formatting]
+  - name: agent-evaluation-engineering
+    path: skills/agent-evaluation-engineering/SKILL.md
+    triggers: [agent evaluation, fixture evaluation, evaluation harness, benchmark design]
+  - name: agent-behavior-scoring
+    path: skills/agent-behavior-scoring/SKILL.md
+    triggers: [agent scoring, behavior scoring, evaluation score, quality gate]
+  - name: agent-multi-turn-evaluations
+    path: skills/agent-multi-turn-evaluations/SKILL.md
+    triggers: [multi turn evaluation, agent recovery, review feedback, iterative benchmark]
+  - name: agent-adversarial-evaluations
+    path: skills/agent-adversarial-evaluations/SKILL.md
+    triggers: [adversarial evaluation, prompt injection, scope creep, test cheating, security benchmark]

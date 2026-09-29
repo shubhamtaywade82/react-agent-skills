@@ -135,3 +135,8 @@ Route by the dominant engineering boundary, then compose only real secondary con
 | rsbuild adapter | rsbuild | styling/runtime/config evidence |
 | rspack adapter | rspack | styling/runtime/config evidence |
 | prettier adapter | prettier | styling/runtime/config evidence |
+
+| Agent evaluation design | agent-evaluation-engineering | fixture evaluator, benchmark runner, testing |
+| Agent quality scoring | agent-behavior-scoring | evaluation evidence, fixture runner |
+| Multi-turn agent recovery | agent-multi-turn-evaluations | fixture evaluation, testing, debugging |
+| Adversarial agent behavior | agent-adversarial-evaluations | security, browser safety, fixture evaluation |

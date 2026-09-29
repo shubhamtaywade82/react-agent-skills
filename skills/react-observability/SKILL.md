@@ -45,3 +45,7 @@ Inspect telemetry provider, naming conventions, correlation IDs, sampling, redac
 
 ## Verification
 Event contract tests, redaction checks, and production configuration review.
+
+## Backend/platform composition
+
+Compose with Sentry, OpenTelemetry, Datadog or New Relic only when repository evidence confirms the adapter. Keep source-map upload, release correlation, PII scrubbing, sampling and provider-specific privacy behavior explicit.
