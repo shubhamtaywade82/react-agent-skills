@@ -18,6 +18,10 @@ Respect the repository's router and rendering model. Treat server/client boundar
 - Make data cache/revalidation behavior explicit.
 - Validate route params and external responses at runtime boundaries.
 
+## Load references
+Read `references/cache-and-rendering.md` when changing data fetching, caching, revalidation, prerendering, or route rendering.
+Read `references/server-client-boundary.md` when crossing Server Components, Client Components, Server Functions, route handlers, middleware, or environment boundaries.
+
 ## Failure modes
 Watch for accidental client bundling, hydration mismatch, stale cache behavior, server-only API use in the browser, and environment leakage.
 
