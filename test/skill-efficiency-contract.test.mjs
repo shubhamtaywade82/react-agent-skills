@@ -47,10 +47,14 @@ test("skill-local references are explicit, shallow, and resolvable", async () =>
     assert.doesNotMatch(skillContent, /(?:^|\])\(\/references\//, name + " must not use root-absolute references");
 
     const refs = skillContent.match(/(?:\(|\s)(references\/[^\s)\`]+)/g) ?? [];
+    assert.ok(content.split(/\r?\n/).length <= 500, name + " SKILL.md must remain <= 500 lines");
+    assert.ok(Math.ceil(content.length / 4) <= 5000, name + " SKILL.md must remain <= 5000 approximate tokens");
+
     for (const raw of refs) {
       const path = raw.replace(/^\(|^\s/, "");
       assert.equal(path.split("/").length, 2, name + " reference paths must be one level deep: " + path);
-      await access(new URL(path, skillRoot));
+      const resource = await readFile(new URL(path, skillRoot), "utf8");
+      assert.doesNotMatch(resource, /(?:^|[\s(])references\/[A-Za-z0-9._/-]+/, name + " reference must not chain to another reference");
     }
 
     try {
