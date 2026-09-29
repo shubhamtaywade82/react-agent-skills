@@ -76,7 +76,7 @@ async function validateRegistry(path, label, rootPattern) {
     if (!nameMatch) continue;
     const pathMatch = lines[index + 1]?.match(rootPattern.path);
     if (!pathMatch) {
-      errors.push(\`Missing path for \${label}: \${nameMatch[1]}\`);
+      errors.push("Missing path for " + label + ": " + nameMatch[1]);
       continue;
     }
     entries.push({ name: nameMatch[1], path: pathMatch[1] });
