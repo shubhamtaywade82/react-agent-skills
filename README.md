@@ -1,6 +1,6 @@
 # React Agent Skills
 
-Production-grade **React + TypeScript engineering skills for AI coding agents**.
+Production-grade **React + TypeScript engineering skills for AI coding agents**, packaged for progressive disclosure and evidence-gated routing.
 
 This repository turns React/TypeScript knowledge into executable guidance an agent can use to inspect a repository, route to the right expertise, implement a bounded change, verify behavior, and report evidence.
 
@@ -71,9 +71,16 @@ The pack is framework-aware rather than framework-dependent. The agent must reso
 
 ## Routing
 
-The canonical inventory is skill-manifest.yml. Routing guidance is in router/ROUTING.md.
+The canonical skill inventory is `skill-manifest.yml`, while `router/ROUTING.md` documents the local router policy. Native Agent Skills discovery should use each skill's `name` and `description` first; the manifest is fallback/tooling metadata rather than required model context.
 
-Choose one primary skill based on the dominant boundary, then compose only secondary skills that add real constraints.
+Choose one primary skill based on the dominant boundary, then compose only the secondary skills that add real constraints. Framework, library, deployment and observability adapters are evidence-gated.
+
+## Context efficiency
+
+This pack follows the Agent Skills progressive-disclosure model: concise `SKILL.md` entrypoints, skill-local `references/` for detailed material, and `scripts/` for deterministic repeatable checks. Agents should not preload the whole pack.
+
+The repository includes contract tests that enforce description limits, shallow/resolvable references, precise routing metadata, and deterministic resource presence.
+
 
 ## Validation
 
@@ -83,6 +90,7 @@ Run:
     node scripts/validate.mjs
     node scripts/validate-benchmarks.mjs
     node scripts/validate-fixtures.mjs
+    node --test test/skill-efficiency-contract.test.mjs test/skill-resource-contract.test.mjs
 
 GitHub Actions runs these structural, benchmark, and installer checks on pushes and pull requests.
 

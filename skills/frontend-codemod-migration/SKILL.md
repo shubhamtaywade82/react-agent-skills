@@ -34,3 +34,8 @@ Review both transform correctness and the final semantic diff. Remove temporary 
 ## Verification
 
 Run the migration verifier, typecheck, tests and repository formatter/lint commands.
+
+
+## Progressive disclosure
+
+Read `references/migration-checklist.md` before applying a large transform or expanding a codemod beyond the first representative package.

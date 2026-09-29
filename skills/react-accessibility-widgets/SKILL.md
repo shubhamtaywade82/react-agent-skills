@@ -42,3 +42,8 @@ Check accessible name, role/state/property accuracy, keyboard behavior, focus vi
 ## Verification
 
 Use accessibility assertions plus keyboard-driven browser tests for every composite widget interaction path.
+
+
+## Progressive disclosure
+
+Read `references/widget-keyboard-matrix.md` when implementing or changing keyboard behavior for a composite widget.

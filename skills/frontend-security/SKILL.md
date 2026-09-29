@@ -28,3 +28,8 @@ Trace attacker-controlled data from source to sink. Verify browser, server, and 
 
 ## Verification
 Use security-focused tests and static tooling available in the repository. Inspect built artifacts when exposure or injection is plausible.
+
+
+## Progressive disclosure
+
+Read `references/browser-security.md` when attacker-controlled browser data reaches DOM, URL, storage, messaging, third-party script or telemetry boundaries.

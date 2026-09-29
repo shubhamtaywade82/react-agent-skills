@@ -39,3 +39,8 @@ Check package/lockfile evidence, renderer support, server/client boundaries, hyd
 ## Verification
 
 Run focused tests plus repository-standard typecheck/lint/build. Use real browser verification for DOM/transition/ref behavior.
+
+
+## Progressive disclosure
+
+Read `references/api-selection.md` when choosing among React 19 APIs or deciding whether a version-specific primitive is justified.

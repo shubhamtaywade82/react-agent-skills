@@ -10,7 +10,7 @@ skills:
     triggers: [agent tools, tool capabilities, agent runtime, capability manifest]
   - name: frontend-repository-archetypes
     path: skills/frontend-repository-archetypes/SKILL.md
-    triggers: [repository archetype, repo classification, frontend architecture, monorepo detection]
+    triggers: [repository archetype, repo classification, monorepo detection]
   - name: frontend-risk-classification
     path: skills/frontend-risk-classification/SKILL.md
     triggers: [risk classification, blast radius, change risk, verification level]
@@ -19,152 +19,152 @@ skills:
     triggers: [debugging, browser debugging, console error, hydration bug, network bug, runtime regression]
   - name: react-architecture
     path: skills/react-architecture/SKILL.md
-    triggers: [react architecture, feature architecture, module boundaries, composition]
+    triggers: [react architecture, feature architecture, composition]
   - name: frontend-architecture
     path: skills/frontend-architecture/SKILL.md
     triggers: [frontend architecture, module boundaries, dependency direction, feature boundaries]
   - name: frontend-browser-platform
     path: skills/frontend-browser-platform/SKILL.md
-    triggers: [browser api, dom, events, storage, url, workers, lifecycle]
+    triggers: [browser api, dom, events, url, workers, lifecycle]
   - name: react-component-engineering
     path: skills/react-component-engineering/SKILL.md
-    triggers: [component, props, reusable component, component API]
+    triggers: [props, reusable component, component API]
   - name: react-hooks-effects
     path: skills/react-hooks-effects/SKILL.md
-    triggers: [hook, useEffect, effect, useMemo, useCallback, synchronization]
+    triggers: [hook, useEffect, useMemo, useCallback, synchronization]
   - name: react-state-management
     path: skills/react-state-management/SKILL.md
-    triggers: [state, context, reducer, state management, store]
+    triggers: [context, reducer, state management]
   - name: react-data-fetching
     path: skills/react-data-fetching/SKILL.md
-    triggers: [api, fetch, query, mutation, cache, server state]
+    triggers: [server state]
   - name: react-async-ui
     path: skills/react-async-ui/SKILL.md
-    triggers: [async ui, loading, refresh, mutation state, empty state, retry]
+    triggers: [async ui, refresh, mutation state, empty state]
   - name: react-forms-validation
     path: skills/react-forms-validation/SKILL.md
-    triggers: [form, validation, field, submit, wizard]
+    triggers: [field, submit, wizard]
   - name: react-routing
     path: skills/react-routing/SKILL.md
     triggers: [routing, route, navigation, url state, deep link]
   - name: react-testing-engineering
     path: skills/react-testing-engineering/SKILL.md
-    triggers: [test, testing, vitest, testing library, integration test]
+    triggers: [integration test]
   - name: frontend-e2e
     path: skills/frontend-e2e/SKILL.md
-    triggers: [e2e, end to end, browser test, playwright, cypress, user journey]
+    triggers: [e2e, end to end, user journey]
   - name: react-accessibility
     path: skills/react-accessibility/SKILL.md
     triggers: [accessibility, a11y, keyboard, focus, screen reader, aria]
   - name: react-performance
     path: skills/react-performance/SKILL.md
-    triggers: [performance, render, memoization, virtualization, profiling, bundle]
+    triggers: [performance, memoization, virtualization, profiling, bundle]
   - name: react-security
     path: skills/react-security/SKILL.md
-    triggers: [react security, xss, csrf, token, storage, authorization, html]
+    triggers: [react security, csrf, token, authorization, html]
   - name: frontend-security
     path: skills/frontend-security/SKILL.md
-    triggers: [frontend security, security review, supply chain, third party scripts, csrf, xss]
+    triggers: [frontend security, security review, supply chain, third party scripts]
   - name: browser-security-dom-safety
     path: skills/browser-security-dom-safety/SKILL.md
     triggers: [dom security, innerHTML, postMessage, iframe, unsafe url, browser sink]
   - name: auth-session-boundaries
     path: skills/auth-session-boundaries/SKILL.md
-    triggers: [authentication, authorization, session, login, logout, refresh token, csrf]
+    triggers: [authentication, login, logout, refresh token]
   - name: react-modern-rendering
     path: skills/react-modern-rendering/SKILL.md
-    triggers: [suspense, transition, hydration, streaming, react compiler, concurrent rendering]
+    triggers: [suspense, transition, hydration, react compiler, concurrent rendering]
   - name: react-server-components
     path: skills/react-server-components/SKILL.md
     triggers: [server components, rsc, server client boundary, server action, streamed rendering]
   - name: react-error-resilience
     path: skills/react-error-resilience/SKILL.md
-    triggers: [error boundary, error state, loading, empty state, retry, resilience]
+    triggers: [error boundary, error state, resilience]
   - name: react-design-system
     path: skills/react-design-system/SKILL.md
     triggers: [design system, ui library, component library, theming, tokens]
   - name: frontend-styling-layout
     path: skills/frontend-styling-layout/SKILL.md
-    triggers: [css, styling, layout, responsive, theme, animation]
+    triggers: [styling, layout, responsive, theme, animation]
   - name: react-toolchain
     path: skills/react-toolchain/SKILL.md
-    triggers: [vite, build, bundler, typescript config, eslint, package, tooling, ci]
+    triggers: [vite, bundler, typescript config, eslint, tooling, ci]
   - name: frontend-environment-configuration
     path: skills/frontend-environment-configuration/SKILL.md
     triggers: [environment variables, env, feature flags, runtime config, build config]
   - name: frontend-dependency-management
     path: skills/frontend-dependency-management/SKILL.md
-    triggers: [dependency, package, npm, pnpm, yarn, lockfile, upgrade, downgrade]
+    triggers: [dependency, npm, pnpm, yarn, lockfile, upgrade, downgrade]
   - name: frontend-production
     path: skills/frontend-production/SKILL.md
-    triggers: [production, deployment, cdn, caching, service worker, release, rollback]
+    triggers: [production, cdn, caching, service worker, release, rollback]
   - name: react-observability
     path: skills/react-observability/SKILL.md
     triggers: [observability, logging, telemetry, metrics, tracing, frontend monitoring]
   - name: react-review
     path: skills/react-review/SKILL.md
-    triggers: [code review, review, audit, cleanup, technical debt]
+    triggers: [code review, audit, cleanup, technical debt]
   - name: typescript-core-engineering
     path: skills/typescript-core-engineering/SKILL.md
-    triggers: [typescript, compiler, tsconfig, narrowing, generics, modules]
+    triggers: [compiler, tsconfig, narrowing, generics, modules]
   - name: typescript-type-design
     path: skills/typescript-type-design/SKILL.md
     triggers: [type design, union, generic, branded type, public API]
   - name: typescript-runtime-contracts
     path: skills/typescript-runtime-contracts/SKILL.md
-    triggers: [json, runtime validation, schema, environment, storage, external input]
+    triggers: [json, runtime validation, environment, external input]
   - name: typescript-async-error-modeling
     path: skills/typescript-async-error-modeling/SKILL.md
-    triggers: [async errors, cancellation, retry, promise state, error normalization]
+    triggers: [async errors, cancellation, promise state, error normalization]
   - name: typescript-public-api-design
     path: skills/typescript-public-api-design/SKILL.md
-    triggers: [public api, exported type, library api, package boundary, semver]
+    triggers: [exported type, library api, package boundary, semver]
   - name: typescript-api-contracts
     path: skills/typescript-api-contracts/SKILL.md
-    triggers: [api contract, openapi, graphql, rpc, client contract, pagination, error envelope]
+    triggers: [api contract, graphql, rpc, client contract, pagination, error envelope]
 
   - name: typescript-module-design
     path: skills/typescript-module-design/SKILL.md
-    triggers: [module design, exports, import graph, dependency cycles, package boundary]
+    triggers: [module design, exports, import graph, dependency cycles]
   - name: typescript-configuration
     path: skills/typescript-configuration/SKILL.md
-    triggers: [tsconfig, compiler options, module resolution, jsx, project references]
+    triggers: [compiler options, module resolution, jsx, project references]
   - name: typescript-migration
     path: skills/typescript-migration/SKILL.md
     triggers: [javascript migration, typescript migration, strictness migration, type migration]
   - name: vite
     path: skills/vite/SKILL.md
-    triggers: [vite, vite config, vite plugin, vite env, vite build]
+    triggers: [vite config, vite plugin, vite env, vite build]
   - name: nextjs
     path: skills/nextjs/SKILL.md
     triggers: [nextjs, next config, app router, pages router]
   - name: remix
     path: skills/remix/SKILL.md
-    triggers: [remix, loader, action, fetcher, remix route]
+    triggers: [remix, loader, fetcher, remix route]
   - name: react-router
     path: skills/react-router/SKILL.md
-    triggers: [react router, loader, action, route params, search params]
+    triggers: [react router, route params, search params]
   - name: tanstack-query
     path: skills/tanstack-query/SKILL.md
-    triggers: [tanstack query, query client, query key, mutation, invalidation]
+    triggers: [tanstack query, query client, query key, invalidation]
   - name: redux
     path: skills/redux/SKILL.md
     triggers: [redux, redux toolkit, slice, selector, middleware]
   - name: zustand
     path: skills/zustand/SKILL.md
-    triggers: [zustand, store, selector, persistence]
+    triggers: [zustand, persistence]
   - name: vitest
     path: skills/vitest/SKILL.md
-    triggers: [vitest, vitest config, fake timers, mocks, coverage]
+    triggers: [vitest config, fake timers, mocks, coverage]
   - name: testing-library
     path: skills/testing-library/SKILL.md
-    triggers: [testing library, user-event, accessible query, react testing]
+    triggers: [user-event, accessible query, react testing]
   - name: playwright
     path: skills/playwright/SKILL.md
-    triggers: [playwright, browser automation, trace, locator]
+    triggers: [browser automation, trace, locator]
   - name: cypress
     path: skills/cypress/SKILL.md
-    triggers: [cypress, cy, intercept, browser test]
+    triggers: [cy, intercept]
   - name: storybook
     path: skills/storybook/SKILL.md
     triggers: [storybook, stories, component story, interaction test, visual regression]
@@ -179,7 +179,7 @@ skills:
     triggers: [useActionState, useFormStatus, useOptimistic, form action, react actions]
   - name: react-compiler
     path: skills/react-compiler/SKILL.md
-    triggers: [react compiler, use memo, use no memo, compiler diagnostics]
+    triggers: [use memo, use no memo, compiler diagnostics]
   - name: react-server-security
     path: skills/react-server-security/SKILL.md
     triggers: [rsc security, server component security, server functions, react server security]
@@ -188,190 +188,190 @@ skills:
     triggers: [typescript 6, typescript 7, ts migration, compiler upgrade]
   - name: typescript-build-architecture
     path: skills/typescript-build-architecture/SKILL.md
-    triggers: [project references, tsc build, incremental build, declaration build]
+    triggers: [tsc build, incremental build, declaration build]
   - name: eslint
     path: skills/eslint/SKILL.md
-    triggers: [eslint, eslint 10, flat config, lint configuration]
+    triggers: [eslint 10, flat config, lint configuration]
   - name: typescript-eslint
     path: skills/typescript-eslint/SKILL.md
     triggers: [typescript eslint, typed linting, projectService, parser]
   - name: frontend-formatting
     path: skills/frontend-formatting/SKILL.md
-    triggers: [formatting, prettier, biome, formatter]
+    triggers: [prettier, biome, formatter]
   - name: frontend-monorepo
     path: skills/frontend-monorepo/SKILL.md
-    triggers: [frontend monorepo,workspaces,pnpm,nx,turborepo,package graph]
+    triggers: [frontend monorepo, workspaces, nx, turborepo, package graph]
   - name: typescript-package-publishing
     path: skills/typescript-package-publishing/SKILL.md
-    triggers: [package publishing,exports,declarations,esm,cjs,semver]
+    triggers: [package publishing, declarations, esm, cjs]
   - name: frontend-generated-code
     path: skills/frontend-generated-code/SKILL.md
-    triggers: [generated code,OpenAPI,GraphQL,SDK generation,codegen]
+    triggers: [generated code, SDK generation, codegen]
   - name: frontend-internationalization
     path: skills/frontend-internationalization/SKILL.md
-    triggers: [i18n,localization,pluralization,RTL,timezone,currency]
+    triggers: [i18n, localization, pluralization, RTL, timezone, currency]
   - name: frontend-offline-pwa
     path: skills/frontend-offline-pwa/SKILL.md
-    triggers: [offline,PWA,service worker,background sync,offline queue]
+    triggers: [offline, PWA, background sync, offline queue]
   - name: frontend-realtime
     path: skills/frontend-realtime/SKILL.md
-    triggers: [WebSocket,SSE,realtime,streaming,reconnect]
+    triggers: [WebSocket, SSE, realtime, reconnect]
   - name: frontend-web-performance
     path: skills/frontend-web-performance/SKILL.md
-    triggers: [web vitals,LCP,INP,CLS,performance trace]
+    triggers: [web vitals, LCP, INP, CLS, performance trace]
   - name: frontend-test-reliability
     path: skills/frontend-test-reliability/SKILL.md
-    triggers: [flaky tests,test reliability,retries,sharding,determinism]
+    triggers: [flaky tests, test reliability, retries, sharding, determinism]
   - name: frontend-visual-testing
     path: skills/frontend-visual-testing/SKILL.md
-    triggers: [visual regression,screenshot baseline,visual testing]
+    triggers: [screenshot baseline, visual testing]
   - name: frontend-rendering-strategies
     path: skills/frontend-rendering-strategies/SKILL.md
-    triggers: [CSR,SSR,SSG,ISR,streaming,prerendering]
+    triggers: [CSR, SSR, SSG, ISR, prerendering]
   - name: frontend-supply-chain
     path: skills/frontend-supply-chain/SKILL.md
-    triggers: [supply chain,SBOM,provenance,lockfile,dependency security]
+    triggers: [SBOM, provenance, dependency security]
   - name: frontend-documentation
     path: skills/frontend-documentation/SKILL.md
-    triggers: [frontend documentation,README,ADR,changelog,Storybook docs]
+    triggers: [frontend documentation, README, ADR, changelog, Storybook docs]
   - name: frontend-codemod-migration
     path: skills/frontend-codemod-migration/SKILL.md
-    triggers: [codemod,migration,large refactor,automated transform]
+    triggers: [codemod, migration, large refactor, automated transform]
   - name: react-accessibility-widgets
     path: skills/react-accessibility-widgets/SKILL.md
-    triggers: [ARIA widget,dialog,menu,combobox,tabs,listbox,grid]
+    triggers: [ARIA widget, dialog, menu, combobox, tabs, listbox, grid]
   - name: frontend-storage
     path: skills/frontend-storage/SKILL.md
-    triggers: [localStorage,IndexedDB,Cache Storage,storage migration]
+    triggers: [localStorage, IndexedDB, Cache Storage, storage migration]
   - name: frontend-messaging
     path: skills/frontend-messaging/SKILL.md
-    triggers: [postMessage,BroadcastChannel,MessageChannel,iframe messaging]
+    triggers: [BroadcastChannel, MessageChannel, iframe messaging]
   - name: frontend-workers
     path: skills/frontend-workers/SKILL.md
-    triggers: [Web Worker,SharedWorker,worker messages,worker lifecycle]
+    triggers: [Web Worker, SharedWorker, worker messages, worker lifecycle]
   - name: frontend-networking
     path: skills/frontend-networking/SKILL.md
-    triggers: [fetch,HTTP,CORS,timeout,retry,request cancellation]
+    triggers: [HTTP, CORS, timeout, request cancellation]
   - name: browser-authentication
     path: skills/browser-authentication/SKILL.md
-    triggers: [browser authentication,session,refresh,login,logout,MFA]
+    triggers: [browser authentication, MFA]
   - name: browser-media
     path: skills/browser-media/SKILL.md
-    triggers: [camera,microphone,MediaDevices,MediaRecorder,autoplay]
+    triggers: [camera, microphone, MediaDevices, MediaRecorder, autoplay]
   - name: apollo
     path: skills/apollo/SKILL.md
-    triggers: [apollo,GraphQL client,Apollo cache]
+    triggers: [apollo, GraphQL client, Apollo cache]
   - name: urql
     path: skills/urql/SKILL.md
-    triggers: [urql,GraphQL exchange,urql cache]
+    triggers: [urql, GraphQL exchange, urql cache]
   - name: swr
     path: skills/swr/SKILL.md
-    triggers: [SWR,cache key,revalidation,mutation]
+    triggers: [SWR, cache key, revalidation]
   - name: rtk-query
     path: skills/rtk-query/SKILL.md
-    triggers: [RTK Query,endpoint,tags,Redux Toolkit Query]
+    triggers: [RTK Query, endpoint, tags, Redux Toolkit Query]
   - name: trpc
     path: skills/trpc/SKILL.md
-    triggers: [tRPC,typed procedures,router,transformer]
+    triggers: [tRPC, typed procedures, transformer]
   - name: graphql-codegen
     path: skills/graphql-codegen/SKILL.md
-    triggers: [GraphQL Code Generator,generated types,codegen]
+    triggers: [GraphQL Code Generator, generated types]
   - name: openapi-tooling
     path: skills/openapi-tooling/SKILL.md
-    triggers: [OpenAPI,generated client,OpenAPI generator]
+    triggers: [generated client, OpenAPI generator]
   - name: jotai
     path: skills/jotai/SKILL.md
-    triggers: [Jotai,atoms,derived atom]
+    triggers: [Jotai, atoms, derived atom]
   - name: mobx
     path: skills/mobx/SKILL.md
-    triggers: [MobX,observable,action,computed]
+    triggers: [MobX, observable, computed]
   - name: xstate
     path: skills/xstate/SKILL.md
-    triggers: [XState,state machine,actor,event]
+    triggers: [XState, state machine, actor, event]
   - name: react-hook-form
     path: skills/react-hook-form/SKILL.md
-    triggers: [React Hook Form,form resolver,register]
+    triggers: [React Hook Form, form resolver, register]
   - name: tanstack-form
     path: skills/tanstack-form/SKILL.md
-    triggers: [TanStack Form,field validation,form]
+    triggers: [TanStack Form, field validation]
   - name: zod
     path: skills/zod/SKILL.md
-    triggers: [Zod,schema,parse,safeParse]
+    triggers: [Zod, parse, safeParse]
   - name: valibot
     path: skills/valibot/SKILL.md
-    triggers: [Valibot,runtime schema,validation]
+    triggers: [Valibot, runtime schema]
   - name: arktype
     path: skills/arktype/SKILL.md
-    triggers: [ArkType,runtime validation,types]
+    triggers: [ArkType, types]
   - name: yup
     path: skills/yup/SKILL.md
-    triggers: [Yup,schema,resolver,validation]
+    triggers: [Yup, resolver]
   - name: vitest-browser
     path: skills/vitest-browser/SKILL.md
-    triggers: [Vitest Browser Mode,browser tests,provider]
+    triggers: [Vitest Browser Mode, browser tests, provider]
   - name: biome
     path: skills/biome/SKILL.md
-    triggers: [biome,format,linter,biome.json]
+    triggers: [format, linter, biome.json]
   - name: vercel
     path: skills/vercel/SKILL.md
-    triggers: [Vercel,deployment,preview,vercel.json]
+    triggers: [Vercel, preview, vercel.json]
   - name: netlify
     path: skills/netlify/SKILL.md
-    triggers: [Netlify,deployment,redirects,netlify.toml]
+    triggers: [Netlify, redirects, netlify.toml]
   - name: cloudflare
     path: skills/cloudflare/SKILL.md
-    triggers: [Cloudflare Workers,Cloudflare Pages,wrangler,edge]
+    triggers: [Cloudflare Workers, Cloudflare Pages, wrangler, edge]
   - name: aws-frontend
     path: skills/aws-frontend/SKILL.md
-    triggers: [AWS frontend,S3,CloudFront,Lambda]
+    triggers: [AWS frontend, S3, CloudFront, Lambda]
   - name: docker-kubernetes-frontend
     path: skills/docker-kubernetes-frontend/SKILL.md
-    triggers: [Docker,Kubernetes,frontend container,rollout]
+    triggers: [Docker, Kubernetes, frontend container, rollout]
   - name: github-pages
     path: skills/github-pages/SKILL.md
-    triggers: [GitHub Pages,static deployment,base path]
+    triggers: [GitHub Pages, static deployment, base path]
   - name: sentry
     path: skills/sentry/SKILL.md
-    triggers: [Sentry,frontend monitoring,source maps,PII]
+    triggers: [Sentry, source maps, PII]
   - name: opentelemetry-frontend
     path: skills/opentelemetry-frontend/SKILL.md
-    triggers: [OpenTelemetry,browser tracing,spans]
+    triggers: [OpenTelemetry, browser tracing, spans]
   - name: datadog-frontend
     path: skills/datadog-frontend/SKILL.md
-    triggers: [Datadog RUM,browser monitoring,privacy]
+    triggers: [Datadog RUM, browser monitoring, privacy]
   - name: new-relic-frontend
     path: skills/new-relic-frontend/SKILL.md
-    triggers: [New Relic,browser monitoring,SPA telemetry]
+    triggers: [New Relic, SPA telemetry]
   - name: tailwindcss
     path: skills/tailwindcss/SKILL.md
-    triggers: [tailwindcss,Tailwind CSS,utility classes]
+    triggers: [tailwindcss, Tailwind CSS, utility classes]
   - name: css-modules
     path: skills/css-modules/SKILL.md
-    triggers: [CSS Modules,module css,scoped styles]
+    triggers: [CSS Modules, module css, scoped styles]
   - name: styled-components
     path: skills/styled-components/SKILL.md
-    triggers: [styled-components,ThemeProvider,styled]
+    triggers: [styled-components, ThemeProvider, styled]
   - name: emotion
     path: skills/emotion/SKILL.md
-    triggers: [Emotion,CSS-in-JS,ThemeProvider]
+    triggers: [Emotion, CSS-in-JS]
   - name: vanilla-extract
     path: skills/vanilla-extract/SKILL.md
-    triggers: [vanilla-extract,typed CSS,style recipes]
+    triggers: [vanilla-extract, typed CSS, style recipes]
   - name: tanstack-start
     path: skills/tanstack-start/SKILL.md
-    triggers: [TanStack Start,route server function,SSR]
+    triggers: [TanStack Start, route server function]
   - name: astro-react
     path: skills/astro-react/SKILL.md
-    triggers: [Astro React,islands,client directive]
+    triggers: [Astro React, islands, client directive]
   - name: rsbuild
     path: skills/rsbuild/SKILL.md
-    triggers: [Rsbuild,rsbuild config,bundler]
+    triggers: [Rsbuild, rsbuild config]
   - name: rspack
     path: skills/rspack/SKILL.md
-    triggers: [Rspack,rspack config,bundler]
+    triggers: [Rspack, rspack config]
   - name: prettier
     path: skills/prettier/SKILL.md
-    triggers: [Prettier,prettier config,formatting]
+    triggers: [prettier config]
   - name: agent-evaluation-engineering
     path: skills/agent-evaluation-engineering/SKILL.md
     triggers: [agent evaluation, fixture evaluation, evaluation harness, benchmark design]

@@ -4,6 +4,7 @@ This matrix tracks the completeness gaps identified for a production React + Typ
 
 | Area | Status | Implemented surface |
 | --- | --- | --- |
+| Agent Skills native packaging/progressive disclosure | Complete | skill-local references/scripts + description/routing contracts |
 | Agent tool capabilities | Complete | agent-tool-capabilities |
 | Repository archetype detection | Complete | frontend-repository-archetypes |
 | Change-risk classification | Complete | frontend-risk-classification |

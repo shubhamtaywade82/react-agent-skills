@@ -34,3 +34,8 @@ Review public exports, declaration signatures, package size/content, peer depend
 ## Verification
 
 Build, pack, inspect the tarball, install into a disposable consumer and run import/typecheck tests.
+
+
+## Progressive disclosure
+
+Read `references/export-checklist.md` when changing `exports`, declaration output, module formats, package contents or release compatibility. Run `node scripts/validate-package-exports.mjs <package-root>` before finalizing an export-map change.
