@@ -35,10 +35,10 @@ This repository is an agent-executable React + TypeScript engineering skill libr
 
 ## TypeScript rules
 
-- Use \`unknown\` at untrusted runtime boundaries.
+- Use `unknown` at untrusted runtime boundaries.
 - Prefer discriminated unions over flag combinations that permit invalid states.
 - Keep exported contracts explicit.
-- Minimize assertions and isolate unavoidable \`any\`.
+- Minimize assertions and isolate unavoidable `any`.
 - Do not mistake TypeScript declarations for runtime validation.
 - Separate transport, domain, and UI types when their invariants differ.
 
@@ -64,4 +64,4 @@ Before adding a dependency, inspect existing dependencies and platform primitive
 
 ## Skill-pack maintenance
 
-Every skill must have a valid \`SKILL.md\`, be registered in \`skill-manifest.yml\`, and contain activation, inspection, decision, implementation, failure, review, and verification guidance. Keep validation and CI green.
+Every skill must have a valid `SKILL.md`, be registered in `skill-manifest.yml`, and contain activation, inspection, decision, implementation, failure, review, and verification guidance. Keep validation and CI green.
