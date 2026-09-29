@@ -27,6 +27,11 @@ for (const entry of entries) {
       if (!description || description.length > 1024) errors.push(entry.path + ": description must be 1-1024 characters");
     }
 
+    const lineCount = content.split(/\r?\n/).length;
+    const approximateTokens = Math.ceil(content.length / 4);
+    if (lineCount > 500) errors.push(entry.path + ": SKILL.md must remain <= 500 lines");
+    if (approximateTokens > 5000) errors.push(entry.path + ": SKILL.md must remain <= 5000 approximate tokens");
+
     for (const required of ["---\n", "## Activate when", "## Repository inspection", "## Verification"]) {
       if (!content.includes(required)) errors.push(entry.path + ": missing " + required.replaceAll("\n", ""));
     }
@@ -37,7 +42,10 @@ for (const entry of entries) {
     for (const resource of resourceRefs) {
       if (resource.split("/").length !== 2) errors.push(entry.path + ": resource path must be one level deep: " + resource);
       try {
-        await readFile(new URL(resource, skillUrl), "utf8");
+        const resourceContent = await readFile(new URL(resource, skillUrl), "utf8");
+        if (resource.startsWith("references/") && /(?:^|[\s(])references\/[A-Za-z0-9._/-]+/.test(resourceContent)) {
+          errors.push(entry.path + ": reference-to-reference chains are not supported: " + resource);
+        }
       } catch {
         errors.push(entry.path + ": missing referenced resource: " + resource);
       }
