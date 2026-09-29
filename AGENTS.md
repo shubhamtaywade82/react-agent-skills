@@ -4,7 +4,7 @@ This repository is an agent-executable React + TypeScript engineering skill libr
 
 ## Operating sequence
 
-1. Discover applicable skills from \`skill-manifest.yml\`.
+1. Use native Agent Skills discovery from each SKILL.md name/description when the host supports it; otherwise use the local manifest/router as a compatibility fallback.
 2. Establish available agent capabilities and classify the repository archetype.
 3. Classify change risk and required verification level.
 4. Inspect React/TypeScript/framework versions, package manager, scripts, source layout, tests, linting, build, and existing conventions.
@@ -18,6 +18,8 @@ This repository is an agent-executable React + TypeScript engineering skill libr
 12. Simplify accidental complexity.
 13. Report observed evidence only; never claim an unrun command passed.
 14. Do not load every skill or adapter for a broad task; use progressive disclosure and load references/scripts only when their conditions apply.
+15. Treat SKILL.md as the always-loaded entrypoint; read skill-local references only just before the decision they inform.
+16. Do not follow reference-to-reference chains; keep supporting resources one level deep.
 
 ## React rules
 
