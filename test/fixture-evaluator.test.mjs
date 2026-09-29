@@ -73,3 +73,15 @@ test("scope and scoring preserve hard safety failures", () => {
   assert.equal(score.passed, false);
   assert.equal(score.dimensions.safety, 0);
 });
+
+test("multi-turn scoring can pass after an intermediate failed turn is recovered", () => {
+  const score = calculateScore({
+    executionOk: true,
+    correctness: { verifiers_passed: 1, verifiers_total: 1 },
+    scopeOk: true,
+    safetyOk: true,
+    recoveryOk: true,
+    multiTurn: true
+  });
+  assert.equal(score.passed, true);
+});
