@@ -354,3 +354,33 @@ skills:
   - name: agent-adversarial-evaluations
     path: skills/agent-adversarial-evaluations/SKILL.md
     triggers: [adversarial evaluation,prompt injection,scope creep,test cheating,security benchmark]
+  - name: astro-react
+    path: skills/astro-react/SKILL.md
+    triggers: [astro-react, astro-react config]
+  - name: css-modules
+    path: skills/css-modules/SKILL.md
+    triggers: [css-modules, css-modules config]
+  - name: emotion
+    path: skills/emotion/SKILL.md
+    triggers: [emotion, emotion config]
+  - name: prettier
+    path: skills/prettier/SKILL.md
+    triggers: [prettier, prettier config]
+  - name: rsbuild
+    path: skills/rsbuild/SKILL.md
+    triggers: [rsbuild, rsbuild config]
+  - name: rspack
+    path: skills/rspack/SKILL.md
+    triggers: [rspack, rspack config]
+  - name: styled-components
+    path: skills/styled-components/SKILL.md
+    triggers: [styled-components, styled-components config]
+  - name: tailwindcss
+    path: skills/tailwindcss/SKILL.md
+    triggers: [tailwindcss, tailwindcss config]
+  - name: tanstack-start
+    path: skills/tanstack-start/SKILL.md
+    triggers: [tanstack-start, tanstack-start config]
+  - name: vanilla-extract
+    path: skills/vanilla-extract/SKILL.md
+    triggers: [vanilla-extract, vanilla-extract config]
