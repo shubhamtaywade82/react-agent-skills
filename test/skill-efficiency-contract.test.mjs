@@ -25,11 +25,13 @@ test("skills use Agent Skills metadata constraints and intent-focused descriptio
     const content = await readFile(new URL("skills/" + name + "/SKILL.md", root), "utf8");
     const { name: declaredName, description } = parseFrontmatter(content);
     assert.equal(declaredName, name);
-    assert.ok(description && description.length <= 1024, name + " description must be <= 1024 characters");
-    assert.match(
+    assert.match(declaredName, /^[a-z0-9]+(?:-[a-z0-9]+)*$/, name + " must follow Agent Skills naming rules");
+    assert.ok(declaredName.length <= 64, name + " name must be <= 64 characters");
+    assert.ok(description && description.length <= 1024, name + " description must be 1-1024 characters");
+    assert.doesNotMatch(
       description.toLowerCase(),
-      /\b(when|for|with|during|across|against|covering|govern|apply|manage|implement|use|engineer|package|probe|score|design|before|after)\b/i,
-      name + " description should communicate scope or applicability"
+      /^(?:helps? with|miscellaneous|general purpose|a collection of|this skill is)/i,
+      name + " description must be specific rather than vague"
     );
   }
 });
