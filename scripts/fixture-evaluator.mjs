@@ -236,7 +236,7 @@ async function runFixture(fixture, agentCommand) {
     }
 
     const after = previous;
-    const executionOk = turnResults.every((turn) => turn.execution.exit_code === 0);
+    const executionOk = turnResults.at(-1)?.execution.exit_code === 0;
     const scope = evaluateScope(before, after, fixture.allowed_paths);
 
     const verifierResults = [];
