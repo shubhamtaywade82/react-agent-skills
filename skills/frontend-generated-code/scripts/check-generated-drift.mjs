@@ -3,8 +3,8 @@ import { execFileSync } from "node:child_process";
 
 const args = process.argv.slice(2);
 const separator = args.indexOf("--");
-const repo = separator === -1 ? args.shift() : args.shift();
-const paths = separator === -1 ? args : args.slice(separator + 1);
+const repo = args[0];
+const paths = separator === -1 ? args.slice(1) : args.slice(separator + 1);
 
 if (!repo || paths.length === 0) {
   console.error("Usage: node scripts/check-generated-drift.mjs <repository-root> -- <generated-path> [...]");
