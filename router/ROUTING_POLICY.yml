@@ -4,7 +4,7 @@ discovery:
   native_agent_skills_first: true
   preload_all_skills: false
   primary_skills_max: 1
-  secondary_skills_max: 4
+  secondary_skills_max: 3
   reference_loading: just_in_time
   reference_depth: 1
 
