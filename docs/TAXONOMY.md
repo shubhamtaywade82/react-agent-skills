@@ -53,6 +53,8 @@ React + TypeScript Core
 
 These are process skills, not React framework knowledge.
 
+Agent evaluation is a separate meta-domain: fixture-backed evaluation, behavior scoring, persistent multi-turn recovery, and adversarial resistance.
+
 ### B. TypeScript engineering
 
 | Skill | Responsibility |
@@ -256,7 +258,7 @@ The integration layer should be represented as composition guidance, not by dupl
 
 ## Implemented inventory
 
-At the current expansion branch, the destination registers 52 skills, 60 reusable patterns, 39 core React/TypeScript evaluation contracts, and 31 benchmark cases. Nine audited source skill snapshots are preserved under `docs/source-lineage/react-typescript/skills/` so provenance is explicit.
+The current expansion registers 127 skills, 60 reusable patterns, 110 evaluation contracts, 102 benchmark cases, and 8 executable fixture scenarios. Nine audited source skill snapshots are preserved under `docs/source-lineage/react-typescript/skills/` so provenance is explicit.
 
 The 24 canonical React/TypeScript patterns and four stack-minimality adapters from the audited source are preserved. The additional patterns are destination-native coverage for browser, security, production, testing, and TypeScript module/configuration concerns.
 
