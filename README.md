@@ -71,7 +71,7 @@ The pack is framework-aware rather than framework-dependent. The agent must reso
 
 ## Routing
 
-The canonical skill inventory is `skill-manifest.yml`, while `router/ROUTING.md` documents the local router policy. Native Agent Skills discovery should use each skill's `name` and `description` first; the manifest is fallback/tooling metadata rather than required model context.
+The standard skill surface is each `skills/<name>/SKILL.md` and its `name`/`description` frontmatter. Native Agent Skills hosts should discover and activate skills from that metadata first. `skill-manifest.yml`, `router/ROUTING.md`, and `router/ROUTING_POLICY.yml` are compatibility, validation, and deterministic local-routing metadata rather than required model context.
 
 Choose one primary skill based on the dominant boundary, then compose only the secondary skills that add real constraints. Framework, library, deployment and observability adapters are evidence-gated.
 
