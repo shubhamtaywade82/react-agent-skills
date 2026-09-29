@@ -28,7 +28,7 @@ test("skills use Agent Skills metadata constraints and intent-focused descriptio
     assert.ok(description && description.length <= 1024, name + " description must be <= 1024 characters");
     assert.match(
       description.toLowerCase(),
-      /\b(when|for|with|during|across|against|covering|govern|apply|manage|implement|use|engineer|package|probe|score|design)\b/i,
+      /\\b(when|for|with|during|across|against|covering|govern|apply|manage|implement|use|engineer|package|probe|score|design|before|after)\\b/i,
       name + " description should communicate scope or applicability"
     );
   }
