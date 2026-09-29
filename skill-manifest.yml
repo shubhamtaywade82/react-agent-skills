@@ -345,3 +345,33 @@ skills:
   - name: agent-evaluation-engineering
     path: skills/agent-evaluation-engineering/SKILL.md
     triggers: [agent evaluation,benchmark,evaluation harness,fixture benchmark,agent scoring]
+  - name: astro-react
+    path: skills/astro-react/SKILL.md
+    triggers: [astro react, astro integration]
+  - name: css-modules
+    path: skills/css-modules/SKILL.md
+    triggers: [css modules, css modules config]
+  - name: emotion
+    path: skills/emotion/SKILL.md
+    triggers: [emotion, styled emotion]
+  - name: prettier
+    path: skills/prettier/SKILL.md
+    triggers: [prettier, prettier config]
+  - name: rsbuild
+    path: skills/rsbuild/SKILL.md
+    triggers: [rsbuild, rsbuild config]
+  - name: rspack
+    path: skills/rspack/SKILL.md
+    triggers: [rspack, rspack config]
+  - name: styled-components
+    path: skills/styled-components/SKILL.md
+    triggers: [styled components, styled-components]
+  - name: tailwindcss
+    path: skills/tailwindcss/SKILL.md
+    triggers: [tailwindcss, tailwind config]
+  - name: tanstack-start
+    path: skills/tanstack-start/SKILL.md
+    triggers: [tanstack start, tanstack-start]
+  - name: vanilla-extract
+    path: skills/vanilla-extract/SKILL.md
+    triggers: [vanilla extract, vanilla-extract]
