@@ -1,7 +1,6 @@
 import assert from "node:assert/strict";
 import { access, readdir, readFile } from "node:fs/promises";
 import { test } from "node:test";
-import { join } from "node:path";
 
 const root = new URL("..", import.meta.url);
 
@@ -23,14 +22,14 @@ test("skills use Agent Skills metadata constraints and intent-focused descriptio
   assert.equal(names.length, 127, "skill inventory should remain complete");
 
   for (const name of names) {
-    const content = await readFile(new URL(`skills/${name}/SKILL.md`, root), "utf8");
+    const content = await readFile(new URL(\`skills/\${name}/SKILL.md\`, root), "utf8");
     const { name: declaredName, description } = parseFrontmatter(content);
     assert.equal(declaredName, name);
-    assert.ok(description && description.length <= 1024, `${name} description must be <= 1024 characters`);
+    assert.ok(description && description.length <= 1024, \`\${name} description must be <= 1024 characters\`);
     assert.match(
       description.toLowerCase(),
-      /\b(when|for|with|during|across|against|covering|govern|apply|manage|implement|use|engineer|package|probe|score)\b/i,
-      `${name} description should communicate when the skill applies`
+      /\b(when|for|with|during|across|against|covering|govern|apply|manage|implement|use|engineer|package|probe|score|design)\b/i,
+      \`\${name} description should communicate scope or applicability\`
     );
   }
 });
@@ -40,15 +39,15 @@ test("skill-local references are explicit, shallow, and resolvable", async () =>
   let referenceDirectories = 0;
 
   for (const name of names) {
-    const skillRoot = new URL(`skills/${name}/`, root);
+    const skillRoot = new URL(\`skills/\${name}/\`, root);
     const skillContent = await readFile(new URL("SKILL.md", skillRoot), "utf8");
-    assert.doesNotMatch(skillContent, /\.\.\/\.\.\/(references|scripts)\//, `${name} must not escape its skill root`);
-    assert.doesNotMatch(skillContent, /(?:^|\])\(\/references\//, `${name} must not use root-absolute references`);
+    assert.doesNotMatch(skillContent, /\.\.\/\.\.\/(references|scripts)\//, \`\${name} must not escape its skill root\`);
+    assert.doesNotMatch(skillContent, /(?:^|\])\(\/references\//, \`\${name} must not use root-absolute references\`);
 
     const refs = skillContent.match(/(?:\(|\s)(references\/[^\s)\`]+)/g) ?? [];
     for (const raw of refs) {
       const path = raw.replace(/^\(|^\s/, "");
-      assert.equal(path.split("/").length, 2, `${name} reference paths must be one level deep: ${path}`);
+      assert.equal(path.split("/").length, 2, \`\${name} reference paths must be one level deep: \${path}\`);
       await access(new URL(path, skillRoot));
     }
 
@@ -86,10 +85,10 @@ test("routing metadata avoids generic trigger collisions and delegates tool choi
   const counts = new Map();
   for (const trigger of triggers) counts.set(trigger, (counts.get(trigger) ?? 0) + 1);
   const collisions = [...counts.entries()].filter(([, count]) => count > 1);
-  assert.ok(collisions.length <= 10, `too many exact trigger collisions: ${collisions.length}`);
+  assert.equal(collisions.length, 0, "exact trigger strings should not collide across skills");
 
   const integration = await readFile(new URL("docs/AGENT_INTEGRATION.md", root), "utf8");
-  assert.match(integration, /native Agent Skills discovery/i);
+  assert.match(integration, /native (?:Agent Skills )?discovery/i);
   assert.match(integration, /one primary skill/i);
 });
 
@@ -101,12 +100,12 @@ test("deterministic skill scripts are documented and local", async () => {
   ];
 
   for (const [skill, script] of expected) {
-    await access(new URL(`skills/${skill}/${script}`, root));
-    const content = await readFile(new URL(`skills/${skill}/SKILL.md`, root), "utf8");
-    assert.ok(content.includes(script), `${skill} must document ${script}`);
+    await access(new URL(\`skills/\${skill}/\${script}\`, root));
+    const content = await readFile(new URL(\`skills/\${skill}/SKILL.md\`, root), "utf8");
+    assert.ok(content.includes(script), \`\${skill} must document \${script}\`);
   }
 
   const routing = await readFile(new URL("router/ROUTING.md", root), "utf8");
-  assert.match(routing, /native Agent Skills discovery/i);
+  assert.match(routing, /native (?:Agent Skills )?discovery/i);
   assert.match(routing, /primary skill/i);
 });

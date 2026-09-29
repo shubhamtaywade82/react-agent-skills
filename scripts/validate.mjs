@@ -17,23 +17,23 @@ for (const entry of entries) {
   try {
     const skillUrl = new URL("skills/" + entry.name + "/", root);
     const content = await readFile(new URL(entry.path, root), "utf8");
-    const frontmatter = content.match(/^---\\n([\\s\\S]*?)\\n---\\n/);
+    const frontmatter = content.match(/^---\n([\s\S]*?)\n---\n/);
     if (!frontmatter) {
       errors.push(entry.path + ": missing YAML frontmatter");
     } else {
-      const declaredName = frontmatter[1].match(/^name:\\s*(.+)$/m)?.[1]?.trim();
-      const description = frontmatter[1].match(/^description:\\s*(.+)$/m)?.[1]?.trim() ?? "";
+      const declaredName = frontmatter[1].match(/^name:\s*(.+)$/m)?.[1]?.trim();
+      const description = frontmatter[1].match(/^description:\s*(.+)$/m)?.[1]?.trim() ?? "";
       if (declaredName !== entry.name) errors.push(entry.path + ": frontmatter name must match directory");
       if (!description || description.length > 1024) errors.push(entry.path + ": description must be 1-1024 characters");
     }
 
-    for (const required of ["---\\n", "## Activate when", "## Repository inspection", "## Verification"]) {
-      if (!content.includes(required)) {
-        errors.push(entry.path + ": missing " + required.replaceAll("\\n", ""));
-      }
+    for (const required of ["---\n", "## Activate when", "## Repository inspection", "## Verification"]) {
+      if (!content.includes(required)) errors.push(entry.path + ": missing " + required.replaceAll("\n", ""));
     }
 
-    const resourceRefs = [...content.matchAll(/(?:\\(|\\s)((?:references|scripts)\\/[^\\s)\`]+)/g)].map(([, value]) => value);
+    const resourceRefs = [...content.matchAll(/(?:\(|\s)((?:references|scripts)\/[A-Za-z0-9._/-]+)/g)]
+      .map(([, value]) => value);
+
     for (const resource of resourceRefs) {
       if (resource.split("/").length !== 2) errors.push(entry.path + ": resource path must be one level deep: " + resource);
       try {
@@ -76,7 +76,7 @@ async function validateRegistry(path, label, rootPattern) {
     if (!nameMatch) continue;
     const pathMatch = lines[index + 1]?.match(rootPattern.path);
     if (!pathMatch) {
-      errors.push(`Missing path for ${label}: ${nameMatch[1]}`);
+      errors.push(\`Missing path for \${label}: \${nameMatch[1]}\`);
       continue;
     }
     entries.push({ name: nameMatch[1], path: pathMatch[1] });
