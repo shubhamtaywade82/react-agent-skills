@@ -47,8 +47,8 @@ test("skill-local references are explicit, shallow, and resolvable", async () =>
     assert.doesNotMatch(skillContent, /(?:^|\])\(\/references\//, name + " must not use root-absolute references");
 
     const refs = skillContent.match(/(?:\(|\s)(references\/[^\s)\`]+)/g) ?? [];
-    assert.ok(content.split(/\r?\n/).length <= 500, name + " SKILL.md must remain <= 500 lines");
-    assert.ok(Math.ceil(content.length / 4) <= 5000, name + " SKILL.md must remain <= 5000 approximate tokens");
+    assert.ok(skillContent.split(/\r?\n/).length <= 500, name + " SKILL.md must remain <= 500 lines");
+    assert.ok(Math.ceil(skillContent.length / 4) <= 5000, name + " SKILL.md must remain <= 5000 approximate tokens");
 
     for (const raw of refs) {
       const path = raw.replace(/^\(|^\s/, "");
