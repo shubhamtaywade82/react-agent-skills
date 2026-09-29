@@ -43,3 +43,8 @@ Check tsconfig drift, module semantics, declaration output, package exports, gen
 ## Verification
 
 Compare pre/post typecheck and build evidence. Run tests and package/library validation when the repository publishes TypeScript artifacts.
+
+
+## Progressive disclosure
+
+Read `references/upgrade-gates.md` after selecting the target TypeScript version and before changing compiler/tooling configuration.

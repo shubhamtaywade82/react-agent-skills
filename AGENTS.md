@@ -17,6 +17,7 @@ This repository is an agent-executable React + TypeScript engineering skill libr
 11. Review security, accessibility, performance, resilience, and scope.
 12. Simplify accidental complexity.
 13. Report observed evidence only; never claim an unrun command passed.
+14. Do not load every skill or adapter for a broad task; use progressive disclosure and load references/scripts only when their conditions apply.
 
 ## React rules
 

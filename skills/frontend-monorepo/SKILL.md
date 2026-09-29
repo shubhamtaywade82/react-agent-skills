@@ -36,3 +36,8 @@ Check dependency edges, package exports, peer dependencies, lockfile, task graph
 ## Verification
 
 Run the workspace's graph-aware lint/typecheck/test/build commands and validate both the changed package and at least one representative consumer when applicable.
+
+
+## Progressive disclosure
+
+Read `references/package-boundaries.md` for package-boundary changes. Run `node scripts/check-package-boundaries.mjs <repo-root>` when validating workspace package names and `workspace:` dependencies.

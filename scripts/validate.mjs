@@ -15,10 +15,42 @@ for (const entry of entries) {
   names.add(entry.name);
 
   try {
+    const skillUrl = new URL("skills/" + entry.name + "/", root);
     const content = await readFile(new URL(entry.path, root), "utf8");
-    for (const required of ["---\n", "## Activate when", "## Repository inspection", "## Verification"]) {
+    const frontmatter = content.match(/^---\\n([\\s\\S]*?)\\n---\\n/);
+    if (!frontmatter) {
+      errors.push(entry.path + ": missing YAML frontmatter");
+    } else {
+      const declaredName = frontmatter[1].match(/^name:\\s*(.+)$/m)?.[1]?.trim();
+      const description = frontmatter[1].match(/^description:\\s*(.+)$/m)?.[1]?.trim() ?? "";
+      if (declaredName !== entry.name) errors.push(entry.path + ": frontmatter name must match directory");
+      if (!description || description.length > 1024) errors.push(entry.path + ": description must be 1-1024 characters");
+    }
+
+    for (const required of ["---\\n", "## Activate when", "## Repository inspection", "## Verification"]) {
       if (!content.includes(required)) {
-        errors.push(entry.path + ": missing " + required.replaceAll("\n", ""));
+        errors.push(entry.path + ": missing " + required.replaceAll("\\n", ""));
+      }
+    }
+
+    const resourceRefs = [...content.matchAll(/(?:\\(|\\s)((?:references|scripts)\\/[^\\s)\`]+)/g)].map(([, value]) => value);
+    for (const resource of resourceRefs) {
+      if (resource.split("/").length !== 2) errors.push(entry.path + ": resource path must be one level deep: " + resource);
+      try {
+        await readFile(new URL(resource, skillUrl), "utf8");
+      } catch {
+        errors.push(entry.path + ": missing referenced resource: " + resource);
+      }
+    }
+
+    for (const directory of ["references", "scripts"]) {
+      try {
+        const children = await readdir(new URL(directory + "/", skillUrl), { withFileTypes: true });
+        for (const child of children) {
+          if (child.isDirectory()) errors.push(entry.path + ": nested " + directory + " directories are not supported: " + child.name);
+        }
+      } catch {
+        // Optional resource directory.
       }
     }
   } catch {

@@ -34,3 +34,8 @@ Reject manual edits that will be overwritten, generated changes without their so
 ## Verification
 
 Run the repository generation command from a clean state and compare the result with the checked-in artifact.
+
+
+## Progressive disclosure
+
+Read `references/reproducibility.md` when generated output is checked in or a generator/schema changes. After regeneration, run `node scripts/check-generated-drift.mjs <repo-root> -- <generated-path> [...]` to prove the generated paths are clean.

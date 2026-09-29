@@ -13,7 +13,7 @@ Keep the repository available to the coding agent and expose:
 - evaluations/
 - benchmarks/
 
-The agent should load one primary skill plus only the secondary skills required by actual repository evidence.
+When the host supports the Agent Skills standard, let native discovery use `SKILL.md` frontmatter (`name` + `description`) first. The agent should load one primary skill plus only the secondary skills required by actual repository evidence.
 
 ## Install from GitHub
 
@@ -41,9 +41,19 @@ Before implementation, an agent should inspect:
 9. security-sensitive boundaries
 10. CI requirements
 
+## Progressive disclosure
+
+Do not load the complete skill pack into the model context. Activate a skill from its description, then read `references/<file>.md` only when the relevant condition applies. Use a skill-local `scripts/<file>` utility when a deterministic check is available.
+
+Reference links must remain relative to the skill root and one level deep.
+
 ## Conditional skills
 
 Do not load all framework adapters by default. Activate Vite, Next.js, Remix, React Router, TanStack Query, Redux, Zustand, Vitest, Testing Library, Playwright, Cypress, Storybook, or MSW guidance only after dependency/config/source evidence confirms the tool is actually used.
+
+## Routing discipline
+
+Prefer a strong intent match over a shared generic keyword. For ambiguous tasks, inspect the repository before loading framework/library adapters. Keep security, accessibility and testing as targeted secondary constraints rather than parallel broad skills.
 
 ## Full-stack repositories
 

@@ -1,0 +1,26 @@
+version: 1
+
+discovery:
+  native_agent_skills_first: true
+  preload_all_skills: false
+  primary_skills_max: 1
+  secondary_skills_max: 4
+  reference_loading: just_in_time
+  reference_depth: 1
+
+routing:
+  dominant_boundary_required: true
+  adapters_require_repository_evidence: true
+  generic_trigger_words_are_non_owning: true
+  prefer_exact_tool_or_domain_match: true
+  inspect_before_adapter_activation: true
+
+selection:
+  prefer_existing_repository_conventions: true
+  prefer_generic_domain_skill_before_vendor_adapter: true
+  remove_secondary_skills_without_material_constraint: true
+
+resources:
+  references_are_skill_local: true
+  scripts_are_skill_local: true
+  forbid_reference_chains: true
