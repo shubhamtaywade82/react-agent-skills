@@ -40,7 +40,7 @@ test("skill discovery evaluator accepts the checked-in corpus", async () => {
   const result = JSON.parse(stdout);
   assert.equal(result.version, 1);
   assert.ok(result.summary.total >= 24);
-  assert.equal(result.summary.failed, 0);
+  assert.equal(result.summary.failed, 0, JSON.stringify(result.cases.filter((entry) => !entry.pass), null, 2));
   assert.equal(result.summary.passed, result.summary.total);
 });
 
