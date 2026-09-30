@@ -1,6 +1,6 @@
 ---
 name: frontend-repository-archetypes
-description: Classify a frontend repository before routing skills so agents do not apply the wrong rendering, packaging, or deployment assumptions.
+description: Classify frontend repository archetypes before routing skills, including application vs library, monorepo/workspace structure, framework/runtime shape, package boundaries, and deployment assumptions.
 ---
 
 # Frontend Repository Archetypes
