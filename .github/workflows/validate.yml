@@ -16,6 +16,7 @@ jobs:
       - run: node scripts/validate.mjs
       - run: node scripts/validate-benchmarks.mjs
       - run: node scripts/validate-fixtures.mjs
+      - run: node scripts/skill-discovery-evaluator.mjs --check
       - run: node scripts/fixture-evaluator.mjs --help
       - run: node scripts/benchmark-runner.mjs --help
       - run: bash -n bin/install
