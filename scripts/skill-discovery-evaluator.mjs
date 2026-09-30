@@ -23,7 +23,7 @@ function tokens(value) {
 }
 
 function parseSkill(content) {
-  const match = content.match(/^---\n([\\s\\S]*?)\n---\n/);
+  const match = content.match(/^---\n([\s\S]*?)\n---\n/);
   if (!match) throw new Error("SKILL.md is missing frontmatter");
   const name = match[1].match(/^name:\s*(.+)$/m)?.[1]?.trim();
   const description = match[1].match(/^description:\s*(.+)$/m)?.[1]?.trim();
