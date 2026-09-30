@@ -79,7 +79,7 @@ Choose one primary skill based on the dominant boundary, then compose only the s
 
 This pack follows the Agent Skills progressive-disclosure model: concise `SKILL.md` entrypoints, skill-local `references/` for detailed material, and `scripts/` for deterministic repeatable checks. Agents should not preload the whole pack.
 
-The repository includes contract tests that enforce description limits, shallow/resolvable references, precise routing metadata, and deterministic resource presence.
+The repository includes contract tests that enforce description limits, shallow/resolvable references, precise routing metadata, deterministic resource presence, and native skill-discovery quality. See [skill discovery evaluation](docs/SKILL_DISCOVERY_EVALUATION.md) for the methodology and limits.
 
 
 ## Validation
@@ -90,7 +90,8 @@ Run:
     node scripts/validate.mjs
     node scripts/validate-benchmarks.mjs
     node scripts/validate-fixtures.mjs
-    node --test test/skill-efficiency-contract.test.mjs test/skill-resource-contract.test.mjs
+    node --test test/skill-efficiency-contract.test.mjs test/skill-resource-contract.test.mjs test/skill-discovery-contract.test.mjs
+    node scripts/skill-discovery-evaluator.mjs --check
 
 GitHub Actions runs these structural, benchmark, and installer checks on pushes and pull requests.
 
