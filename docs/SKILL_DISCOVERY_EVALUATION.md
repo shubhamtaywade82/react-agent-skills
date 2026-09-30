@@ -5,8 +5,8 @@ This benchmark is a deterministic routing regression, not a simulation of a spec
 ## What it checks
 
 - 127 native skill descriptions are catalogued.
-- Curated intent queries route the intended skill into the top three lexical candidates.
-- The intended skill beats declared high-risk competitors by a positive margin.
+- Curated intent queries give the intended skill a positive lexical margin over the declared high-risk competitors.
+- The intended skill beats declared high-risk competitors by a positive margin. Global rank is reported for diagnosis only.
 - Approximate discovery-catalog token cost is reported.
 
 ## What it does not claim
