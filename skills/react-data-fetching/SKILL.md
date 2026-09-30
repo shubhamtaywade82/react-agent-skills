@@ -1,6 +1,6 @@
 ---
 name: react-data-fetching
-description: Use when implementing HTTP APIs, queries, mutations, caching, invalidation, optimistic updates, and asynchronous server state.
+description: Use when implementing HTTP APIs, HTTP request lifecycles, generic data fetching, server state, caching, invalidation, optimistic updates, and asynchronous query behavior.
 ---
 
 # React Data Fetching
