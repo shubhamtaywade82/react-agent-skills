@@ -1,0 +1,455 @@
+{
+  "version": 1,
+  "purpose": "Representative routing regression corpus for native Agent Skills metadata.",
+  "cases": [
+    {
+      "id": "workflow-feature-change",
+      "query": "Implement a non-trivial React repository feature and verify it end to end.",
+      "expected_skill": "agent-workflow",
+      "competitors": [
+        "react-architecture"
+      ]
+    },
+    {
+      "id": "repository-archetype",
+      "query": "Identify whether this frontend repository is a monorepo and determine its application architecture before editing.",
+      "expected_skill": "frontend-repository-archetypes",
+      "competitors": [
+        "frontend-architecture"
+      ]
+    },
+    {
+      "id": "change-risk",
+      "query": "Classify the blast radius and verification level for a frontend dependency and architecture change.",
+      "expected_skill": "frontend-risk-classification",
+      "competitors": [
+        "frontend-architecture"
+      ]
+    },
+    {
+      "id": "browser-regression",
+      "query": "Debug a runtime browser regression involving console errors, hydration and failed network requests.",
+      "expected_skill": "frontend-debugging",
+      "competitors": [
+        "frontend-e2e"
+      ]
+    },
+    {
+      "id": "feature-boundary",
+      "query": "Reshape React feature boundaries, module ownership and shared abstractions without creating circular dependencies.",
+      "expected_skill": "react-architecture",
+      "competitors": [
+        "frontend-architecture"
+      ]
+    },
+    {
+      "id": "component-api",
+      "query": "Design a reusable React component API with explicit props and composition.",
+      "expected_skill": "react-component-engineering",
+      "competitors": [
+        "react-architecture"
+      ]
+    },
+    {
+      "id": "effect-bug",
+      "query": "Fix a React useEffect dependency and synchronization bug without duplicating derived state.",
+      "expected_skill": "react-hooks-effects",
+      "competitors": [
+        "react-async-ui"
+      ]
+    },
+    {
+      "id": "client-state",
+      "query": "Decide where local UI state, context, reducer state or a shared store should live.",
+      "expected_skill": "react-state-management",
+      "competitors": [
+        "zustand",
+        "redux"
+      ]
+    },
+    {
+      "id": "query-cache",
+      "query": "Fix a server-state query key, cache invalidation and mutation consistency problem.",
+      "expected_skill": "react-data-fetching",
+      "competitors": [
+        "tanstack-query",
+        "swr"
+      ]
+    },
+    {
+      "id": "async-ui",
+      "query": "Implement loading, empty, refresh, retry and mutation states for an async React UI.",
+      "expected_skill": "react-async-ui",
+      "competitors": [
+        "react-error-resilience"
+      ]
+    },
+    {
+      "id": "forms",
+      "query": "Implement a React form with field validation, submission state and accessible error handling.",
+      "expected_skill": "react-forms-validation",
+      "competitors": [
+        "react-actions-forms"
+      ]
+    },
+    {
+      "id": "navigation",
+      "query": "Change React routing, navigation and URL state while preserving deep links.",
+      "expected_skill": "react-routing",
+      "competitors": [
+        "react-router"
+      ]
+    },
+    {
+      "id": "component-testing",
+      "query": "Add focused React integration tests with Testing Library and Vitest.",
+      "expected_skill": "react-testing-engineering",
+      "competitors": [
+        "testing-library",
+        "vitest"
+      ]
+    },
+    {
+      "id": "browser-e2e",
+      "query": "Add a Playwright end-to-end user journey with browser assertions and traces.",
+      "expected_skill": "frontend-e2e",
+      "competitors": [
+        "playwright"
+      ]
+    },
+    {
+      "id": "accessibility",
+      "query": "Audit a React interface for keyboard navigation, focus management and screen-reader semantics.",
+      "expected_skill": "react-accessibility",
+      "competitors": [
+        "react-accessibility-widgets"
+      ]
+    },
+    {
+      "id": "performance",
+      "query": "Profile React rendering and determine whether memoization or virtualization is justified.",
+      "expected_skill": "react-performance",
+      "competitors": [
+        "react-compiler"
+      ]
+    },
+    {
+      "id": "frontend-security",
+      "query": "Perform a frontend security review covering XSS, CSRF, third-party scripts and browser trust boundaries.",
+      "expected_skill": "frontend-security",
+      "competitors": [
+        "react-security",
+        "browser-security-dom-safety"
+      ]
+    },
+    {
+      "id": "modern-react",
+      "query": "Adopt React 19.3 ViewTransition or Fragment Refs only after verifying React and renderer support.",
+      "expected_skill": "react-19-modern-apis",
+      "competitors": [
+        "react-modern-rendering"
+      ]
+    },
+    {
+      "id": "react-actions",
+      "query": "Implement React Actions using useActionState, useFormStatus and useOptimistic.",
+      "expected_skill": "react-actions-forms",
+      "competitors": [
+        "react-forms-validation"
+      ]
+    },
+    {
+      "id": "react-compiler",
+      "query": "Evaluate React Compiler diagnostics and decide whether manual useMemo or useCallback changes are needed.",
+      "expected_skill": "react-compiler",
+      "competitors": [
+        "react-performance"
+      ]
+    },
+    {
+      "id": "rsc-security",
+      "query": "Review React Server Components and server function security boundaries for exposure and remote-code risks.",
+      "expected_skill": "react-server-security",
+      "competitors": [
+        "react-server-components"
+      ]
+    },
+    {
+      "id": "typescript-types",
+      "query": "Design a TypeScript discriminated union, generic API and explicit public type contract.",
+      "expected_skill": "typescript-type-design",
+      "competitors": [
+        "typescript-core-engineering"
+      ]
+    },
+    {
+      "id": "runtime-schema",
+      "query": "Harden JSON and other untrusted runtime inputs with explicit TypeScript runtime validation.",
+      "expected_skill": "typescript-runtime-contracts",
+      "competitors": [
+        "typescript-type-design"
+      ]
+    },
+    {
+      "id": "async-errors",
+      "query": "Model async cancellation, retry and normalized promise errors in TypeScript.",
+      "expected_skill": "typescript-async-error-modeling",
+      "competitors": [
+        "frontend-networking",
+        "react-async-ui"
+      ]
+    },
+    {
+      "id": "public-api",
+      "query": "Change an exported TypeScript library API while preserving package boundaries and semver expectations.",
+      "expected_skill": "typescript-public-api-design",
+      "competitors": [
+        "typescript-package-publishing"
+      ]
+    },
+    {
+      "id": "api-contract",
+      "query": "Keep an OpenAPI or GraphQL transport contract mapped to a stable frontend domain shape.",
+      "expected_skill": "typescript-api-contracts",
+      "competitors": [
+        "frontend-generated-code"
+      ]
+    },
+    {
+      "id": "ts-migration",
+      "query": "Plan a TypeScript 6 or 7 compiler upgrade and identify migration gates and breaking changes.",
+      "expected_skill": "typescript-version-migration",
+      "competitors": [
+        "typescript-migration",
+        "typescript-configuration"
+      ]
+    },
+    {
+      "id": "ts-build",
+      "query": "Design a TypeScript project-reference build graph with incremental declaration builds.",
+      "expected_skill": "typescript-build-architecture",
+      "competitors": [
+        "typescript-configuration"
+      ]
+    },
+    {
+      "id": "eslint-config",
+      "query": "Migrate ESLint configuration to flat config and wire typed linting correctly.",
+      "expected_skill": "eslint",
+      "competitors": [
+        "typescript-eslint"
+      ]
+    },
+    {
+      "id": "typed-eslint",
+      "query": "Configure typescript-eslint Project Service for typed linting across a TypeScript monorepo.",
+      "expected_skill": "typescript-eslint",
+      "competitors": [
+        "eslint",
+        "frontend-monorepo"
+      ]
+    },
+    {
+      "id": "formatting",
+      "query": "Choose and enforce a frontend Prettier or Biome formatting contract.",
+      "expected_skill": "frontend-formatting",
+      "competitors": [
+        "prettier",
+        "biome"
+      ]
+    },
+    {
+      "id": "monorepo",
+      "query": "Fix frontend monorepo package boundaries, workspace dependencies and affected-project verification.",
+      "expected_skill": "frontend-monorepo",
+      "competitors": [
+        "typescript-build-architecture"
+      ]
+    },
+    {
+      "id": "package-publish",
+      "query": "Validate TypeScript package exports, declarations, ESM and CJS compatibility before publishing.",
+      "expected_skill": "typescript-package-publishing",
+      "competitors": [
+        "typescript-public-api-design"
+      ]
+    },
+    {
+      "id": "generated-code",
+      "query": "Regenerate an OpenAPI or GraphQL client and verify generated output is reproducible.",
+      "expected_skill": "frontend-generated-code",
+      "competitors": [
+        "openapi-tooling",
+        "graphql-codegen"
+      ]
+    },
+    {
+      "id": "i18n",
+      "query": "Fix localized React text, pluralization, RTL layout and timezone-aware date formatting.",
+      "expected_skill": "frontend-internationalization",
+      "competitors": [
+        "react-accessibility"
+      ]
+    },
+    {
+      "id": "offline",
+      "query": "Implement offline-first PWA behavior with service worker caching and background sync.",
+      "expected_skill": "frontend-offline-pwa",
+      "competitors": [
+        "frontend-production"
+      ]
+    },
+    {
+      "id": "realtime",
+      "query": "Implement WebSocket or SSE reconnection and real-time event handling.",
+      "expected_skill": "frontend-realtime",
+      "competitors": [
+        "frontend-networking"
+      ]
+    },
+    {
+      "id": "web-performance",
+      "query": "Measure LCP, INP and CLS and enforce a browser performance budget.",
+      "expected_skill": "frontend-web-performance",
+      "competitors": [
+        "react-performance"
+      ]
+    },
+    {
+      "id": "test-reliability",
+      "query": "Investigate flaky browser tests, retries, sharding and determinism problems.",
+      "expected_skill": "frontend-test-reliability",
+      "competitors": [
+        "frontend-e2e"
+      ]
+    },
+    {
+      "id": "visual-testing",
+      "query": "Fix a visual regression screenshot baseline and make browser rendering deterministic.",
+      "expected_skill": "frontend-visual-testing",
+      "competitors": [
+        "storybook"
+      ]
+    },
+    {
+      "id": "rendering",
+      "query": "Choose between CSR, SSR, SSG, ISR and streaming for a React application.",
+      "expected_skill": "frontend-rendering-strategies",
+      "competitors": [
+        "react-modern-rendering"
+      ]
+    },
+    {
+      "id": "supply-chain",
+      "query": "Review frontend dependency supply chain, lockfiles, SBOM and provenance controls.",
+      "expected_skill": "frontend-supply-chain",
+      "competitors": [
+        "frontend-dependency-management"
+      ]
+    },
+    {
+      "id": "codemod",
+      "query": "Run a safe AST-aware frontend codemod migration with staged rollout and semantic verification.",
+      "expected_skill": "frontend-codemod-migration",
+      "competitors": [
+        "typescript-migration"
+      ]
+    },
+    {
+      "id": "accessibility-widget",
+      "query": "Implement a combobox with ARIA semantics, roving focus or active descendant keyboard behavior.",
+      "expected_skill": "react-accessibility-widgets",
+      "competitors": [
+        "react-accessibility"
+      ]
+    },
+    {
+      "id": "storage",
+      "query": "Implement localStorage or IndexedDB with migration and corruption handling.",
+      "expected_skill": "frontend-storage",
+      "competitors": [
+        "frontend-browser-platform"
+      ]
+    },
+    {
+      "id": "messaging",
+      "query": "Secure iframe postMessage and BroadcastChannel communication between browser contexts.",
+      "expected_skill": "frontend-messaging",
+      "competitors": [
+        "browser-security-dom-safety"
+      ]
+    },
+    {
+      "id": "workers",
+      "query": "Move expensive work to a Web Worker and design its lifecycle and message contract.",
+      "expected_skill": "frontend-workers",
+      "competitors": [
+        "frontend-browser-platform"
+      ]
+    },
+    {
+      "id": "networking",
+      "query": "Harden browser fetch with HTTP timeout, cancellation, CORS and retry behavior.",
+      "expected_skill": "frontend-networking",
+      "competitors": [
+        "typescript-async-error-modeling"
+      ]
+    },
+    {
+      "id": "browser-auth",
+      "query": "Implement browser login, logout, session refresh and MFA boundaries safely.",
+      "expected_skill": "browser-authentication",
+      "competitors": [
+        "auth-session-boundaries"
+      ]
+    },
+    {
+      "id": "media",
+      "query": "Implement camera and microphone capture with MediaDevices permissions and autoplay constraints.",
+      "expected_skill": "browser-media",
+      "competitors": [
+        "frontend-browser-platform"
+      ]
+    },
+    {
+      "id": "tanstack-query-adapter",
+      "query": "Change TanStack Query QueryClient, query keys, invalidation or optimistic mutation behavior.",
+      "expected_skill": "tanstack-query",
+      "competitors": [
+        "react-data-fetching"
+      ]
+    },
+    {
+      "id": "nextjs-adapter",
+      "query": "Change a Next.js App Router application involving server/client boundaries and caching.",
+      "expected_skill": "nextjs",
+      "competitors": [
+        "react-server-components"
+      ]
+    },
+    {
+      "id": "playwright-adapter",
+      "query": "Fix Playwright locator, trace and browser automation configuration.",
+      "expected_skill": "playwright",
+      "competitors": [
+        "frontend-e2e"
+      ]
+    },
+    {
+      "id": "sentry-adapter",
+      "query": "Fix Sentry source maps, release correlation or frontend PII scrubbing.",
+      "expected_skill": "sentry",
+      "competitors": [
+        "react-observability"
+      ]
+    },
+    {
+      "id": "tailwind-adapter",
+      "query": "Fix Tailwind responsive state variants and production content scanning.",
+      "expected_skill": "tailwindcss",
+      "competitors": [
+        "frontend-styling-layout"
+      ]
+    }
+  ]
+}\n
