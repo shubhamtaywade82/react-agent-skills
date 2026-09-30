@@ -12,6 +12,19 @@ jobs:
       - uses: actions/setup-node@v5
         with:
           node-version: 22
+      - name: Evaluate native skill discovery
+        id: discovery
+        continue-on-error: true
+        run: node scripts/skill-discovery-evaluator.mjs --check > "$RUNNER_TEMP/skill-discovery-report.json"
+
+      - name: Upload skill discovery report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: skill-discovery-report
+          path: ${{ runner.temp }}/skill-discovery-report.json
+          if-no-files-found: warn
+
       - run: node --test test/*.test.mjs
       - run: node scripts/validate.mjs
       - run: node scripts/validate-benchmarks.mjs
@@ -22,3 +35,9 @@ jobs:
       - run: bash -n bin/install
       - run: bash bin/install --help
       - run: rm -rf "$RUNNER_TEMP/react-agent-skills" && bash bin/install --target "$RUNNER_TEMP/react-agent-skills" && test -f "$RUNNER_TEMP/react-agent-skills/AGENTS.md" && test -f "$RUNNER_TEMP/react-agent-skills/skill-manifest.yml"
+
+      - name: Enforce native skill discovery gate
+        if: always() && steps.discovery.outcome == 'failure'
+        run: |
+          echo "Native skill discovery regression gate failed. See the skill-discovery-report artifact."
+          exit 1
