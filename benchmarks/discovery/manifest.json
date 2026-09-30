@@ -102,7 +102,7 @@
     },
     {
       "id": "component-testing",
-      "query": "Add focused React integration tests with Testing Library and Vitest.",
+      "query": "Test React components, hooks, forms, async UI, user interactions, accessibility, and integration boundaries.",
       "expected_skill": "react-testing-engineering",
       "competitors": [
         "testing-library",
@@ -111,7 +111,7 @@
     },
     {
       "id": "browser-e2e",
-      "query": "Add a Playwright end-to-end user journey with browser assertions and traces.",
+      "query": "Test an end-to-end user journey in a real browser and preserve browser diagnostics.",
       "expected_skill": "frontend-e2e",
       "competitors": [
         "playwright"
@@ -251,7 +251,7 @@
     },
     {
       "id": "formatting",
-      "query": "Choose and enforce a frontend Prettier or Biome formatting contract.",
+      "query": "Enforce deterministic frontend formatting without mixing formatter policy into semantic lint rules.",
       "expected_skill": "frontend-formatting",
       "competitors": [
         "prettier",
@@ -450,6 +450,38 @@
       "competitors": [
         "frontend-styling-layout"
       ]
+    },
+    {
+      "id": "testing-library-adapter",
+      "query": "Use Testing Library user-centric accessible queries and user-event for a React test.",
+      "expected_skill": "testing-library",
+      "competitors": [
+        "react-testing-engineering"
+      ]
+    },
+    {
+      "id": "vitest-adapter",
+      "query": "Configure Vitest fake timers, mocks, coverage and test environments.",
+      "expected_skill": "vitest",
+      "competitors": [
+        "react-testing-engineering"
+      ]
+    },
+    {
+      "id": "prettier-adapter",
+      "query": "Apply Prettier conventions for deterministic frontend formatting in a repository that uses Prettier.",
+      "expected_skill": "prettier",
+      "competitors": [
+        "frontend-formatting"
+      ]
+    },
+    {
+      "id": "biome-adapter",
+      "query": "Apply Biome formatting and linting when Biome is the configured frontend toolchain.",
+      "expected_skill": "biome",
+      "competitors": [
+        "frontend-formatting"
+      ]
     }
   ]
-}\n
+}
