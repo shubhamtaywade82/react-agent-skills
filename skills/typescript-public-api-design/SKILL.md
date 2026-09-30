@@ -1,6 +1,6 @@
 ---
 name: typescript-public-api-design
-description: Design stable exported TypeScript contracts for libraries, packages, and shared application modules.
+description: Design stable public TypeScript APIs and exported contracts for libraries, packages, and shared application modules without coupling API design to release mechanics.
 ---
 
 ## Activate when
