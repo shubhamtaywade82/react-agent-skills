@@ -1,6 +1,6 @@
 ---
 name: react-component-engineering
-description: Use when designing, implementing, refactoring, or reviewing React components and their public APIs.
+description: Use when designing, implementing, refactoring, or reviewing React component APIs, props, composition, reusable UI boundaries, and component-level contracts.
 ---
 
 # React Component Engineering
