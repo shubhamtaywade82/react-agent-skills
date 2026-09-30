@@ -1,6 +1,6 @@
 ---
 name: react-state-management
-description: Use when choosing or changing React local state, reducers, context, stores, or state ownership.
+description: Use when deciding React UI state ownership across component state, useState, reducers, context, and shared stores.
 ---
 
 # React State Management
