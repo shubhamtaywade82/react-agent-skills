@@ -1,6 +1,6 @@
 ---
 name: react-routing
-description: Use when adding or changing routes, navigation, URL-driven state, route params, loaders, guards, or deep-link behavior.
+description: Use for framework-agnostic React route design, navigation, URL-driven state, route params, guards, and deep-link behavior.
 ---
 
 # React Routing
