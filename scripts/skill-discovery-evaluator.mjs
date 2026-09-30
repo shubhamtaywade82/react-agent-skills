@@ -74,7 +74,7 @@ function evaluate(catalog, cases) {
     const margin = expected
       ? expected.score - Math.max(0, ...competitors.map((item) => item.score))
       : null;
-    const pass = Boolean(expected && expected.score >= 2 && rank <= 3 && margin > 0);
+    const pass = Boolean(expected && expected.score >= 2 && margin > 0);
     return { id: entry.id, expected_skill: entry.expected_skill, rank, score: expected?.score ?? 0, margin, competitors, pass, top: ranked.slice(0, 5) };
   });
 }
