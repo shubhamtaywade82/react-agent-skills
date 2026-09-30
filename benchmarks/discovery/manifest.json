@@ -12,7 +12,7 @@
     },
     {
       "id": "repository-archetype",
-      "query": "Identify whether this frontend repository is a monorepo and determine its application architecture before editing.",
+      "query": "Classify the frontend repository archetype, application versus library, monorepo/workspaces and framework/runtime shape before routing.",
       "expected_skill": "frontend-repository-archetypes",
       "competitors": [
         "frontend-architecture"
@@ -44,7 +44,7 @@
     },
     {
       "id": "component-api",
-      "query": "Design a reusable React component API with explicit props and composition.",
+      "query": "Design reusable React component APIs, props, composition, and component-level contracts.",
       "expected_skill": "react-component-engineering",
       "competitors": [
         "react-architecture"
@@ -60,7 +60,7 @@
     },
     {
       "id": "client-state",
-      "query": "Decide where local UI state, context, reducer state or a shared store should live.",
+      "query": "Decide React UI state ownership across component state, useState, reducers and context.",
       "expected_skill": "react-state-management",
       "competitors": [
         "zustand",
@@ -69,7 +69,7 @@
     },
     {
       "id": "query-cache",
-      "query": "Fix a server-state query key, cache invalidation and mutation consistency problem.",
+      "query": "Implement an HTTP server-state data fetching layer with cache lifecycle, invalidation and request errors.",
       "expected_skill": "react-data-fetching",
       "competitors": [
         "tanstack-query",
@@ -86,7 +86,7 @@
     },
     {
       "id": "forms",
-      "query": "Implement a React form with field validation, submission state and accessible error handling.",
+      "query": "Build a React multi-step form with field-level validation, field errors and submission behavior.",
       "expected_skill": "react-forms-validation",
       "competitors": [
         "react-actions-forms"
@@ -94,7 +94,7 @@
     },
     {
       "id": "navigation",
-      "query": "Change React routing, navigation and URL state while preserving deep links.",
+      "query": "Design framework-agnostic React navigation, URL-driven state and deep-link behavior.",
       "expected_skill": "react-routing",
       "competitors": [
         "react-router"
@@ -127,7 +127,7 @@
     },
     {
       "id": "performance",
-      "query": "Profile React rendering and determine whether memoization or virtualization is justified.",
+      "query": "Profile React rendering, large lists, code splitting and virtualization and decide whether memoization is justified.",
       "expected_skill": "react-performance",
       "competitors": [
         "react-compiler"
@@ -201,7 +201,7 @@
     },
     {
       "id": "public-api",
-      "query": "Change an exported TypeScript library API while preserving package boundaries and semver expectations.",
+      "query": "Design a stable public TypeScript API for a shared module without package publishing or release mechanics.",
       "expected_skill": "typescript-public-api-design",
       "competitors": [
         "typescript-package-publishing"
@@ -209,7 +209,7 @@
     },
     {
       "id": "api-contract",
-      "query": "Keep an OpenAPI or GraphQL transport contract mapped to a stable frontend domain shape.",
+      "query": "Design typed client/server API contracts for transport, domain, validation, errors and compatibility boundaries.",
       "expected_skill": "typescript-api-contracts",
       "competitors": [
         "frontend-generated-code"
@@ -276,7 +276,7 @@
     },
     {
       "id": "generated-code",
-      "query": "Regenerate an OpenAPI or GraphQL client and verify generated output is reproducible.",
+      "query": "Govern generated frontend code with source ownership and reproducible regeneration, regardless of which generator produced it.",
       "expected_skill": "frontend-generated-code",
       "competitors": [
         "openapi-tooling",
@@ -309,7 +309,7 @@
     },
     {
       "id": "web-performance",
-      "query": "Measure LCP, INP and CLS and enforce a browser performance budget.",
+      "query": "Diagnose Core Web Vitals, resource waterfalls, long tasks, rendering traces and measured performance budgets.",
       "expected_skill": "frontend-web-performance",
       "competitors": [
         "react-performance"
@@ -373,7 +373,7 @@
     },
     {
       "id": "messaging",
-      "query": "Secure iframe postMessage and BroadcastChannel communication between browser contexts.",
+      "query": "Design browser messaging across iframes, workers and tabs with explicit origins and message schemas.",
       "expected_skill": "frontend-messaging",
       "competitors": [
         "browser-security-dom-safety"
