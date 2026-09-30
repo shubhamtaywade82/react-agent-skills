@@ -31,11 +31,17 @@ test("skill discovery benchmark corpus is present and non-trivial", async () => 
 test("skill discovery evaluator accepts the checked-in corpus", async () => {
   await access(new URL("scripts/skill-discovery-evaluator.mjs", root));
 
-  const { stdout } = await exec(process.execPath, [
-    new URL("scripts/skill-discovery-evaluator.mjs", root).pathname,
-    "--manifest", new URL("benchmarks/discovery/manifest.json", root).pathname,
-    "--check"
-  ]);
+  let stdout = "";
+  let stderr = "";
+  try {
+    ({ stdout, stderr } = await exec(process.execPath, [
+      new URL("scripts/skill-discovery-evaluator.mjs", root).pathname,
+      "--manifest", new URL("benchmarks/discovery/manifest.json", root).pathname,
+      "--check"
+    ]));
+  } catch (error) {
+    assert.fail("skill discovery evaluator failed to execute: " + (error.stderr || stderr || "") + (error.stdout || stdout || ""));
+  }
 
   const result = JSON.parse(stdout);
   assert.equal(result.version, 1);
