@@ -123,6 +123,23 @@ GitHub Actions runs these structural, benchmark, and installer checks on pushes 
 
 This is engineering guidance for coding agents. It does not replace product requirements, security review, framework-specific documentation, or repository inspection.
 
+## Full-stack: Rails + React and Node + React
+
+This pack is the frontend half. Backend skills are not copied here; install the backend pack next to it:
+
+| Backend | Install with this pack | Seam skill |
+| --- | --- | --- |
+| Ruby on Rails | [ruby-agent-skills](https://github.com/shubhamtaywade82/ruby-agent-skills) | `rails-react-integration` |
+| Node.js + TypeScript | [node-agent-skills](https://github.com/shubhamtaywade82/node-agent-skills) | `node-react-integration` |
+
+```bash
+npx skills add shubhamtaywade82/react-agent-skills -a claude-code
+npx skills add shubhamtaywade82/node-agent-skills -a claude-code      # Node backend
+# Rails backend: run `bash bin/install --agent claude` in a ruby-agent-skills checkout, before this pack
+```
+
+Routing, ownership per concern, and current skill-name collisions with ruby-agent-skills are in [Full-stack composition](docs/FULLSTACK_COMPOSITION.md).
+
 ## Split architecture
 
 The planned split from `ruby-agent-skills` is documented in:

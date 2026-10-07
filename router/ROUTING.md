@@ -87,7 +87,7 @@ Route by the dominant engineering boundary, then compose only real secondary con
 3. Add secondary skills only for concrete dependencies.
 4. Load framework/tool adapters only after dependency, config, or source evidence confirms them.
 5. Keep UI state, server state, synchronization, runtime validation, and browser trust as separate concerns.
-6. Cross-boundary Rails/API work must compose with ruby-agent-skills; do not duplicate Rails backend guidance here.
+6. Cross-boundary backend work composes with the backend pack: Rails with ruby-agent-skills (`rails-react-integration`), Node.js with node-agent-skills (`node-react-integration`). Do not duplicate backend guidance here; see the backend companion table below.
 7. Security and accessibility are implementation constraints, not post-hoc cleanup.
 
 | TypeScript major migration | typescript-version-migration | typescript-core-engineering, typescript-configuration, dependency-management, testing |
@@ -161,3 +161,16 @@ Route by the dominant engineering boundary, then compose only real secondary con
 | Agent quality scoring | agent-behavior-scoring | evaluation evidence, fixture runner |
 | Multi-turn agent recovery | agent-multi-turn-evaluations | fixture evaluation, testing, debugging |
 | Adversarial agent behavior | agent-adversarial-evaluations | security, browser safety, fixture evaluation |
+
+## Backend companion packs
+
+Backend skills live in separate packs and are never copied here. When a task crosses the client/server boundary, this pack owns the client side and the backend pack owns the server side and the seam (`docs/FULLSTACK_COMPOSITION.md`).
+
+| Detected backend | Seam owner (backend pack) | Client side (this pack) |
+|---|---|---|
+| Rails (`Gemfile` with `rails`) | ruby-agent-skills / rails-react-integration | typescript-api-contracts, typescript-runtime-contracts, react-data-fetching, react-forms-validation, browser-authentication |
+| Node.js service or BFF (separate `package.json` with an HTTP framework) | node-agent-skills / node-react-integration | typescript-api-contracts, typescript-runtime-contracts, react-data-fetching, react-forms-validation, browser-authentication |
+| Next.js, Remix, or TanStack Start route handlers in this app | this pack: framework adapter + react-server-security | — |
+
+- A client-only change (component, hook, client state, styling, client test) stays in this pack even in a full-stack repository.
+- When the backend pack is not installed, finish the client work and report the backend follow-up and the backend skill that owns it.

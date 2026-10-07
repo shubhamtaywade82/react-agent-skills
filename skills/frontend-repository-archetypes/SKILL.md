@@ -41,7 +41,7 @@ Classify the repository across independent axes rather than assigning one label.
 3. A monorepo requires package-level routing plus workspace-level dependency/build analysis.
 4. A library requires stronger exported API and packaging checks than a private application.
 5. An RSC repository requires server/client boundary and RSC security checks.
-6. A Rails/React repository requires cross-boundary API/auth/error semantics and should compose with `ruby-agent-skills`.
+6. A Rails/React repository requires cross-boundary API/auth/error semantics and composes with `ruby-agent-skills` (`rails-react-integration`); a Node.js backend + React repository composes with `node-agent-skills` (`node-react-integration`). Classify the backend from its own manifest (`Gemfile`, server `package.json`) before choosing the pack.
 
 ## Implementation contract
 
