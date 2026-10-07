@@ -1,11 +1,11 @@
 # Contributing
 
 Every skill must:
-- live at \`skills/<skill-name>/SKILL.md\`;
-- have \`name\` and \`description\` frontmatter;
+- live at `skills/<skill-name>/SKILL.md`;
+- have `name` and `description` frontmatter;
 - define activation, repository inspection, decision rules, implementation procedure, anti-patterns, review checklist, and verification;
 - use source-foundation links to primary documentation;
-- be registered in \`skill-manifest.yml\`.
+- be registered in `skill-manifest.yml`.
 
 Run:
 

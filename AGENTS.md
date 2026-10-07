@@ -21,6 +21,10 @@ This repository is an agent-executable React + TypeScript engineering skill libr
 15. Treat SKILL.md as the always-loaded entrypoint; read skill-local references only just before the decision they inform.
 16. Do not follow reference-to-reference chains; keep supporting resources one level deep.
 
+## Backend companion packs
+
+Backend work belongs to a backend pack: Rails to `ruby-agent-skills`, Node.js to `node-agent-skills`. Never copy backend skills here. For cross-boundary changes, follow `router/ROUTING.md` "Backend companion packs" and `docs/FULLSTACK_COMPOSITION.md`: the backend pack's seam skill (`rails-react-integration` or `node-react-integration`) owns the server side and the fit; this pack owns the client.
+
 ## React rules
 
 - Prefer React primitives and repository patterns before adding abstractions.

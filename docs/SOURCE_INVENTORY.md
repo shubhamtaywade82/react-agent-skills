@@ -2,9 +2,9 @@
 
 ## Audited source
 
-Repository: \`shubhamtaywade82/ruby-agent-skills\`
+Repository: `shubhamtaywade82/ruby-agent-skills`
 
-Commit: \`3ce8a2bbfef174d83c161ff7399d47742289c4e6\`
+Commit: `3ce8a2bbfef174d83c161ff7399d47742289c4e6`
 
 ## Canonical skills
 
@@ -66,7 +66,7 @@ Commit: \`3ce8a2bbfef174d83c161ff7399d47742289c4e6\`
 
 ## Non-counted cross-cutting patterns
 
-The source also contains four React/TypeScript-specific patterns in \`patterns/stack-minimality\`:
+The source also contains four React/TypeScript-specific patterns in `patterns/stack-minimality`:
 
 - react-derived-state-in-render
 - react-local-state-before-context

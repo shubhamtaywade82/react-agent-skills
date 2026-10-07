@@ -3,20 +3,20 @@
 ## Source and destination
 
 Source:
-\`shubhamtaywade82/ruby-agent-skills\`
+`shubhamtaywade82/ruby-agent-skills`
 
 Audited source commit:
-\`3ce8a2bbfef174d83c161ff7399d47742289c4e6\`
+`3ce8a2bbfef174d83c161ff7399d47742289c4e6`
 
 Destination:
-\`shubhamtaywade82/react-agent-skills\`
+`shubhamtaywade82/react-agent-skills`
 
 Current destination baseline:
-\`caaea5f7ad9d70f391fb6c52ec7b9a0e75f91ed6\`
+`caaea5f7ad9d70f391fb6c52ec7b9a0e75f91ed6`
 
 ## Migration principles
 
-1. Do not delete frontend material from \`ruby-agent-skills\` until the new pack has equivalent coverage and verified evaluations.
+1. Do not delete frontend material from `ruby-agent-skills` until the new pack has equivalent coverage and verified evaluations.
 2. Do not blindly copy combined skills; preserve their content but split ownership where the new taxonomy requires it.
 3. Keep source lineage in a machine-readable migration map.
 4. Every migrated skill/pattern/evaluation must remain registered and executable in the destination.
@@ -29,8 +29,8 @@ Current destination baseline:
 Status: design phase.
 
 Deliverables:
-- \`docs/TAXONOMY.md\`
-- \`docs/MIGRATION_PLAN.md\`
+- `docs/TAXONOMY.md`
+- `docs/MIGRATION_PLAN.md`
 - migration source inventory/map
 - explicit ownership rules
 - core vs conditional skill policy
@@ -65,8 +65,8 @@ Migrate the 9 source skills without deleting them from the source pack.
 Lineage:
 - 7 direct migrations;
 - 2 deliberate splits:
-  - \`react-state-effects\` → \`react-hooks-effects\` + \`react-state-management\`
-  - \`react-accessibility-performance\` → \`react-accessibility\` + \`react-performance\`
+  - `react-state-effects` → `react-hooks-effects` + `react-state-management`
+  - `react-accessibility-performance` → `react-accessibility` + `react-performance`
 
 For split skills, preserve all source coverage first, then improve wording/ownership only after parity is established.
 
@@ -76,7 +76,7 @@ Exit gate:
 
 ## Phase 3 — migrate the 24 canonical patterns
 
-Migrate all 24 \`patterns/react-typescript\` patterns.
+Migrate all 24 `patterns/react-typescript` patterns.
 
 Do not rewrite them during migration except for:
 - path/link updates;
@@ -91,7 +91,7 @@ Exit gate:
 - every pattern is referenced by at least one skill or evaluation.
 
 Cross-cutting exception:
-The four React/TypeScript patterns under \`stack-minimality\` are a separate decision. First generalize the minimality principle; then decide whether their canonical home becomes this pack or a future shared cross-stack pack.
+The four React/TypeScript patterns under `stack-minimality` are a separate decision. First generalize the minimality principle; then decide whether their canonical home becomes this pack or a future shared cross-stack pack.
 
 ## Phase 4 — migrate and split evaluations
 
@@ -127,20 +127,20 @@ Exit gate:
 
 Add, in this order:
 
-1. \`typescript-async-error-modeling\`
-2. \`typescript-public-api-design\`
-3. \`typescript-api-contracts\`
-4. \`react-async-ui\`
-5. \`frontend-e2e\`
-6. \`frontend-architecture\`
-7. \`frontend-browser-platform\`
-8. \`frontend-styling-layout\`
-9. \`frontend-environment-configuration\`
-10. \`frontend-dependency-management\`
-11. \`frontend-production\`
-12. \`frontend-security\`
-13. \`browser-security-dom-safety\`
-14. \`auth-session-boundaries\`
+1. `typescript-async-error-modeling`
+2. `typescript-public-api-design`
+3. `typescript-api-contracts`
+4. `react-async-ui`
+5. `frontend-e2e`
+6. `frontend-architecture`
+7. `frontend-browser-platform`
+8. `frontend-styling-layout`
+9. `frontend-environment-configuration`
+10. `frontend-dependency-management`
+11. `frontend-production`
+12. `frontend-security`
+13. `browser-security-dom-safety`
+14. `auth-session-boundaries`
 
 Sequence rationale:
 - first close TypeScript/React semantic gaps;
@@ -199,7 +199,7 @@ Define composition artifacts without merging repositories.
 
 A full-stack agent should be able to load:
 
-\`\`\`text
+```text
 agent-workflow
 +
 ruby-agent-skills routing
@@ -207,7 +207,7 @@ ruby-agent-skills routing
 react-agent-skills routing
 +
 shared API/auth/error/observability contracts
-\`\`\`
+```
 
 The composition layer should cover:
 - OpenAPI/JSON schema ownership;
@@ -227,7 +227,7 @@ Exit gate:
 Only after all prior gates pass:
 
 1. mark the 9 original frontend skills as deprecated in the Ruby pack;
-2. add explicit replacement references to \`react-agent-skills\`;
+2. add explicit replacement references to `react-agent-skills`;
 3. keep migration notes for at least one release cycle;
 4. keep source evaluations until destination equivalence is verified;
 5. remove source frontend artifacts only in a deliberate breaking-release change.
@@ -238,7 +238,7 @@ The Ruby pack remains authoritative for Ruby/Rails/PostgreSQL/backend concerns.
 
 Use isolated branches so failures never contaminate main:
 
-\`\`\`
+```
 react/01-foundation
 react/02-skill-migration
 react/03-pattern-migration
@@ -248,7 +248,7 @@ react/06-conditional-adapters
 react/07-benchmarking
 react/08-fullstack-composition
 ruby/09-frontend-deprecation
-\`\`\`
+```
 
 Merge order is strictly sequential because later phases depend on the routing and ownership contracts established earlier.
 
@@ -262,6 +262,6 @@ The split is complete only when:
 - conditional adapters are opt-in by repository evidence;
 - frontend benchmarks are independently executable;
 - full-stack composition is documented;
-- \`ruby-agent-skills\` frontend skills are deprecated only after verified equivalence;
+- `ruby-agent-skills` frontend skills are deprecated only after verified equivalence;
 - destination CI is green;
 - all claims are backed by executed validation/evaluation evidence.
