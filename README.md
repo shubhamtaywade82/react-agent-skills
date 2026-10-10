@@ -86,14 +86,30 @@ The repository includes contract tests that enforce description limits, shallow/
 
 Run:
 
-    node --test test/manifest-contract.test.mjs test/benchmark-contract.test.mjs test/benchmark-runner.test.mjs test/install-contract.test.mjs
+    node --test test/*.test.mjs
     node scripts/validate.mjs
     node scripts/validate-benchmarks.mjs
     node scripts/validate-fixtures.mjs
-    node --test test/skill-efficiency-contract.test.mjs test/skill-resource-contract.test.mjs test/skill-discovery-contract.test.mjs
     node scripts/skill-discovery-evaluator.mjs --check
 
-GitHub Actions runs these structural, benchmark, and installer checks on pushes and pull requests.
+GitHub Actions runs these structural, benchmark, and installer checks on pushes and pull requests. CI also builds the Agensi marketplace bundles (complete and starter) and uploads them as a `agensi-bundles` artifact on every green run; see `packaging/PUBLISHING.md` for how to promote an artifact to a marketplace listing.
+
+## Marketplace distribution
+
+The canonical source remains this GitHub repository under the MIT License. A curated, tested Agensi marketplace bundle is published alongside the open-source release for buyers who want a packaged, validated, installable archive.
+
+- Complete bundle: `scripts/build-bundle.mjs --output dist/` — every skill, pattern, evaluation, and benchmark, plus the contract tests, validators, and installer.
+- Starter bundle (free): `scripts/build-starter-bundle.mjs --output dist/` — a strict subset for discovery and evaluation; see `packaging/STARTER_SKILLS.yml`.
+
+MIT already permits redistribution and resale, so the paid bundle adds curation, packaging, validation, and maintenance — not exclusivity. See:
+
+- `packaging/MARKETPLACE_LISTING.md` — the marketplace listing copy.
+- `packaging/LICENSE_ADDENDUM.md` — the license interaction between MIT and Agensi's terms.
+- `packaging/PUBLISHING.md` — the end-to-end publishing workflow.
+- `packaging/STARTER_SKILLS.yml` — the curated free starter set.
+- `packaging/BUNDLE_VERSION.txt` — the bundle version (bumped per release).
+
+The bundle contract test (`test/bundle-contract.test.mjs`) enforces that both bundles are byte-identical to the canonical source and that the starter bundle is a strict subset of the complete bundle.
 
 ## Non-negotiables
 
