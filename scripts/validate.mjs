@@ -75,7 +75,16 @@ for (const dir of dirs) {
 }
 
 async function validateRegistry(path, label, rootPattern) {
-  const registry = await readFile(new URL(path, root), "utf8");
+  let registry;
+  try {
+    registry = await readFile(new URL(path, root), "utf8");
+  } catch {
+    // The complete bundle ships patterns/PATTERN_MANIFEST.yml and
+    // evaluations/manifest.yml. The free starter bundle ships neither,
+    // so missing registry files are not an error — return an empty
+    // entry list and let the caller proceed.
+    return [];
+  }
   const lines = registry.split(/\r?\n/);
   const entries = [];
 

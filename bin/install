@@ -41,12 +41,15 @@ mkdir -p "$STAGING"
 
 cp "$ROOT/AGENTS.md" "$STAGING/AGENTS.md"
 cp "$ROOT/skill-manifest.yml" "$STAGING/skill-manifest.yml"
-cp -R "$ROOT/router" "$STAGING/router"
-cp -R "$ROOT/skills" "$STAGING/skills"
-cp -R "$ROOT/patterns" "$STAGING/patterns"
-cp -R "$ROOT/evaluations" "$STAGING/evaluations"
-cp -R "$ROOT/benchmarks" "$STAGING/benchmarks"
-cp -R "$ROOT/docs" "$STAGING/docs"
+
+# Copy optional directories. The complete bundle ships all of these;
+# the free starter bundle ships only a subset (skills, router, docs).
+# Use [ -d ] so a missing directory does not fail the install.
+for dir in router skills patterns evaluations benchmarks docs; do
+  if [ -d "$ROOT/$dir" ]; then
+    cp -R "$ROOT/$dir" "$STAGING/$dir"
+  fi
+done
 
 rm -rf "$TARGET"
 mkdir -p "$(dirname -- "$TARGET")"

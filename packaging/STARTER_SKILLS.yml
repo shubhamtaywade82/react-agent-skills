@@ -1,0 +1,40 @@
+# Free starter bundle for Agensi marketplace discovery.
+#
+# Selection criteria (in order):
+#   1. Foundational — every React + TypeScript agent task starts here.
+#   2. Self-contained — does not depend on secondary skills to be useful.
+#   3. Compact — small enough to evaluate in minutes, large enough to deliver value.
+#   4. Representative — demonstrates the SKILL.md + references/ + scripts/ shape.
+#
+# The starter bundle is a strict subset of the full bundle. It must never
+# contain skills, patterns, or evaluations that are not present in the
+# canonical GitHub repository. When the full bundle is rebuilt, the starter
+# bundle is rebuilt from the same source.
+#
+# Do not add a skill here without a one-line justification, and do not
+# remove a skill without updating docs/MARKETPLACE_LISTING.md.
+
+version: 1
+name: react-agent-skills-starter
+description: Free starter slice of the React + TypeScript agent skill pack for discovery and evaluation.
+
+skills:
+  - name: agent-workflow
+    reason: Always-on entry point — inspection, risk classification, routing, evidence reporting.
+  - name: frontend-repository-archetypes
+    reason: Classifies the target repository so the agent picks the right downstream skills.
+  - name: frontend-risk-classification
+    reason: Bounds the verification level before implementation begins.
+  - name: react-architecture
+    reason: Foundational ownership and composition guidance that other React skills build on.
+  - name: react-hooks-effects
+    reason: The highest-frequency React footgun surface — effects, deps, cleanup, stale state.
+
+# Patterns are pulled in by skill-local references/, so the starter bundle
+# ships only the patterns that the selected skills' references/ actually
+# cite. The bundle builder derives this set automatically; do not list
+# patterns here manually.
+
+# Evaluations are not included in the starter bundle. The full bundle is the
+# only place evaluation contracts ship, so buyers who need evaluation
+# coverage must upgrade.

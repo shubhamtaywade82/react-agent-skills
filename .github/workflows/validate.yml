@@ -36,6 +36,37 @@ jobs:
       - run: bash bin/install --help
       - run: rm -rf "$RUNNER_TEMP/react-agent-skills" && bash bin/install --target "$RUNNER_TEMP/react-agent-skills" && test -f "$RUNNER_TEMP/react-agent-skills/AGENTS.md" && test -f "$RUNNER_TEMP/react-agent-skills/skill-manifest.yml"
 
+      # Marketplace bundle: build the complete and starter bundles into
+      # dist/ and upload them as a CI artifact so each green run ships a
+      # verified, installable archive. The bundle contract test (already
+      # run above as part of test/*.test.mjs) enforces the bundle's
+      # internal consistency; the steps below produce the actual .tgz
+      # archives that go to Agensi.
+      - name: Build complete bundle
+        run: node scripts/build-bundle.mjs --output dist/
+
+      - name: Build starter bundle
+        run: node scripts/build-starter-bundle.mjs --output dist/
+
+      - name: Verify bundle archives
+        run: |
+          test -f dist/react-agent-skills-bundle-*.tgz
+          test -f dist/react-agent-skills-bundle-*.manifest.json
+          test -f dist/react-agent-skills-starter-*.tgz
+          test -f dist/react-agent-skills-starter-*.manifest.json
+          # Each archive must contain a BUNDLE_MANIFEST.json at the root.
+          for archive in dist/react-agent-skills-bundle-*.tgz dist/react-agent-skills-starter-*.tgz; do
+            tar -tzf "$archive" | grep -E '^react-agent-skills/BUNDLE_MANIFEST\.json$' \
+              || { echo "missing BUNDLE_MANIFEST.json in $archive"; exit 1; }
+          done
+
+      - name: Upload bundle artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: agensi-bundles
+          path: dist/
+          if-no-files-found: error
+
       - name: Enforce native skill discovery gate
         if: always() && steps.discovery.outcome == 'failure'
         run: |

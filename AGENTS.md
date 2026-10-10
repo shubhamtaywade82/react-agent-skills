@@ -69,3 +69,7 @@ Before adding a dependency, inspect existing dependencies and platform primitive
 ## Skill-pack maintenance
 
 Every skill must have a valid `SKILL.md`, be registered in `skill-manifest.yml`, and contain activation, inspection, decision, implementation, failure, review, and verification guidance. Keep validation and CI green.
+
+## Marketplace bundle maintenance
+
+The Agensi marketplace bundles (`scripts/build-bundle.mjs`, `scripts/build-starter-bundle.mjs`) are byte-identical copies of the canonical source. The bundle contract test (`test/bundle-contract.test.mjs`) enforces that the bundles match the canonical registries and that the starter bundle is a strict subset. Before bumping the bundle version, run the full validator suite and the bundle contract test; before publishing to Agensi, follow `packaging/PUBLISHING.md`.
