@@ -1,0 +1,117 @@
+# Autonomous Engineering Platform - reusable Node CI.
+#
+# Called by ci.yml via `uses: ./.github/workflows/reusable-node-ci.yml`.
+# Structure:
+#   - test (matrix): fast per-version test suite.
+#   - full-validation: structural validation + pack export + skill loader
+#     + cross-pack CLI/verifier + MCP smoke on the primary Node version.
+#
+# The workflow is intentionally parameterised so it can be promoted to a
+# shared workflow library without changing the ci.yml call site.
+
+name: Reusable Node CI
+
+on:
+  workflow_call:
+    inputs:
+      node-versions:
+        description: JSON array of Node.js versions for the test matrix
+        type: string
+        default: ["20", "22", "24"]
+      primary-node:
+        description: Node.js version that runs the full validation suite
+        type: string
+        default: "22"
+      upload-artifacts:
+        description: Upload CI metadata artifacts
+        type: boolean
+        default: true
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: test (node-${{ matrix.node }})
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: read
+    strategy:
+      fail-fast: false
+      matrix:
+        node: ${{ fromJSON(inputs.node-versions) }}
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Set up Node.js ${{ matrix.node }}
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: ${{ matrix.node }}
+
+      - name: Test suite
+        run: node --test test/*.test.mjs
+
+      - name: Record CI metadata
+        run: |
+          mkdir -p tmp
+          cat > tmp/ci-metadata.json <<JSON
+          {
+            "pack": "${GITHUB_REPOSITORY##*/}",
+            "node": "${{ matrix.node }}",
+            "sha": "${{ github.sha }}",
+            "ref": "${{ github.ref_name }}",
+            "run_id": "${{ github.run_id }}",
+            "run_attempt": "${{ github.run_attempt }}"
+          }
+          JSON
+
+      - name: Upload CI metadata
+        if: ${{ inputs.upload-artifacts }}
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: ci-metadata-node-${{ matrix.node }}-${{ github.run_id }}
+          path: tmp/ci-metadata.json
+          if-no-files-found: warn
+          retention-days: 14
+
+  full-validation:
+    name: full-validation
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      contents: read
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Set up Node.js ${{ inputs.primary-node }}
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: ${{ inputs.primary-node }}
+
+      - name: Native skill discovery evaluation
+        run: node scripts/skill-discovery-evaluator.mjs --check
+
+      - name: Structural validation
+        run: node scripts/validate.mjs
+
+      - name: Benchmark validation
+        run: node scripts/validate-benchmarks.mjs
+
+      - name: Fixture validation
+        run: node scripts/validate-fixtures.mjs
+
+      - name: Tool smoke tests
+        run: |
+          node scripts/fixture-evaluator.mjs --help
+          node scripts/benchmark-runner.mjs --help
+
+      - name: Install script smoke test
+        run: |
+          bash -n bin/install
+          bash bin/install --help
+          rm -rf "$RUNNER_TEMP/react-agent-skills" && bash bin/install --target "$RUNNER_TEMP/react-agent-skills"
+          test -f "$RUNNER_TEMP/react-agent-skills/AGENTS.md"
+          test -f "$RUNNER_TEMP/react-agent-skills/skill-manifest.yml"
