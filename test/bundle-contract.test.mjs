@@ -194,7 +194,7 @@ test("starter bundle staging directory is internally consistent", async () => {
     }
 
     // The starter bundle's skill-manifest.yml must list only the
-    // starter skills, not all 127. The bundle's own validator must
+    // starter skills, not all 129. The bundle's own validator must
     // pass on the subset manifest.
     const starterManifest = await readFile(
       path.join(stagePath, "skill-manifest.yml"),

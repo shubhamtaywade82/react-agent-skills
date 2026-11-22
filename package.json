@@ -1,0 +1,18 @@
+{
+  "name": "react-agent-skills",
+  "version": "0.5.0",
+  "private": true,
+  "description": "Production-grade React + TypeScript engineering skills for AI coding agents.",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.mjs",
+    "validate": "node scripts/validate.mjs",
+    "validate:fixtures": "node scripts/validate-fixtures.mjs",
+    "validate:benchmarks": "node scripts/validate-benchmarks.mjs",
+    "bundle": "node scripts/build-bundle.mjs",
+    "bundle:starter": "node scripts/build-starter-bundle.mjs"
+  }
+}
