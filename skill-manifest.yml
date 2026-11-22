@@ -384,3 +384,139 @@ skills:
   - name: agent-adversarial-evaluations
     path: skills/agent-adversarial-evaluations/SKILL.md
     triggers: [adversarial evaluation, prompt injection, scope creep, test cheating, security benchmark]
+
+# v3 cross-pack contract (additive). Existing v1 parsers ignore this key.
+# Machine-checkable companion inventory: bin/cross-pack-verify.mjs validates
+# every field below against data/cross-pack/*.snapshot.yml in CI.
+cross_pack:
+  schema_version: 3
+  companions:
+    - pack: ruby-agent-skills
+      repo: https://github.com/shubhamtaywade82/ruby-agent-skills
+      pinned_ref: v1.6.0
+      snapshot: data/cross-pack/ruby-agent-skills.snapshot.yml
+      seam_skill: browser-authentication
+      language: ruby
+    - pack: node-agent-skills
+      repo: https://github.com/shubhamtaywade82/node-agent-skills
+      pinned_ref: main
+      snapshot: data/cross-pack/node-agent-skills.snapshot.yml
+      seam_skill: browser-authentication
+      language: typescript
+  # react-agent-skills and node-agent-skills share ZERO skill names today
+  # (the node pack prefixes every skill with `node-`). ruby-agent-skills
+  # shares 8 names: agent-workflow plus the seven React/TypeScript skills
+  # the ruby pack deprecated in favor of this pack. cross_pack.name_collisions
+  # is the machine-checkable surface that bin/cross-pack-verify.mjs compares
+  # against the recomputed set intersection; it must list every name present
+  # in both packs.
+  name_collisions:
+    - skill_name: agent-workflow
+      this_pack_owner: skills/agent-workflow/SKILL.md
+      companion_pack: ruby-agent-skills
+      companion_owner: skills/agent-workflow/SKILL.md
+      resolution: context_dependent
+      rationale: |
+        Both packs ship an agent-workflow with different content; the last
+        install wins. For React/TypeScript work this pack's copy is
+        authoritative; for pure Ruby/Rails work the ruby pack's copy is
+        authoritative (see the ruby pack's docs/INSTALLATION.md
+        "Name collisions" and this pack's docs/FULLSTACK_COMPOSITION.md).
+    - skill_name: react-architecture
+      this_pack_owner: skills/react-architecture/SKILL.md
+      companion_pack: ruby-agent-skills
+      companion_owner: skills/react-architecture/SKILL.md
+      resolution: this_pack_wins
+      rationale: |
+        The ruby pack deprecates its react-architecture skill in favor of this pack (see
+        the ruby pack's docs/REACT_AGENT_SKILLS_MIGRATION.md and the
+        deprecations section of its skill-manifest.yml). Install this pack
+        after ruby-agent-skills so the replacement copy wins in shared
+        skill roots.
+    - skill_name: react-component-engineering
+      this_pack_owner: skills/react-component-engineering/SKILL.md
+      companion_pack: ruby-agent-skills
+      companion_owner: skills/react-component-engineering/SKILL.md
+      resolution: this_pack_wins
+      rationale: |
+        The ruby pack deprecates its react-component-engineering skill in favor of this pack (see
+        the ruby pack's docs/REACT_AGENT_SKILLS_MIGRATION.md and the
+        deprecations section of its skill-manifest.yml). Install this pack
+        after ruby-agent-skills so the replacement copy wins in shared
+        skill roots.
+    - skill_name: react-data-fetching
+      this_pack_owner: skills/react-data-fetching/SKILL.md
+      companion_pack: ruby-agent-skills
+      companion_owner: skills/react-data-fetching/SKILL.md
+      resolution: this_pack_wins
+      rationale: |
+        The ruby pack deprecates its react-data-fetching skill in favor of this pack (see
+        the ruby pack's docs/REACT_AGENT_SKILLS_MIGRATION.md and the
+        deprecations section of its skill-manifest.yml). Install this pack
+        after ruby-agent-skills so the replacement copy wins in shared
+        skill roots.
+    - skill_name: react-testing-engineering
+      this_pack_owner: skills/react-testing-engineering/SKILL.md
+      companion_pack: ruby-agent-skills
+      companion_owner: skills/react-testing-engineering/SKILL.md
+      resolution: this_pack_wins
+      rationale: |
+        The ruby pack deprecates its react-testing-engineering skill in favor of this pack (see
+        the ruby pack's docs/REACT_AGENT_SKILLS_MIGRATION.md and the
+        deprecations section of its skill-manifest.yml). Install this pack
+        after ruby-agent-skills so the replacement copy wins in shared
+        skill roots.
+    - skill_name: typescript-core-engineering
+      this_pack_owner: skills/typescript-core-engineering/SKILL.md
+      companion_pack: ruby-agent-skills
+      companion_owner: skills/typescript-core-engineering/SKILL.md
+      resolution: this_pack_wins
+      rationale: |
+        The ruby pack deprecates its typescript-core-engineering skill in favor of this pack (see
+        the ruby pack's docs/REACT_AGENT_SKILLS_MIGRATION.md and the
+        deprecations section of its skill-manifest.yml). Install this pack
+        after ruby-agent-skills so the replacement copy wins in shared
+        skill roots.
+    - skill_name: typescript-runtime-contracts
+      this_pack_owner: skills/typescript-runtime-contracts/SKILL.md
+      companion_pack: ruby-agent-skills
+      companion_owner: skills/typescript-runtime-contracts/SKILL.md
+      resolution: this_pack_wins
+      rationale: |
+        The ruby pack deprecates its typescript-runtime-contracts skill in favor of this pack (see
+        the ruby pack's docs/REACT_AGENT_SKILLS_MIGRATION.md and the
+        deprecations section of its skill-manifest.yml). Install this pack
+        after ruby-agent-skills so the replacement copy wins in shared
+        skill roots.
+    - skill_name: typescript-type-design
+      this_pack_owner: skills/typescript-type-design/SKILL.md
+      companion_pack: ruby-agent-skills
+      companion_owner: skills/typescript-type-design/SKILL.md
+      resolution: this_pack_wins
+      rationale: |
+        The ruby pack deprecates its typescript-type-design skill in favor of this pack (see
+        the ruby pack's docs/REACT_AGENT_SKILLS_MIGRATION.md and the
+        deprecations section of its skill-manifest.yml). Install this pack
+        after ruby-agent-skills so the replacement copy wins in shared
+        skill roots.
+  seam_contracts:
+    - boundary: react-to-ruby-backend
+      primary_in_this_pack: browser-authentication
+      secondary_in_this_pack:
+        - typescript-api-contracts
+        - typescript-runtime-contracts
+        - react-data-fetching
+        - react-forms-validation
+      companion_pack: ruby-agent-skills
+      companion_side: ruby-agent-skills/skills/rails-react-integration
+      routing_doc: router/ROUTING.md#backend-companion-packs
+    - boundary: react-to-node-backend
+      primary_in_this_pack: browser-authentication
+      secondary_in_this_pack:
+        - typescript-api-contracts
+        - typescript-runtime-contracts
+        - react-data-fetching
+        - react-forms-validation
+      companion_pack: node-agent-skills
+      companion_side: node-agent-skills/skills/node-react-integration
+      routing_doc: router/ROUTING.md#backend-companion-packs
