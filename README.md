@@ -156,6 +156,14 @@ npx skills add shubhamtaywade82/node-agent-skills -a claude-code      # Node bac
 
 Routing, ownership per concern, and current skill-name collisions with ruby-agent-skills are in [Full-stack composition](docs/FULLSTACK_COMPOSITION.md).
 
+The companion inventory is also a machine-checked contract: the `cross_pack` section of [skill-manifest.yml](skill-manifest.yml) pins each companion pack (ruby at `v1.6.0`, node at `main`) to a skill-inventory snapshot under `data/cross-pack/`, declares the eight shared names with `ruby-agent-skills` and their resolutions, and records the two backend seam contracts. Verify it locally with:
+
+```bash
+node bin/cross-pack-verify.mjs
+```
+
+CI runs the verifier on every push and a scheduled monthly check opens an issue when a companion snapshot goes stale.
+
 ## Split architecture
 
 The planned split from `ruby-agent-skills` is documented in:
