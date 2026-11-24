@@ -1,0 +1,34 @@
+id: frontend-dependency-management-contract
+coverage: static-only
+version: 1
+title: Frontend Dependency Management Contract
+category: react-typescript
+source: react-agent-skills-core-v1
+skills:
+  - frontend-dependency-management
+patterns:
+  - dependency-platform-before-library
+  - dependency-upgrade-isolation
+prompt: |
+  Evaluate a proposed dependency and determine whether the existing browser or repository capabilities satisfy the requirement first.
+constraints:
+  required_boundary: frontend-dependency-management
+checks:
+  - functional
+  - tests
+  - security
+  - scope_control
+cases:
+  - name: platform-first
+    input: Decide whether a new library is needed when an existing platform primitive can satisfy the behavior.
+    expected:
+      dependency-platform-before-library: platform or existing dependency is preferred when sufficient
+  - name: upgrade-isolation
+    input: Upgrade one package without unrelated lockfile or dependency churn.
+    expected:
+      dependency-upgrade-isolation: change is attributable
+grading:
+  functional: The chosen dependency behavior satisfies the requirement.
+  tests: The affected behavior and package graph are verified.
+  security: Dependency risk is considered explicitly.
+  scope_control: Unrelated cleanup is excluded.
