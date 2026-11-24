@@ -8,7 +8,7 @@ Source migration:
 Release candidate inventory:
 - skills: 52
 - reusable patterns: 60
-- core evaluations: 39
+- core evals: 39
 - benchmark cases: 31
 - conditional adapters: 13
 
