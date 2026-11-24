@@ -1,0 +1,8 @@
+id: frontend-documentation-contract
+version: 1
+prompt: Update user-facing or public frontend documentation after a behavior or API contract change.
+checks:
+  - repository evidence
+  - functional behavior
+  - security/accessibility where relevant
+  - focused tests
