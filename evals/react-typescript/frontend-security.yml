@@ -1,0 +1,41 @@
+id: frontend-security-contract
+coverage: security-review
+version: 1
+title: Frontend Security Contract
+category: react-typescript
+source: react-agent-skills-core-v1
+skills:
+  - frontend-security
+  - browser-security-dom-safety
+  - auth-session-boundaries
+patterns:
+  - security-html-sanitization-boundary
+  - security-open-redirect-boundary
+  - security-token-storage
+prompt: |
+  Review a frontend change involving HTML rendering, redirect targets, and session credentials and enforce explicit trust boundaries.
+constraints:
+  required_boundary: frontend-security
+checks:
+  - functional
+  - tests
+  - security
+  - contract
+cases:
+  - name: html
+    input: Render CMS-provided rich text without introducing an unsafe HTML sink.
+    expected:
+      security-html-sanitization-boundary: dedicated sanitization boundary
+  - name: redirect
+    input: Constrain a return URL after authentication.
+    expected:
+      security-open-redirect-boundary: untrusted destinations are rejected or constrained
+  - name: credentials
+    input: Review whether privileged tokens should be stored in general browser storage.
+    expected:
+      security-token-storage: threat-model-driven storage choice
+grading:
+  functional: Required application behavior remains available.
+  tests: Security-sensitive paths have focused regression coverage.
+  security: Attacker-controlled inputs and credential boundaries are handled explicitly.
+  contract: Authentication and authorization are not conflated.
