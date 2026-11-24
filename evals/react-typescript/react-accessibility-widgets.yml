@@ -1,0 +1,8 @@
+id: react-accessibility-widgets-contract
+version: 1
+prompt: Implement an APG-aligned composite widget with keyboard, focus and accessible state semantics.
+checks:
+  - repository evidence
+  - functional behavior
+  - security/accessibility where relevant
+  - focused tests
