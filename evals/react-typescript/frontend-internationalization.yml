@@ -1,0 +1,8 @@
+id: frontend-internationalization-contract
+version: 1
+prompt: Localize a React feature with pluralization, date/timezone formatting and RTL-safe interaction.
+checks:
+  - repository evidence
+  - functional behavior
+  - focused tests
+  - scope control
