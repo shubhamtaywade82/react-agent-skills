@@ -1,0 +1,8 @@
+id: graphql-codegen-contract
+version: 1
+prompt: Update GraphQL documents/schema and regenerate typed artifacts without hand-editing generated output.
+checks:
+  - repository evidence
+  - functional behavior
+  - focused tests
+  - adapter-specific contract
