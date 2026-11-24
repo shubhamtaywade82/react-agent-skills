@@ -1,0 +1,34 @@
+id: react-toolchain-contract
+coverage: build-level
+version: 1
+title: React Toolchain Contract
+category: react-typescript
+source: react-agent-skills-core-v1
+skills:
+  - react-toolchain
+  - typescript-configuration
+patterns:
+  - typescript-config-isolated-change
+prompt: |
+  Change frontend build configuration without causing dev, test, and production behavior to diverge.
+constraints:
+  required_boundary: react-toolchain
+checks:
+  - functional
+  - tests
+  - contract
+  - scope_control
+cases:
+  - name: build-contract
+    input: Apply a toolchain change while preserving the repository's existing build pipeline.
+    expected:
+      contract: build ownership remains explicit
+  - name: config-scope
+    input: Keep compiler configuration changes limited to the project that owns them.
+    expected:
+      typescript-config-isolated-change: narrow configuration scope
+grading:
+  functional: Build output remains correct.
+  tests: Toolchain-sensitive tests continue to pass.
+  contract: Dev/test/build semantics remain aligned.
+  scope_control: No unrelated tooling migration is introduced.
