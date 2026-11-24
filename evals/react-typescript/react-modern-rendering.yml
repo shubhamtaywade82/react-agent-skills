@@ -1,0 +1,34 @@
+id: react-modern-rendering-contract
+coverage: runtime-rendering
+version: 1
+title: React Modern Rendering Contract
+category: react-typescript
+source: react-agent-skills-core-v1
+skills:
+  - react-modern-rendering
+patterns:
+  - react-transition-boundary
+  - react-hydration-stability
+prompt: |
+  Diagnose a rendering regression involving hydration and a non-urgent transition without changing the application's rendering architecture unnecessarily.
+constraints:
+  required_boundary: react-modern-rendering
+checks:
+  - functional
+  - tests
+  - contract
+  - performance
+cases:
+  - name: hydration
+    input: Remove a browser-dependent first-render mismatch.
+    expected:
+      react-hydration-stability: initial output is stable
+  - name: transition
+    input: Keep urgent input work separate from non-urgent rendering.
+    expected:
+      react-transition-boundary: work is split by urgency
+grading:
+  functional: Rendering behavior is correct.
+  tests: Hydration or rendering behavior is directly verified.
+  contract: React concurrency features are used according to the runtime.
+  performance: Non-urgent work does not unnecessarily block urgent interaction.
