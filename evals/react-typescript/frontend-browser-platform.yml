@@ -1,0 +1,34 @@
+id: frontend-browser-platform-contract
+coverage: static-only
+version: 1
+title: Frontend Browser Platform Contract
+category: react-typescript
+source: react-agent-skills-core-v1
+skills:
+  - frontend-browser-platform
+patterns:
+  - frontend-browser-listener-cleanup
+  - frontend-storage-schema
+prompt: |
+  Integrate a browser API with capability detection, lifecycle cleanup, and safe persisted state handling.
+constraints:
+  required_boundary: frontend-browser-platform
+checks:
+  - functional
+  - tests
+  - security
+  - scope_control
+cases:
+  - name: lifecycle
+    input: Add a browser event listener that is cleaned up across mount update unmount and remount.
+    expected:
+      frontend-browser-listener-cleanup: one registration per active owner
+  - name: storage
+    input: Read versioned browser storage data without trusting its shape.
+    expected:
+      frontend-storage-schema: runtime validation before domain use
+grading:
+  functional: Browser behavior works on supported paths.
+  tests: Lifecycle and malformed storage cases are covered.
+  security: Persisted browser data is treated as untrusted.
+  scope_control: Platform behavior stays within its owning feature.
