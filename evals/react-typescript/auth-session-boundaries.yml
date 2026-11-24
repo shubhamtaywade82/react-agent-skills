@@ -1,0 +1,34 @@
+id: auth-session-boundaries-contract
+coverage: cross-boundary
+version: 1
+title: Authentication Session Contract
+category: react-typescript
+source: react-agent-skills-core-v1
+skills:
+  - auth-session-boundaries
+patterns:
+  - react-route-auth-boundary
+  - security-token-storage
+prompt: |
+  Handle expired authentication, concurrent refreshes, unauthorized responses, forbidden responses, and logout cleanup.
+constraints:
+  required_boundary: auth-session-boundaries
+checks:
+  - functional
+  - tests
+  - security
+  - contract
+cases:
+  - name: refresh
+    input: Prevent concurrent requests from creating a refresh storm.
+    expected:
+      behavior: refresh coordination is explicit and bounded
+  - name: authorization
+    input: Distinguish unauthenticated access from authenticated-but-forbidden access.
+    expected:
+      contract: 401 and 403 semantics remain distinct
+grading:
+  functional: Session behavior remains usable.
+  tests: Expiry, refresh, forbidden, and logout paths are covered.
+  security: Authentication is not treated as authorization.
+  contract: Protected resource enforcement remains server-authoritative.
