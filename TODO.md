@@ -8,17 +8,19 @@
 - [x] `router/ROUTING.md` "Backend companion packs" table now routes through the seam skills instead of a generic secondary list.
 - [x] `CLAUDE.md` added (Claude Code entry point), `RELEASE.md` added, `package.json` added (engines Node >=22, standard scripts), `framework-drift.yml` added (React 19 removals + TSLint deprecation), `TODO.md` added.
 
-## Cross-pack follow-ups
+## Cross-pack follow-ups (RESOLVED 2026-11-24 — structural-alignment pass)
 
-- ruby-agent-skills: once its own CI can verify the change, update `cross_pack.seam_contracts` for the `rails-to-react-client` boundary so `companion_side` points at `react-agent-skills/skills/react-rails-integration` (currently the pre-existing `browser-authentication` stand-in) and refresh the React column in `router/ROUTING.md`. Make the change from the ruby side, where its system tests run — do not edit ruby files without running them.
-- Pin `node-agent-skills` in `cross_pack.companions` to an immutable tag once it cuts its next release (currently `main`, matching how the companions pin this pack today).
-- Create `data/cross-pack/` companion snapshots (like ruby and node ship) so a future cross-pack verifier can validate pinned refs offline.
-- Adopt a `bin/cross-pack-verify` equivalent once this pack ships one, and run it with `--companions` in CI.
+- [x] ruby-agent-skills seam: this pack's `react-rails-integration` is registered on the ruby side as the companion side of the `rails-to-react-client` boundary (executed from the ruby repository where its system tests run, tracked in its own PR); this pack's manifest already points at it symmetrically.
+- [x] `node-agent-skills` pinned to the immutable tag **`v0.11.0`** (its first tagged release, cut by its Release workflow at the release merge commit `9d74c75`); the snapshot records the tagged commit.
+- [x] `data/cross-pack/` companion snapshots created: `node-agent-skills.snapshot.yml` (subset list; zero collisions by the documented `node-` prefix contract) and `ruby-agent-skills.snapshot.yml` (full 104-skill inventory at the pinned v1.5.0 tag, so the collision registry is computed from the complete set).
+- [x] `bin/cross-pack-verify.mjs` shipped (self-contained v3 verifier: companions, snapshot freshness, recomputed collision intersections, seam primaries on disk, optional `--companions` symmetry) and wired into CI after `npm run validate`. The verifier flagged a real registry defect, fixed in the same change: ruby-agent-skills ships 8 deprecated scaffolds whose names this pack owns (the 4 `react-*` skills plus `agent-workflow`, `typescript-core-engineering`, `typescript-runtime-contracts`, `typescript-type-design`) — `cross_pack.name_collisions` now documents all 8 as `this_pack_wins`, symmetric with ruby's `companion_wins` registry; the previously empty registry was wrong.
 
-## Structural alignment (tracked from the cross-pack review)
+## Structural alignment (RESOLVED 2026-11-24)
 
-- `evaluations/` vs `evals/`: ruby-agent-skills and node-agent-skills use `evals/`; this pack uses `evaluations/`. Renaming touches the manifest registry, test pins, and bundle layout — schedule as its own change, then document the aligned name.
-- `adapters/`, `agent-recordings/`, `mcp/`: not yet present. Create `mcp/` server definitions before exposing this pack over MCP; add `agent-recordings/` before recording regression campaigns.
+- [x] `evaluations/` → `evals/` renamed for cross-pack consistency (ruby-agent-skills and node-agent-skills use `evals/`): 28 files updated (manifest, validators, bundle builders, tests, docs, packaging, bin/install, skill prose); skill names like `agent-adversarial-evaluations` are untouched; `CHANGELOG.md` history keeps the old name; the aligned name is documented in AGENTS.md ("Repository completeness changes").
+- [x] `mcp/` server definitions created before any server ships: `mcp/README.md` + `mcp/permissions.yml` (schema_version 1 policy, fail-closed, pre-classifying the read-only routing surface; node-agent-skills' `lib/mcp-server.mjs` is the family's reference implementation).
+- [x] `agent-recordings/` format contract added (`agent-recordings/README.md`), mirroring the family convention; no fabricated recordings.
+- [x] CI hardened (mirrors node-agent-skills): per-ref concurrency with `cancel-in-progress` and a 30-minute job timeout.
 - [x] Naming conventions: skills mix `agent-*`, `frontend-*`, `react-*`, `typescript-*`, `browser-*`, and bare library names (`nextjs`, `vite`, ...). Bare library names are acceptable for adapter-style skills; the convention is now documented in `AGENTS.md` ("Skill naming conventions") — follow it before adding more skills.
 
 ## Skill ownership vs companion packs
