@@ -80,7 +80,7 @@ async function validateRegistry(path, label, rootPattern) {
     registry = await readFile(new URL(path, root), "utf8");
   } catch {
     // The complete bundle ships patterns/PATTERN_MANIFEST.yml and
-    // evaluations/manifest.yml. The free starter bundle ships neither,
+    // evals/manifest.yml. The free starter bundle ships neither,
     // so missing registry files are not an error — return an empty
     // entry list and let the caller proceed.
     return [];
@@ -125,7 +125,7 @@ const patternEntries = await validateRegistry(
   }
 );
 
-const evaluationManifest = await readFile(new URL("evaluations/manifest.yml", root), "utf8").catch(() => "");
+const evaluationManifest = await readFile(new URL("evals/manifest.yml", root), "utf8").catch(() => "");
 if (evaluationManifest) {
   const lines = evaluationManifest.split(/\r?\n/);
   const evaluationEntries = [];
@@ -159,7 +159,7 @@ if (evaluationManifest) {
     }
   }
 
-  if (!evaluationEntries.length) errors.push("No evaluations registered in evaluations/manifest.yml");
+  if (!evaluationEntries.length) errors.push("No evals registered in evals/manifest.yml");
 }
 
 if (errors.length) {
@@ -169,5 +169,5 @@ if (errors.length) {
 
 console.log(
   "Validated " + entries.length + " skills, " + patternEntries.length +
-  " patterns" + (evaluationManifest ? " and evaluations." : ".")
+  " patterns" + (evaluationManifest ? " and evals." : ".")
 );
