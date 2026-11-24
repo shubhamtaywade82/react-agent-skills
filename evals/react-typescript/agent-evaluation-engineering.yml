@@ -1,0 +1,8 @@
+id: agent-evaluation-engineering-contract
+version: 1
+prompt: Design or review a fixture-backed agent evaluation that separates execution from correctness, scope and safety.
+checks:
+  - independent verifier
+  - scope control
+  - safety invariant
+  - machine-readable evidence
