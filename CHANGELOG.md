@@ -2,6 +2,14 @@
 
 ## Unreleased
 
+### Enrichment band 3: the 4x eval-corpus tier
+
+- Enriched to production depth: `typescript-api-contracts` (transport vs domain types, zod boundary validation, discriminated error envelope with retryable/terminal/permission classes, full endpoint example), `typescript-configuration` (strict base + app/node splits, bundler vs node18 resolution trap, emit-semantics flags, tsconfig composition example), `browser-security-dom-safety` (source→transform→sink mapping, URL/postMessage/HTML-choke-point contracts with adversarial examples), `auth-session-boundaries` (authN/authZ/presentation split, httpOnly-first credential policy, single-flight refresh with 401/403 split, complete logout checklist).
+- Each skill carries purpose, boundary-with-related-skills, decision rules, a reference example, anti-patterns, verification steps, and a source foundation (OWASP cheat sheets, MDN, TypeScript docs, RFC 6265, OpenAPI/zod).
+
+## Old
+
+
 ### Production readiness: naming conventions and TODO sync
 
 - AGENTS.md gains a "Skill naming conventions" section: domain prefixes (`react-`, `frontend-`, `typescript-`, `browser-`, `agent-`) for domain skills, bare library names reserved for adapter-style skills, the `<client>-<backend>-integration` seam naming pattern, a pre-addition collision check, and the grandfathered unprefixed exceptions (`auth-session-boundaries`, `github-pages`).
