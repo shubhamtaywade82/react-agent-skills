@@ -9,6 +9,13 @@ description: Define and verify the concrete tools available to an AI coding agen
 
 Activate before non-trivial repository work when the agent's tool surface is unknown, when browser/CI/GitHub execution is required, or when the task spans local files and external verification.
 
+## Boundary with related skills
+
+- Use `agent-workflow` for the operating loop this skill's capability map feeds (plan → verify ordering depends on it).
+- Use `agent-behavior-scoring` when a missing capability must surface as an execution-evidence gap, not a zero.
+- Use `mcp/permissions.yml` (this pack's capability policy) for what a tool is ALLOWED to do; this skill is about what tools EXIST.
+- Use `browser-security-dom-safety` and `frontend-e2e` for the contracts a browser-automation capability would be used to verify.
+
 ## Repository inspection
 
 Establish which capabilities are actually available. Do not infer a tool from prose, a previous run, or an IDE feature that is not exposed to the current agent.
@@ -65,6 +72,23 @@ Check that the agent did not:
 - treat a tool's successful invocation as proof of application correctness;
 - claim a browser or CI result that was not actually observed;
 - add a dependency to compensate for a missing built-in capability without first checking repository conventions.
+
+**Reference example** — the capability map produced before planning, with the verification plan it forces:
+
+```yaml
+capability_map:
+  filesystem: available        # inspect/edit/test files
+  shell: available             # vitest, tsc, eslint, build
+  git: available               # diff + scoped commits
+  github: unavailable          # no PR/check evidence available
+  browser_automation: unavailable
+  type_checker: available      # tsc via the repository's npm script
+verification_plan:
+  covered: [unit, typecheck, lint, build]
+  unavailable: [browser verify, CI checks]   # downgraded explicitly, disclosed in the report
+```
+
+`unavailable` entries are the load-bearing part: a missing browser capability means browser checks were NOT run — never silently treated as passed.
 
 ## Verification
 
