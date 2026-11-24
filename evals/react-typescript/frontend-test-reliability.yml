@@ -1,0 +1,8 @@
+id: frontend-test-reliability-contract
+version: 1
+prompt: Remove a frontend test race without hiding it behind retries or sleeps.
+checks:
+  - repository evidence
+  - functional behavior
+  - focused tests
+  - scope control
