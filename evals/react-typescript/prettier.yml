@@ -1,0 +1,7 @@
+id: prettier-contract
+version: 1
+prompt: Apply the prettier adapter only after repository evidence confirms the dependency and preserve its configured semantics.
+checks:
+  - repository evidence
+  - functional behavior
+  - adapter-specific contract
