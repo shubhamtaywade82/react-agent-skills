@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## 0.1.0 (2026-11-24)
 
 ### Enrichment band 4: the 3x eval-corpus tier
 
