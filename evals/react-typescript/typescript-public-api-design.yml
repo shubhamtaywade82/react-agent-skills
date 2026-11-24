@@ -1,0 +1,34 @@
+id: typescript-public-api-design-contract
+coverage: static-only
+version: 1
+title: TypeScript Public API Design Contract
+category: react-typescript
+source: react-agent-skills-core-v1
+skills:
+  - typescript-public-api-design
+patterns:
+  - typescript-export-surface
+prompt: |
+  Refine a shared TypeScript module so its exported API is explicit and implementation details remain private.
+  Preserve compatibility unless a breaking change is required.
+constraints:
+  required_boundary: typescript-public-api-design
+checks:
+  - functional
+  - tests
+  - contract
+  - scope_control
+cases:
+  - name: export-surface
+    input: Remove accidental exports from a convenience barrel while preserving supported imports.
+    expected:
+      typescript-export-surface: intentional public exports only
+  - name: compatibility
+    input: Add a new API shape without changing existing supported call sites.
+    expected:
+      compatibility: preserved unless explicitly versioned otherwise
+grading:
+  functional: Supported consumers continue to work.
+  tests: Public contract behavior is covered.
+  contract: Export ownership is explicit.
+  scope_control: No unrelated package restructure is introduced.
