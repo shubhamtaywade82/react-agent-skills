@@ -1,8 +1,0 @@
-id: tanstack-form-contract
-version: 1
-prompt: Implement a TanStack Form async validation and submission flow without duplicating form state.
-checks:
-  - repository evidence
-  - functional behavior
-  - focused tests
-  - adapter-specific contract
