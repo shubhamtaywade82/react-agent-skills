@@ -1,0 +1,31 @@
+id: frontend-styling-layout-contract
+coverage: static-only
+version: 1
+title: Frontend Styling Layout Contract
+category: react-typescript
+source: react-agent-skills-core-v1
+skills:
+  - frontend-styling-layout
+prompt: |
+  Fix a responsive layout regression while preserving focus visibility, reduced-motion behavior, and the repository's existing styling architecture.
+constraints:
+  required_boundary: frontend-styling-layout
+checks:
+  - functional
+  - tests
+  - accessibility
+  - scope_control
+cases:
+  - name: responsive-layout
+    input: Repair a layout that overflows on a narrow viewport without adding a second styling framework.
+    expected:
+      architecture: existing styling model is preserved
+  - name: focus-motion
+    input: Preserve visible focus and reduced-motion behavior while changing layout and animation.
+    expected:
+      accessibility: interaction remains accessible
+grading:
+  functional: Layout works across supported viewport classes.
+  tests: Relevant interaction or visual checks are added.
+  accessibility: Focus and motion preferences remain supported.
+  scope_control: No unrelated styling migration is introduced.
