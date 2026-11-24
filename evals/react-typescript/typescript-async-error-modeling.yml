@@ -1,0 +1,35 @@
+id: typescript-async-error-modeling-contract
+coverage: static-only
+version: 1
+title: TypeScript Async Error Modeling Contract
+category: react-typescript
+source: react-agent-skills-core-v1
+skills:
+  - typescript-async-error-modeling
+patterns:
+  - typescript-async-state-machine
+  - typescript-error-cause
+prompt: |
+  Model an async operation with success, failure, cancellation, retry, and stale-response behavior.
+  Preserve error provenance and prevent contradictory states.
+constraints:
+  required_boundary: typescript-async-error-modeling
+checks:
+  - functional
+  - tests
+  - contract
+  - scope_control
+cases:
+  - name: state-model
+    input: Model an operation with explicit success failure cancellation and pending states.
+    expected:
+      typescript-async-state-machine: explicit and exhaustive
+  - name: error-cause
+    input: Normalize an unknown thrown value without discarding its cause.
+    expected:
+      typescript-error-cause: normalized with provenance preserved
+grading:
+  functional: The async behavior is modeled consistently.
+  tests: Transition and failure paths are covered.
+  contract: Impossible state combinations are excluded.
+  scope_control: No unrelated API or framework migration is introduced.
