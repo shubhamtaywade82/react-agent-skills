@@ -1,6 +1,6 @@
 # Fixture Evaluation Schema
 
-Fixture evaluations provide a deterministic repository state, an agent-controlled workspace, independent verifier source, explicit scope controls, and machine-readable evidence.
+Fixture evals provide a deterministic repository state, an agent-controlled workspace, independent verifier source, explicit scope controls, and machine-readable evidence.
 
 ## Contract
 
