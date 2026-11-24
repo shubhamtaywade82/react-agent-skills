@@ -1,0 +1,34 @@
+id: typescript-api-contracts-contract
+coverage: static-only
+version: 1
+title: TypeScript API Contracts Contract
+category: react-typescript
+source: react-agent-skills-core-v1
+skills:
+  - typescript-api-contracts
+patterns:
+  - typescript-api-runtime-envelope
+  - typescript-api-pagination-contract
+prompt: |
+  Define a typed client boundary for an API with validated success, structured errors, pagination, and version-aware semantics.
+constraints:
+  required_boundary: typescript-api-contracts
+checks:
+  - functional
+  - tests
+  - contract
+  - security
+cases:
+  - name: runtime-envelope
+    input: Validate an untrusted API response before using it as domain data.
+    expected:
+      typescript-api-runtime-envelope: runtime validation is explicit
+  - name: pagination
+    input: Add cursor pagination without losing resource identity in the cache contract.
+    expected:
+      typescript-api-pagination-contract: cursor is part of explicit pagination semantics
+grading:
+  functional: Request and response behavior matches the declared API contract.
+  tests: Success and representative failure responses are covered.
+  contract: Transport and domain boundaries remain explicit.
+  security: Untrusted responses are validated before privileged use.
