@@ -18,9 +18,9 @@ The React/TypeScript evaluation migration preserves all nine source evaluation c
 
 ## Split rules
 
-react-state-effects is represented by independent react-hooks-effects and react-state-management evaluations.
+react-state-effects is represented by independent react-hooks-effects and react-state-management evals.
 
-react-accessibility-performance is represented by independent react-accessibility and react-performance evaluations.
+react-accessibility-performance is represented by independent react-accessibility and react-performance evals.
 
 Evaluation difficulty and verification dimensions remain explicit: functional behavior, tests, contract adherence, and scope control.
 
