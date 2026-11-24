@@ -1,0 +1,33 @@
+id: react-error-resilience-contract
+coverage: static-only
+version: 1
+title: React Error Resilience Contract
+category: react-typescript
+source: react-agent-skills-core-v1
+skills:
+  - react-error-resilience
+patterns:
+  - react-error-boundary-recovery
+prompt: |
+  Add a recoverable error boundary around a feature without swallowing unrelated application failures.
+constraints:
+  required_boundary: react-error-resilience
+checks:
+  - functional
+  - tests
+  - contract
+  - scope_control
+cases:
+  - name: recovery
+    input: Trigger a deterministic feature failure and recover through an explicit reset path.
+    expected:
+      react-error-boundary-recovery: reset semantics are tied to meaningful ownership
+  - name: containment
+    input: Keep unrelated failures outside the feature boundary observable.
+    expected:
+      contract: boundary scope is narrow and intentional
+grading:
+  functional: Feature failures are recoverable.
+  tests: Fallback and recovery paths are covered.
+  contract: Boundary ownership is explicit.
+  scope_control: Error handling does not become a global catch-all.
