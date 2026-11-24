@@ -1,0 +1,35 @@
+id: react-accessibility-contract
+coverage: static-only
+version: 1
+title: React Accessibility Contract
+category: react-typescript
+source: ruby-agent-skills/react-accessibility-performance-v1
+skills:
+  - react-accessibility
+patterns:
+  - react-accessible-interaction
+  - react-focus-management
+prompt: |
+  Build an interactive dialog with correct semantics, keyboard interaction, focus entry, and focus restoration.
+  Inspect the repository before choosing the implementation shape. Prefer native semantics where possible and verify the user-visible accessibility behavior.
+constraints:
+  required_boundary: react-accessibility
+checks:
+  - functional
+  - tests
+  - contract
+  - scope_control
+cases:
+  - name: semantics
+    input: Build an interactive dialog with a clear accessible name and correct keyboard dismissal behavior.
+    expected:
+      react-accessible-interaction: semantic roles and labels are explicit and justified
+  - name: focus
+    input: Ensure focus enters the dialog and returns to the invoking control after close.
+    expected:
+      react-focus-management: focus lifecycle is explicit and tested
+grading:
+  functional: The resulting behavior satisfies the interaction contract.
+  tests: Verification covers keyboard and focus behavior.
+  contract: The implementation is accessible without unnecessary custom semantics.
+  scope_control: No unrelated frontend framework or build migration is introduced.
