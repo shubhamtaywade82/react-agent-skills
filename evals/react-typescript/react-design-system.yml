@@ -1,0 +1,34 @@
+id: react-design-system-contract
+coverage: static-only
+version: 1
+title: React Design System Contract
+category: react-typescript
+source: react-agent-skills-core-v1
+skills:
+  - react-design-system
+patterns:
+  - react-component-boundary
+  - react-composition-over-boolean-props
+prompt: |
+  Extend a shared component without leaking feature policy into the design-system layer or creating a boolean-prop matrix.
+constraints:
+  required_boundary: react-design-system
+checks:
+  - functional
+  - tests
+  - accessibility
+  - scope_control
+cases:
+  - name: shared-boundary
+    input: Add a reusable variant that remains domain-neutral.
+    expected:
+      react-component-boundary: shared responsibility stays coherent
+  - name: composition
+    input: Replace interacting boolean flags with composable slots or explicit variants.
+    expected:
+      react-composition-over-boolean-props: invalid combinations are removed
+grading:
+  functional: Shared component behavior remains correct.
+  tests: Shared states and interactions are covered.
+  accessibility: The design-system component preserves semantic behavior.
+  scope_control: Domain-specific policy remains outside shared UI.
