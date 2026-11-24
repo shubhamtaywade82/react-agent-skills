@@ -1,6 +1,6 @@
 # React + TypeScript Agent Engineering Contract
 
-This repository is an agent-executable React + TypeScript engineering skill library. Treat skills, routing, validation, references, evaluations, and CI as one system. Every coding agent working here must treat the skill library, pattern library, evaluation corpus, and validators as one consistency surface.
+This repository is an agent-executable React + TypeScript engineering skill library. Treat skills, routing, validation, references, evals, and CI as one system. Every coding agent working here must treat the skill library, pattern library, evaluation corpus, and validators as one consistency surface.
 
 ## Domain change contracts
 
@@ -174,7 +174,8 @@ Skill names are routing surface: a name must tell the agent which boundary owns 
 
 For changes to the skill repository itself:
 
-- treat the manifest, router, validator, test suite, evaluations, README inventory, and agent guidance as one consistency surface;
+- treat the manifest, router, validator, test suite, evals, README inventory, and agent guidance as one consistency surface;
+- the public evaluation corpus directory is `evals/` (aligned with ruby-agent-skills and node-agent-skills; renamed from `evaluations/` in the structural-alignment pass — historical documents and changelog entries keep the old name);
 - preserve one owning skill for a framework capability unless repository evidence justifies a new boundary; before adding a near-duplicate skill, check whether the domain is already owned;
 - register every new skill in `skill-manifest.yml` and make the canonical validator execute every repository test;
 - resolve current React behavior from the supported React version (see `framework-drift.yml`) before adding triggers or guidance;
