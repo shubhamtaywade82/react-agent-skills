@@ -27,7 +27,8 @@ ruby-agent-skills still ships deprecated react-* skills (`react-architecture`, `
 
 ## Skill depth
 
-Most `SKILL.md` files are ~2 KB scaffolds. Enrich toward the ruby-agent-skills baseline (~4–5 KB with code examples, decision trees, and source citations), starting with the highest-traffic routing targets. Keep each skill under 500 lines; move deep knowledge into skill-local `references/` one level deep (the efficiency contract already tracks reference coverage).
+- [x] Highest-traffic routing targets enriched (production-readiness increment 2): `frontend-e2e` (4x eval-corpus), `react-architecture`, `frontend-architecture`, `react-async-ui`, `react-testing-engineering`, `react-accessibility`, `react-performance`, `frontend-networking` (3x each), `react-data-fetching`, `react-forms-validation` (2x each) — each now carries purpose, boundary-with-related-skills, decision frameworks, a complete reference example, agent checklists, and source foundations.
+- The remaining ~119 skills are ~1.5–2 KB scaffolds. Continue enriching in eval-corpus-frequency order (next band: `frontend-browser-platform`, `frontend-formatting`, `react-modern-rendering`, `react-server-components`, and the typescript-* trio). Keep each skill under 500 lines; move deep knowledge into skill-local `references/` one level deep (the efficiency contract already tracks reference coverage).
 
 ## Scheduled recheck
 
