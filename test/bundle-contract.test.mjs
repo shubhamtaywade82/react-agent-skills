@@ -85,12 +85,12 @@ test("complete bundle manifest matches the canonical registries", async () => {
 
     const skills = await readSkillRegistry();
     const patterns = await readPatternRegistry();
-    const evaluations = await readEvaluationRegistry();
+    const evals = await readEvaluationRegistry();
     const benchmarks = await readBenchmarkRegistry();
 
     assert.equal(manifest.inventory.skills, skills.length);
     assert.equal(manifest.inventory.patterns, patterns.length);
-    assert.equal(manifest.inventory.evaluations, evaluations.length);
+    assert.equal(manifest.inventory.evals, evals.length);
     assert.equal(manifest.inventory.benchmarkCases, benchmarks.cases);
     assert.equal(manifest.inventory.benchmarkFixtures, benchmarks.fixtures);
 
@@ -134,10 +134,10 @@ test("starter bundle is a strict subset of the canonical skills", async () => {
       assert.ok(allSkills.has(name), `starter skill ${name} not in canonical registry`);
     }
 
-    // Starter bundle intentionally ships no patterns, evaluations, or
+    // Starter bundle intentionally ships no patterns, evals, or
     // benchmarks. They live only in the complete bundle.
     assert.equal(manifest.inventory.patterns, 0);
-    assert.equal(manifest.inventory.evaluations, 0);
+    assert.equal(manifest.inventory.evals, 0);
     assert.equal(manifest.inventory.benchmarkCases, 0);
     assert.equal(manifest.inventory.benchmarkFixtures, 0);
   } finally {
