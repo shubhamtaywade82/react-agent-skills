@@ -1,0 +1,8 @@
+id: swr-contract
+version: 1
+prompt: Repair an SWR cache-key or mutation race using the repository's existing fetcher and cache provider.
+checks:
+  - repository evidence
+  - functional behavior
+  - focused tests
+  - adapter-specific contract
