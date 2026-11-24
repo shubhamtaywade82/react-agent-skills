@@ -1,0 +1,35 @@
+id: frontend-production-contract
+coverage: release-level
+version: 1
+title: Frontend Production Contract
+category: react-typescript
+source: react-agent-skills-core-v1
+skills:
+  - frontend-production
+patterns:
+  - production-asset-cache
+  - production-service-worker-rollout
+  - production-runtime-config
+prompt: |
+  Harden a production frontend release against stale assets, configuration drift, and service-worker cache state.
+constraints:
+  required_boundary: frontend-production
+checks:
+  - functional
+  - tests
+  - contract
+  - scope_control
+cases:
+  - name: asset-version
+    input: Build two releases and preserve correct HTML-to-asset references across deployment.
+    expected:
+      production-asset-cache: immutable asset identity is preserved
+  - name: service-worker
+    input: Define safe cache/update behavior for a service worker across a release.
+    expected:
+      production-service-worker-rollout: rollout semantics are explicit
+grading:
+  functional: Released assets load consistently.
+  tests: Production-mode and release-boundary checks are covered.
+  contract: Cache and configuration lifecycles are explicit.
+  scope_control: Release changes are limited to production concerns.
