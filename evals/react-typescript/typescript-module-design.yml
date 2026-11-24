@@ -1,0 +1,33 @@
+id: typescript-module-design-contract
+coverage: static-only
+version: 1
+title: TypeScript Module Design Contract
+category: react-typescript
+source: react-agent-skills-core-v1
+skills:
+  - typescript-module-design
+patterns:
+  - typescript-module-cycle-boundary
+prompt: |
+  Refactor a TypeScript import cycle while preserving public module contracts and dependency direction.
+constraints:
+  required_boundary: typescript-module-design
+checks:
+  - functional
+  - tests
+  - contract
+  - scope_control
+cases:
+  - name: cycle-removal
+    input: Break a circular dependency created by convenience exports.
+    expected:
+      typescript-module-cycle-boundary: dependency direction is explicit and acyclic
+  - name: public-surface
+    input: Remove the cycle without broadening the supported export surface.
+    expected:
+      contract: only intentional exports remain public
+grading:
+  functional: Runtime behavior remains correct.
+  tests: Existing module behavior remains covered.
+  contract: Dependency direction is explicit.
+  scope_control: No unrelated directory migration is introduced.
