@@ -1,0 +1,33 @@
+id: react-observability-contract
+coverage: telemetry-review
+version: 1
+title: React Observability Contract
+category: react-typescript
+source: react-agent-skills-core-v1
+skills:
+  - react-observability
+patterns:
+  - react-observability-safe-context
+prompt: |
+  Instrument a frontend operation with useful telemetry while excluding secrets and sensitive user data.
+constraints:
+  required_boundary: react-observability
+checks:
+  - functional
+  - tests
+  - security
+  - scope_control
+cases:
+  - name: safe-context
+    input: Emit operation name duration and sanitized failure metadata without logging credentials.
+    expected:
+      react-observability-safe-context: telemetry is diagnostically useful and redacted
+  - name: failure
+    input: Preserve enough context to identify a failed operation without sending full request payloads.
+    expected:
+      security: sensitive payloads remain excluded
+grading:
+  functional: Instrumentation does not alter feature behavior.
+  tests: Emitted event shape is covered.
+  security: Sensitive data is redacted.
+  scope_control: Telemetry remains focused.
