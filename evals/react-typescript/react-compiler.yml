@@ -1,0 +1,8 @@
+id: react-compiler-contract
+version: 1
+prompt: Improve a compiler-enabled component without speculative manual memoization.
+checks:
+  - compiler diagnostics
+  - functional behavior
+  - referential identity
+  - performance evidence
