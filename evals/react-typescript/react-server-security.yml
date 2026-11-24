@@ -1,0 +1,8 @@
+id: react-server-security-contract
+version: 1
+prompt: Harden an RSC server-function boundary so unauthorized input and privileged data do not cross the client boundary.
+checks:
+  - authorization
+  - input validation
+  - serialization safety
+  - dependency version evidence
