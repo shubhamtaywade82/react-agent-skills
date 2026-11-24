@@ -1,0 +1,8 @@
+id: agent-multi-turn-evaluations-contract
+version: 1
+prompt: Evaluate persistent multi-turn agent work and recovery from verifier feedback in the same workspace.
+checks:
+  - persistent state
+  - per-turn evidence
+  - recovery
+  - final verifier
