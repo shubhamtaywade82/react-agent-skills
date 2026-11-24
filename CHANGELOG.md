@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+### Production readiness: naming conventions and TODO sync
+
+- AGENTS.md gains a "Skill naming conventions" section: domain prefixes (`react-`, `frontend-`, `typescript-`, `browser-`, `agent-`) for domain skills, bare library names reserved for adapter-style skills, the `<client>-<backend>-integration` seam naming pattern, a pre-addition collision check, and the grandfathered unprefixed exceptions (`auth-session-boundaries`, `github-pages`).
+- TODO.md synced with merged reality: the second enrichment band (PR #25) is recorded as complete, the node-agent-skills seam recheck is closed (cross-pack verification passes with both manifests agreeing on the seam skill paths), and the next eval-corpus-frequency enrichment band is identified (4x tier: `typescript-api-contracts`, `typescript-configuration`, `browser-security-dom-safety`, `auth-session-boundaries`).
+
 ### Production readiness: cross-pack seams and engineering contract
 
 - Added the symmetric client-side integration seam skills: `react-rails-integration` (Rails↔React client contract: CSRF token handling, session credentials, 422 validation-error mapping, pagination consumption) and `react-node-integration` (Node/BFF↔React client contract: typed API consumption, problem-details mapping, credential modes, SSE/WebSocket lifecycle). Both mirror the server-side seams `rails-react-integration` and `node-react-integration`, closing the cross-pack seam gap flagged in the production-readiness review.

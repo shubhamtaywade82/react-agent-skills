@@ -19,7 +19,7 @@
 
 - `evaluations/` vs `evals/`: ruby-agent-skills and node-agent-skills use `evals/`; this pack uses `evaluations/`. Renaming touches the manifest registry, test pins, and bundle layout — schedule as its own change, then document the aligned name.
 - `adapters/`, `agent-recordings/`, `mcp/`: not yet present. Create `mcp/` server definitions before exposing this pack over MCP; add `agent-recordings/` before recording regression campaigns.
-- Naming conventions: skills mix `agent-*`, `frontend-*`, `react-*`, `typescript-*`, and bare library names (`nextjs`, `vite`, ...). Bare library names are acceptable for adapter-style skills; document the convention in `AGENTS.md` before adding more.
+- [x] Naming conventions: skills mix `agent-*`, `frontend-*`, `react-*`, `typescript-*`, `browser-*`, and bare library names (`nextjs`, `vite`, ...). Bare library names are acceptable for adapter-style skills; the convention is now documented in `AGENTS.md` ("Skill naming conventions") — follow it before adding more skills.
 
 ## Skill ownership vs companion packs
 
@@ -28,8 +28,9 @@ ruby-agent-skills still ships deprecated react-* skills (`react-architecture`, `
 ## Skill depth
 
 - [x] Highest-traffic routing targets enriched (production-readiness increment 2): `frontend-e2e` (4x eval-corpus), `react-architecture`, `frontend-architecture`, `react-async-ui`, `react-testing-engineering`, `react-accessibility`, `react-performance`, `frontend-networking` (3x each), `react-data-fetching`, `react-forms-validation` (2x each) — each now carries purpose, boundary-with-related-skills, decision frameworks, a complete reference example, agent checklists, and source foundations.
-- The remaining ~119 skills are ~1.5–2 KB scaffolds. Continue enriching in eval-corpus-frequency order (next band: `frontend-browser-platform`, `frontend-formatting`, `react-modern-rendering`, `react-server-components`, and the typescript-* trio). Keep each skill under 500 lines; move deep knowledge into skill-local `references/` one level deep (the efficiency contract already tracks reference coverage).
+- [x] Second band enriched (production-readiness increment 3, PR #25): `frontend-browser-platform`, `frontend-formatting` (3x each), `react-modern-rendering`, `react-server-components`, `typescript-type-design`, `typescript-public-api-design`, `typescript-async-error-modeling` (2x each).
+- The remaining ~112 skills are ~1.5–2 KB scaffolds. Continue enriching in eval-corpus-frequency order. Next band (4x tier): `typescript-api-contracts`, `typescript-configuration`, `browser-security-dom-safety`, `auth-session-boundaries`; then the 3x tier (`typescript-runtime-contracts`, `react-component-engineering`, `react-hooks-effects`, `react-state-management`, `typescript-module-design`, `typescript-migration`, `frontend-styling-layout`, `frontend-dependency-management`, `frontend-production`, `frontend-security`, `react-routing`, `react-error-resilience`). Keep each skill under 500 lines; move deep knowledge into skill-local `references/` one level deep (the efficiency contract already tracks reference coverage).
 
 ## Scheduled recheck
 
-- After node-agent-skills merges its production-readiness branch, confirm its `cross_pack.seam_contracts.companion_side` still points at `react-node-integration`, and that both manifests agree on the seam skill paths.
+- [x] node-agent-skills merged its production-readiness work (main `5f84831` → `8116329`): its `cross_pack.seam_contracts.companion_side` now points at `react-node-integration`, both manifests agree on the seam skill paths, and its `bin/cross-pack-verify.mjs --companions` run passes with this pack's seam skills resolving. Remaining follow-up is companion pinning (see "Cross-pack follow-ups").

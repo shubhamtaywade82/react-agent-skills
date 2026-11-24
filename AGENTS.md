@@ -160,6 +160,16 @@ For final release or publication changes:
 
 Every skill must have a valid `SKILL.md`, be registered in `skill-manifest.yml`, and contain activation, inspection, decision, implementation, failure, review, and verification guidance. Keep validation and CI green. Keep each `SKILL.md` within the size gate (500 lines, ~5,000 estimated tokens) by moving deep knowledge into skill-local `references/` one level deep, never into a new skill unless it is a separate routing boundary.
 
+## Skill naming conventions
+
+Skill names are routing surface: a name must tell the agent which boundary owns the prompt before the description is read. Use these rules when adding or renaming skills:
+
+- Domain skills take a domain prefix matching their routing boundary: `react-` for React-specific behavior and APIs, `frontend-` for framework-agnostic frontend concerns, `typescript-` for the language and its toolchain, `browser-` for Web-platform APIs, `agent-` for agent/evaluation process guidance.
+- Bare library names (`nextjs`, `vite`, `zod`, `playwright`, ...) are reserved for adapter-style skills: exactly one library, translating this pack's domain rules onto that library's APIs. Do not use a bare library name for a skill that teaches a general practice.
+- Cross-pack seam skills follow `<client>-<backend>-integration` (`react-rails-integration`, `react-node-integration`); the server-side mirror lives in the backend pack.
+- Before adding a skill, search the manifest for an existing owner of the boundary; a new name must not overlap another skill's triggers (see "Skill precedence").
+- A few historical unprefixed domain skills exist (`auth-session-boundaries`, `github-pages`); they are grandfathered, not a pattern to extend. New domain skills always take a prefix.
+
 ## Repository completeness changes
 
 For changes to the skill repository itself:
