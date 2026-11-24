@@ -43,9 +43,9 @@ This matrix tracks the completeness gaps identified for a production React + Typ
 | Framework/runtime adapters | Complete | vite, nextjs, remix, react-router, tanstack-start, astro-react, rsbuild, rspack |
 | Deployment adapters | Complete | vercel, netlify, cloudflare, aws-frontend, docker-kubernetes-frontend, github-pages |
 | Observability adapters | Complete | sentry, opentelemetry-frontend, datadog-frontend, new-relic-frontend |
-| Fixture-backed evaluations | Complete | benchmarks/fixtures + fixture-evaluator |
-| Multi-turn evaluations | Complete | agent-multi-turn-evaluations + persistent fixture turns |
-| Adversarial evaluations | Complete | agent-adversarial-evaluations + hostile-content fixtures |
+| Fixture-backed evals | Complete | benchmarks/fixtures + fixture-evaluator |
+| Multi-turn evals | Complete | agent-multi-turn-evaluations + persistent fixture turns |
+| Adversarial evals | Complete | agent-adversarial-evaluations + hostile-content fixtures |
 | Agent behavior scoring | Complete | agent-behavior-scoring + dimensioned fixture score |
 | Full-stack Rails + React boundary | Complete | fullstack-rails-react-contract fixture + shared routing |
 
