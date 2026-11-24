@@ -16,7 +16,7 @@ Current destination baseline:
 
 ## Migration principles
 
-1. Do not delete frontend material from `ruby-agent-skills` until the new pack has equivalent coverage and verified evaluations.
+1. Do not delete frontend material from `ruby-agent-skills` until the new pack has equivalent coverage and verified evals.
 2. Do not blindly copy combined skills; preserve their content but split ownership where the new taxonomy requires it.
 3. Keep source lineage in a machine-readable migration map.
 4. Every migrated skill/pattern/evaluation must remain registered and executable in the destination.
@@ -83,7 +83,7 @@ Do not rewrite them during migration except for:
 - target skill reference updates;
 - removal of source-pack-specific assumptions.
 
-Preserve pattern names initially so evaluations and provenance remain easy to compare.
+Preserve pattern names initially so evals and provenance remain easy to compare.
 
 Exit gate:
 - 24/24 patterns present;
@@ -93,7 +93,7 @@ Exit gate:
 Cross-cutting exception:
 The four React/TypeScript patterns under `stack-minimality` are a separate decision. First generalize the minimality principle; then decide whether their canonical home becomes this pack or a future shared cross-stack pack.
 
-## Phase 4 — migrate and split evaluations
+## Phase 4 — migrate and split evals
 
 Migrate the 9 existing evaluation contracts.
 
@@ -110,7 +110,7 @@ Expected destination evaluation set:
 - React performance
 - React architecture
 
-This produces more destination evaluations than source because two combined source evaluations split by ownership.
+This produces more destination evals than source because two combined source evals split by ownership.
 
 Add regression/system tests for:
 - manifest registration;
@@ -229,7 +229,7 @@ Only after all prior gates pass:
 1. mark the 9 original frontend skills as deprecated in the Ruby pack;
 2. add explicit replacement references to `react-agent-skills`;
 3. keep migration notes for at least one release cycle;
-4. keep source evaluations until destination equivalence is verified;
+4. keep source evals until destination equivalence is verified;
 5. remove source frontend artifacts only in a deliberate breaking-release change.
 
 The Ruby pack remains authoritative for Ruby/Rails/PostgreSQL/backend concerns.
@@ -258,7 +258,7 @@ The split is complete only when:
 
 - destination core taxonomy is fully registered;
 - migrated skills and patterns have parity with source;
-- split skills have independent contracts/evaluations;
+- split skills have independent contracts/evals;
 - conditional adapters are opt-in by repository evidence;
 - frontend benchmarks are independently executable;
 - full-stack composition is documented;
