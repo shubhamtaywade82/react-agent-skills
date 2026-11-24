@@ -1,0 +1,89 @@
+# Removed/deprecated React and TypeScript APIs that skill TypeScript/JavaScript
+# code fences must not recommend. Mirrors the ruby-agent-skills and
+# node-agent-skills framework-drift.yml contract: each entry needs framework
+# (react|typescript), status, version, symbol, match, example, replacement,
+# source_url (HTTPS official release notes), and source_section. Write `match`
+# in YAML single quotes with single backslashes ('\bfoo\b'); doubling them
+# makes the regex require a literal backslash. `example` is a line the regex
+# must match. Quote any value containing " #" or ": " so YAML does not
+# truncate it.
+version: 1
+policy:
+  scan_roots:
+    - skills
+    - patterns
+  languages:
+    - typescript
+    - javascript
+  default_framework: react
+entries:
+  react-dom-render:
+    framework: react
+    status: removed
+    version: "19"
+    symbol: "ReactDOM.render / ReactDOM.hydrate"
+    match: '\bReactDOM\s*\.\s*(?:render|hydrate)\s*\('
+    example: 'ReactDOM.render(<App />, rootEl)'
+    replacement: "createRoot(rootEl).render(<App />) / hydrateRoot(rootEl, <App />)"
+    source_url: https://react.dev/blog/2024/04/25/react-19
+    source_section: Removed ReactDOM.render and ReactDOM.hydrate
+  react-unmount-component-at-node:
+    framework: react
+    status: removed
+    version: "19"
+    symbol: ReactDOM.unmountComponentAtNode
+    match: '\bunmountComponentAtNode\b'
+    example: 'ReactDOM.unmountComponentAtNode(rootEl)'
+    replacement: "root.unmount() on the createRoot root"
+    source_url: https://react.dev/blog/2024/04/25/react-19
+    source_section: Removed unmountComponentAtNode
+  react-find-dom-node:
+    framework: react
+    status: removed
+    version: "19"
+    symbol: ReactDOM.findDOMNode
+    match: '\bfindDOMNode\b'
+    example: 'const node = findDOMNode(this)'
+    replacement: refs on the rendered element
+    source_url: https://react.dev/blog/2024/04/25/react-19
+    source_section: Removed findDOMNode
+  react-string-refs:
+    framework: react
+    status: removed
+    version: "19"
+    symbol: "string refs (ref=\"name\")"
+    match: '\bref\s*=\s*["''][A-Za-z0-9_]+["'']'
+    example: 'ref="submitButton"'
+    replacement: callback refs / useRef
+    source_url: https://react.dev/blog/2024/04/25/react-19
+    source_section: Removed string refs
+  react-fn-default-props:
+    framework: react
+    status: removed
+    version: "19"
+    symbol: defaultProps on function components
+    match: '\bdefaultProps\s*='
+    example: 'MyButton.defaultProps = { kind: "primary" }'
+    replacement: default parameter values in the component signature
+    source_url: https://react.dev/blog/2024/04/25/react-19
+    source_section: Removed defaultProps for function components
+  react-test-utils:
+    framework: react
+    status: deprecated
+    version: "19"
+    symbol: react-dom/test-utils (act moved to react)
+    match: '\breact-dom/test-utils\b'
+    example: "import { act } from 'react-dom/test-utils'"
+    replacement: "React.act from 'react'"
+    source_url: https://react.dev/blog/2024/04/25/react-19
+    source_section: Deprecated react-dom/test-utils
+  typescript-tslint:
+    framework: typescript
+    status: deprecated
+    version: "6.1"
+    symbol: TSLint
+    match: '\btslint\b'
+    example: 'npm install tslint'
+    replacement: typescript-eslint (ESLint with @typescript-eslint)
+    source_url: https://palantir.github.io/tslint/
+    source_section: deprecation notice

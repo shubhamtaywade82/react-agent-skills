@@ -384,3 +384,52 @@ skills:
   - name: agent-adversarial-evaluations
     path: skills/agent-adversarial-evaluations/SKILL.md
     triggers: [adversarial evaluation, prompt injection, scope creep, test cheating, security benchmark]
+  - name: react-rails-integration
+    path: skills/react-rails-integration/SKILL.md
+    triggers: [react rails integration, rails backend, csrf token, inertia, rails 422 errors, same-origin credentials]
+  - name: react-node-integration
+    path: skills/react-node-integration/SKILL.md
+    triggers: [react node integration, node backend, problem details, bff topology, eventsource, live updates, credential mode]
+
+cross_pack:
+  schema_version: 3
+  companions:
+    - pack: ruby-agent-skills
+      repo: https://github.com/shubhamtaywade82/ruby-agent-skills
+      pinned_ref: v1.5.0
+      seam_skill: react-rails-integration
+      language: ruby
+    - pack: node-agent-skills
+      repo: https://github.com/shubhamtaywade82/node-agent-skills
+      pinned_ref: main
+      seam_skill: react-node-integration
+      language: typescript
+  # This pack shares no skill names with ruby-agent-skills or
+  # node-agent-skills (React-client skills are unprefixed or react-*/typescript-*;
+  # both backend packs use rails-*/node- prefixes). name_collisions is the
+  # machine-checkable surface the v3 verifier compares against the actual
+  # name intersection.
+  name_collisions: []
+  seam_contracts:
+    - boundary: react-client-to-rails-backend
+      primary_in_this_pack: react-rails-integration
+      secondary_in_this_pack:
+        - typescript-api-contracts
+        - typescript-runtime-contracts
+        - react-data-fetching
+        - react-forms-validation
+        - browser-authentication
+      companion_pack: ruby-agent-skills
+      companion_side: ruby-agent-skills/skills/rails-react-integration
+      routing_doc: router/ROUTING.md#backend-companion-packs
+    - boundary: react-client-to-node-backend
+      primary_in_this_pack: react-node-integration
+      secondary_in_this_pack:
+        - typescript-api-contracts
+        - typescript-runtime-contracts
+        - react-data-fetching
+        - react-forms-validation
+        - browser-authentication
+      companion_pack: node-agent-skills
+      companion_side: node-agent-skills/skills/node-react-integration
+      routing_doc: router/ROUTING.md#backend-companion-packs

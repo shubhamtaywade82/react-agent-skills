@@ -19,7 +19,7 @@ function parseFrontmatter(content) {
 
 test("skills use Agent Skills metadata constraints and intent-focused descriptions", async () => {
   const names = await skillFiles();
-  assert.equal(names.length, 127, "skill inventory should remain complete");
+  assert.equal(names.length, 129, "skill inventory should remain complete");
 
   for (const name of names) {
     const content = await readFile(new URL("skills/" + name + "/SKILL.md", root), "utf8");

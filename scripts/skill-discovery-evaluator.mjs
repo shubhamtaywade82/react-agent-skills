@@ -103,7 +103,7 @@ async function main() {
     cases
   };
   process.stdout.write(JSON.stringify(output, null, 2) + "\n");
-  if (args.check && (output.catalog.skills !== 127 || output.summary.failed > 0)) process.exitCode = 1;
+  if (args.check && (output.catalog.skills !== 129 || output.summary.failed > 0)) process.exitCode = 1;
 }
 
 await main();

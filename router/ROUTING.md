@@ -168,8 +168,8 @@ Backend skills live in separate packs and are never copied here. When a task cro
 
 | Detected backend | Seam owner (backend pack) | Client side (this pack) |
 |---|---|---|
-| Rails (`Gemfile` with `rails`) | ruby-agent-skills / rails-react-integration | typescript-api-contracts, typescript-runtime-contracts, react-data-fetching, react-forms-validation, browser-authentication |
-| Node.js service or BFF (separate `package.json` with an HTTP framework) | node-agent-skills / node-react-integration | typescript-api-contracts, typescript-runtime-contracts, react-data-fetching, react-forms-validation, browser-authentication |
+| Rails (`Gemfile` with `rails`) | ruby-agent-skills / rails-react-integration | react-rails-integration (seam), typescript-api-contracts, typescript-runtime-contracts, react-data-fetching, react-forms-validation, browser-authentication |
+| Node.js service or BFF (separate `package.json` with an HTTP framework) | node-agent-skills / node-react-integration | react-node-integration (seam), typescript-api-contracts, typescript-runtime-contracts, react-data-fetching, react-forms-validation, browser-authentication |
 | Next.js, Remix, or TanStack Start route handlers in this app | this pack: framework adapter + react-server-security | — |
 
 - A client-only change (component, hook, client state, styling, client test) stays in this pack even in a full-stack repository.
