@@ -1,0 +1,8 @@
+id: frontend-messaging-contract
+version: 1
+prompt: Secure browser messaging with origin checks, schema validation and lifecycle cleanup.
+checks:
+  - repository evidence
+  - functional behavior
+  - security/accessibility where relevant
+  - focused tests
