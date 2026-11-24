@@ -1,0 +1,335 @@
+version: 1
+schema: docs/EVAL_SCHEMA.md
+category: react-typescript
+evals:
+  - id: typescript-core-contract
+    path: evals/react-typescript/typescript-core-contract.yml
+    skill: typescript-core-engineering
+  - id: typescript-type-design-contract
+    path: evals/react-typescript/typescript-type-design-contract.yml
+    skill: typescript-type-design
+  - id: typescript-runtime-contracts
+    path: evals/react-typescript/typescript-runtime-contracts.yml
+    skill: typescript-runtime-contracts
+  - id: react-component-contract
+    path: evals/react-typescript/react-component-contract.yml
+    skill: react-component-engineering
+  - id: react-hooks-effects-contract
+    path: evals/react-typescript/react-hooks-effects-contract.yml
+    skill: react-hooks-effects
+  - id: react-state-management-contract
+    path: evals/react-typescript/react-state-management-contract.yml
+    skill: react-state-management
+  - id: react-data-fetching-contract
+    path: evals/react-typescript/react-data-fetching-contract.yml
+    skill: react-data-fetching
+  - id: react-testing-contract
+    path: evals/react-typescript/react-testing-contract.yml
+    skill: react-testing-engineering
+  - id: react-accessibility-contract
+    path: evals/react-typescript/react-accessibility-contract.yml
+    skill: react-accessibility
+  - id: react-performance-contract
+    path: evals/react-typescript/react-performance-contract.yml
+    skill: react-performance
+  - id: react-architecture-contract
+    path: evals/react-typescript/react-architecture-contract.yml
+    skill: react-architecture
+
+  - id: react-async-ui-contract
+    path: evals/react-typescript/react-async-ui.yml
+    skill: react-async-ui
+  - id: typescript-async-error-modeling-contract
+    path: evals/react-typescript/typescript-async-error-modeling.yml
+    skill: typescript-async-error-modeling
+  - id: typescript-public-api-design-contract
+    path: evals/react-typescript/typescript-public-api-design.yml
+    skill: typescript-public-api-design
+  - id: typescript-api-contracts-contract
+    path: evals/react-typescript/typescript-api-contracts.yml
+    skill: typescript-api-contracts
+  - id: typescript-module-design-contract
+    path: evals/react-typescript/typescript-module-design.yml
+    skill: typescript-module-design
+  - id: typescript-configuration-contract
+    path: evals/react-typescript/typescript-configuration.yml
+    skill: typescript-configuration
+  - id: typescript-migration-contract
+    path: evals/react-typescript/typescript-migration.yml
+    skill: typescript-migration
+  - id: frontend-architecture-contract
+    path: evals/react-typescript/frontend-architecture.yml
+    skill: frontend-architecture
+  - id: frontend-browser-platform-contract
+    path: evals/react-typescript/frontend-browser-platform.yml
+    skill: frontend-browser-platform
+  - id: frontend-styling-layout-contract
+    path: evals/react-typescript/frontend-styling-layout.yml
+    skill: frontend-styling-layout
+  - id: frontend-e2e-contract
+    path: evals/react-typescript/frontend-e2e.yml
+    skill: frontend-e2e
+  - id: frontend-environment-configuration-contract
+    path: evals/react-typescript/frontend-environment-configuration.yml
+    skill: frontend-environment-configuration
+  - id: frontend-dependency-management-contract
+    path: evals/react-typescript/frontend-dependency-management.yml
+    skill: frontend-dependency-management
+  - id: frontend-production-contract
+    path: evals/react-typescript/frontend-production.yml
+    skill: frontend-production
+  - id: frontend-security-contract
+    path: evals/react-typescript/frontend-security.yml
+    skill: frontend-security
+  - id: browser-security-dom-safety-contract
+    path: evals/react-typescript/browser-security-dom-safety.yml
+    skill: browser-security-dom-safety
+  - id: auth-session-boundaries-contract
+    path: evals/react-typescript/auth-session-boundaries.yml
+    skill: auth-session-boundaries
+  - id: react-modern-rendering-contract
+    path: evals/react-typescript/react-modern-rendering.yml
+    skill: react-modern-rendering
+  - id: react-server-components-contract
+    path: evals/react-typescript/react-server-components.yml
+    skill: react-server-components
+  - id: react-forms-validation-contract
+    path: evals/react-typescript/react-forms-validation.yml
+    skill: react-forms-validation
+  - id: react-routing-contract-v2
+    path: evals/react-typescript/react-routing.yml
+    skill: react-routing
+  - id: react-error-resilience-contract
+    path: evals/react-typescript/react-error-resilience.yml
+    skill: react-error-resilience
+  - id: react-security-contract
+    path: evals/react-typescript/react-security.yml
+    skill: react-security
+  - id: react-design-system-contract
+    path: evals/react-typescript/react-design-system.yml
+    skill: react-design-system
+  - id: react-toolchain-contract
+    path: evals/react-typescript/react-toolchain.yml
+    skill: react-toolchain
+  - id: react-observability-contract
+    path: evals/react-typescript/react-observability.yml
+    skill: react-observability
+  - id: react-review-contract
+    path: evals/react-typescript/react-review.yml
+    skill: react-review
+  - id: agent-workflow-contract
+    path: evals/react-typescript/agent-workflow.yml
+    skill: agent-workflow
+  - id: react-19-modern-apis-contract
+    path: evals/react-typescript/react-19-modern-apis.yml
+    skill: react-19-modern-apis
+  - id: react-actions-forms-contract
+    path: evals/react-typescript/react-actions-forms.yml
+    skill: react-actions-forms
+  - id: react-compiler-contract
+    path: evals/react-typescript/react-compiler.yml
+    skill: react-compiler
+  - id: react-server-security-contract
+    path: evals/react-typescript/react-server-security.yml
+    skill: react-server-security
+  - id: typescript-version-migration-contract
+    path: evals/react-typescript/typescript-version-migration.yml
+    skill: typescript-version-migration
+  - id: typescript-build-architecture-contract
+    path: evals/react-typescript/typescript-build-architecture.yml
+    skill: typescript-build-architecture
+  - id: eslint-contract
+    path: evals/react-typescript/eslint.yml
+    skill: eslint
+  - id: typescript-eslint-contract
+    path: evals/react-typescript/typescript-eslint.yml
+    skill: typescript-eslint
+  - id: frontend-formatting-contract
+    path: evals/react-typescript/frontend-formatting.yml
+    skill: frontend-formatting
+  - id: frontend-monorepo-contract
+    path: evals/react-typescript/frontend-monorepo.yml
+    skill: frontend-monorepo
+  - id: typescript-package-publishing-contract
+    path: evals/react-typescript/typescript-package-publishing.yml
+    skill: typescript-package-publishing
+  - id: frontend-generated-code-contract
+    path: evals/react-typescript/frontend-generated-code.yml
+    skill: frontend-generated-code
+  - id: frontend-internationalization-contract
+    path: evals/react-typescript/frontend-internationalization.yml
+    skill: frontend-internationalization
+  - id: frontend-offline-pwa-contract
+    path: evals/react-typescript/frontend-offline-pwa.yml
+    skill: frontend-offline-pwa
+  - id: frontend-realtime-contract
+    path: evals/react-typescript/frontend-realtime.yml
+    skill: frontend-realtime
+  - id: frontend-web-performance-contract
+    path: evals/react-typescript/frontend-web-performance.yml
+    skill: frontend-web-performance
+  - id: frontend-test-reliability-contract
+    path: evals/react-typescript/frontend-test-reliability.yml
+    skill: frontend-test-reliability
+  - id: frontend-visual-testing-contract
+    path: evals/react-typescript/frontend-visual-testing.yml
+    skill: frontend-visual-testing
+  - id: frontend-rendering-strategies-contract
+    path: evals/react-typescript/frontend-rendering-strategies.yml
+    skill: frontend-rendering-strategies
+  - id: frontend-supply-chain-contract
+    path: evals/react-typescript/frontend-supply-chain.yml
+    skill: frontend-supply-chain
+  - id: frontend-documentation-contract
+    path: evals/react-typescript/frontend-documentation.yml
+    skill: frontend-documentation
+  - id: frontend-codemod-migration-contract
+    path: evals/react-typescript/frontend-codemod-migration.yml
+    skill: frontend-codemod-migration
+  - id: react-accessibility-widgets-contract
+    path: evals/react-typescript/react-accessibility-widgets.yml
+    skill: react-accessibility-widgets
+  - id: frontend-storage-contract
+    path: evals/react-typescript/frontend-storage.yml
+    skill: frontend-storage
+  - id: frontend-messaging-contract
+    path: evals/react-typescript/frontend-messaging.yml
+    skill: frontend-messaging
+  - id: frontend-workers-contract
+    path: evals/react-typescript/frontend-workers.yml
+    skill: frontend-workers
+  - id: frontend-networking-contract
+    path: evals/react-typescript/frontend-networking.yml
+    skill: frontend-networking
+  - id: browser-authentication-contract
+    path: evals/react-typescript/browser-authentication.yml
+    skill: browser-authentication
+  - id: browser-media-contract
+    path: evals/react-typescript/browser-media.yml
+    skill: browser-media
+  - id: apollo-contract
+    path: evals/react-typescript/apollo.yml
+    skill: apollo
+  - id: urql-contract
+    path: evals/react-typescript/urql.yml
+    skill: urql
+  - id: swr-contract
+    path: evals/react-typescript/swr.yml
+    skill: swr
+  - id: rtk-query-contract
+    path: evals/react-typescript/rtk-query.yml
+    skill: rtk-query
+  - id: trpc-contract
+    path: evals/react-typescript/trpc.yml
+    skill: trpc
+  - id: graphql-codegen-contract
+    path: evals/react-typescript/graphql-codegen.yml
+    skill: graphql-codegen
+  - id: openapi-tooling-contract
+    path: evals/react-typescript/openapi-tooling.yml
+    skill: openapi-tooling
+  - id: jotai-contract
+    path: evals/react-typescript/jotai.yml
+    skill: jotai
+  - id: mobx-contract
+    path: evals/react-typescript/mobx.yml
+    skill: mobx
+  - id: xstate-contract
+    path: evals/react-typescript/xstate.yml
+    skill: xstate
+  - id: react-hook-form-contract
+    path: evals/react-typescript/react-hook-form.yml
+    skill: react-hook-form
+  - id: tanstack-form-contract
+    path: evals/react-typescript/tanstack-form.yml
+    skill: tanstack-form
+  - id: zod-contract
+    path: evals/react-typescript/zod.yml
+    skill: zod
+  - id: valibot-contract
+    path: evals/react-typescript/valibot.yml
+    skill: valibot
+  - id: arktype-contract
+    path: evals/react-typescript/arktype.yml
+    skill: arktype
+  - id: yup-contract
+    path: evals/react-typescript/yup.yml
+    skill: yup
+  - id: vitest-browser-contract
+    path: evals/react-typescript/vitest-browser.yml
+    skill: vitest-browser
+  - id: biome-contract
+    path: evals/react-typescript/biome.yml
+    skill: biome
+  - id: vercel-contract
+    path: evals/react-typescript/vercel.yml
+    skill: vercel
+  - id: netlify-contract
+    path: evals/react-typescript/netlify.yml
+    skill: netlify
+  - id: cloudflare-contract
+    path: evals/react-typescript/cloudflare.yml
+    skill: cloudflare
+  - id: aws-frontend-contract
+    path: evals/react-typescript/aws-frontend.yml
+    skill: aws-frontend
+  - id: docker-kubernetes-frontend-contract
+    path: evals/react-typescript/docker-kubernetes-frontend.yml
+    skill: docker-kubernetes-frontend
+  - id: github-pages-contract
+    path: evals/react-typescript/github-pages.yml
+    skill: github-pages
+  - id: sentry-contract
+    path: evals/react-typescript/sentry.yml
+    skill: sentry
+  - id: opentelemetry-frontend-contract
+    path: evals/react-typescript/opentelemetry-frontend.yml
+    skill: opentelemetry-frontend
+  - id: datadog-frontend-contract
+    path: evals/react-typescript/datadog-frontend.yml
+    skill: datadog-frontend
+  - id: new-relic-frontend-contract
+    path: evals/react-typescript/new-relic-frontend.yml
+    skill: new-relic-frontend
+  - id: tailwindcss-contract
+    path: evals/react-typescript/tailwindcss.yml
+    skill: tailwindcss
+  - id: css-modules-contract
+    path: evals/react-typescript/css-modules.yml
+    skill: css-modules
+  - id: styled-components-contract
+    path: evals/react-typescript/styled-components.yml
+    skill: styled-components
+  - id: emotion-contract
+    path: evals/react-typescript/emotion.yml
+    skill: emotion
+  - id: vanilla-extract-contract
+    path: evals/react-typescript/vanilla-extract.yml
+    skill: vanilla-extract
+  - id: tanstack-start-contract
+    path: evals/react-typescript/tanstack-start.yml
+    skill: tanstack-start
+  - id: astro-react-contract
+    path: evals/react-typescript/astro-react.yml
+    skill: astro-react
+  - id: rsbuild-contract
+    path: evals/react-typescript/rsbuild.yml
+    skill: rsbuild
+  - id: rspack-contract
+    path: evals/react-typescript/rspack.yml
+    skill: rspack
+  - id: prettier-contract
+    path: evals/react-typescript/prettier.yml
+    skill: prettier
+  - id: agent-evaluation-engineering-contract
+    path: evals/react-typescript/agent-evaluation-engineering.yml
+    skill: agent-evaluation-engineering
+  - id: agent-behavior-scoring-contract
+    path: evals/react-typescript/agent-behavior-scoring.yml
+    skill: agent-behavior-scoring
+  - id: agent-multi-turn-evaluations-contract
+    path: evals/react-typescript/agent-multi-turn-evaluations.yml
+    skill: agent-multi-turn-evaluations
+  - id: agent-adversarial-evaluations-contract
+    path: evals/react-typescript/agent-adversarial-evaluations.yml
+    skill: agent-adversarial-evaluations
