@@ -10,7 +10,7 @@ Current target inventory:
 - conditional adapters for Vite, Next.js, Remix, React Router, TanStack Query, Redux, Zustand, Vitest, Testing Library, Playwright, Cypress, Storybook, and MSW
 
 Promotion gates:
-1. foundation patterns and source-derived evaluations
+1. foundation patterns and source-derived evals
 2. frontend core expansion and conditional adapters
 3. browser/security/production coverage
 4. benchmark runner and installer verification
