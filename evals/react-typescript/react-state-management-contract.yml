@@ -1,0 +1,36 @@
+id: react-state-management-contract
+coverage: static-only
+version: 1
+title: React State Management Contract
+category: react-typescript
+source: ruby-agent-skills/react-state-effects-v1
+skills:
+  - react-state-management
+patterns:
+  - react-state-ownership
+  - react-reducer-state-machine
+  - react-context-scope
+prompt: |
+  Refactor a feature that stores local UI state in a global context and has implicit transition flags.
+  Inspect the repository before choosing the implementation shape. Keep state owned by the narrowest meaningful boundary and use an explicit state machine when transitions have meaningful invariants.
+constraints:
+  required_boundary: react-state-management
+checks:
+  - functional
+  - tests
+  - contract
+  - scope_control
+cases:
+  - name: state-ownership
+    input: Move feature-local state out of a global provider without changing user-visible behavior.
+    expected:
+      react-state-ownership: state is colocated with its narrowest meaningful owner
+  - name: explicit-transitions
+    input: Replace mutually interacting loading/saving/error flags with an explicit reducer state model.
+    expected:
+      react-reducer-state-machine: impossible transitions are eliminated and transitions are tested
+grading:
+  functional: The resulting behavior satisfies the task contract.
+  tests: Verification covers state transitions and provider scope.
+  contract: UI state ownership and transitions are explicit.
+  scope_control: No unrelated frontend framework or build migration is introduced.
