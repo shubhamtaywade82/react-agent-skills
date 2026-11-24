@@ -9,6 +9,13 @@ description: Design agent evals that separate execution success from correctness
 
 Activate when creating or changing benchmark cases, fixture repositories, evaluators, hidden checks, multi-turn tasks, adversarial tasks or agent scoring.
 
+## Boundary with related skills
+
+- Use `agent-behavior-scoring` to consume this skill's verifier results; this skill owns the case contract, that owns the scorecard.
+- Use `agent-adversarial-evaluations` for hostile repository content; this skill owns the neutral corpus contract.
+- Use `agent-multi-turn-evaluations` when the scenario spans sequential turns; this skill owns the single-turn contract.
+- Use `agent-workflow` for the repository loop the evals measure.
+
 ## Repository inspection
 
 Inspect benchmark schema, fixture manifests, evaluator scripts, expected invariants, allowed paths and CI execution boundaries.
@@ -38,6 +45,23 @@ Never convert verifier failure into success because the agent exited zero. Prese
 ## Review
 
 Check for oracle tampering, agent-cheatable tests, missing scope controls, flaky timing, implementation-detail assertions and benchmarks that reward unnecessary edits.
+
+**Reference example** — one fixture case in the contract's shape (initial state → prompt → scope → verifiers → outcome):
+
+```yaml
+# evals/react-typescript/cart-optimistic-update.yml
+case: cart-optimistic-update
+fixture: ecommerce-storefront            # fixture root with seeded state
+prompt: "Add optimistic updates to the cart quantity stepper"
+allowed_paths: [src/cart/**, src/state/**, test/cart/**]
+verifiers:                               # verifier source lives outside the agent workspace
+  - test: test/cart/optimistic.test.mjs  # behavioral: pending state, rollback on 409
+  - invariant: "git diff --name-only matches allowed_paths"
+  - invariant: "package.json has no new dependencies"
+outcome: machine-readable per-verifier pass/fail
+```
+
+The three verifier kinds are the contract: a behavioral test proves correctness, scope invariants prove discipline, and the dependency invariant proves the agent did not buy its way out. All three are independent of the agent's exit status.
 
 ## Verification
 
