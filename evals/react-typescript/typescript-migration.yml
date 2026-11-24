@@ -1,0 +1,33 @@
+id: typescript-migration-contract
+coverage: static-only
+version: 1
+title: TypeScript Migration Contract
+category: react-typescript
+source: react-agent-skills-core-v1
+skills:
+  - typescript-migration
+patterns:
+  - typescript-migration-no-suppression
+prompt: |
+  Convert one bounded JavaScript feature to strict TypeScript while preserving runtime behavior and avoiding blanket suppression.
+constraints:
+  required_boundary: typescript-migration
+checks:
+  - functional
+  - tests
+  - contract
+  - scope_control
+cases:
+  - name: bounded-slice
+    input: Convert one vertical slice without rewriting unrelated modules.
+    expected:
+      scope_control: migration is incremental and bounded
+  - name: suppression
+    input: Resolve type uncertainty without introducing repository-wide any or suppression debt.
+    expected:
+      typescript-migration-no-suppression: no blanket suppression
+grading:
+  functional: Runtime behavior is preserved.
+  tests: Existing and new behavior remain verified.
+  contract: Types are more explicit at real boundaries.
+  scope_control: Migration remains incremental.
