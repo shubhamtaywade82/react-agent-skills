@@ -2,7 +2,7 @@
 //
 // Both build-bundle.mjs and build-starter-bundle.mjs read the canonical
 // registries (skill-manifest.yml, patterns/PATTERN_MANIFEST.yml,
-// evaluations/manifest.yml, benchmarks/manifest.yml), copy the
+// evals/manifest.yml, benchmarks/manifest.yml), copy the
 // registered files into a staging directory, and tar+gzip the result.
 //
 // Keeping the parsing logic in one place ensures the two builders agree
@@ -77,7 +77,7 @@ export async function readPatternRegistry() {
 }
 
 /**
- * Parse evaluations/manifest.yml.
+ * Parse evals/manifest.yml.
  *
  * Each entry looks like:
  *
@@ -86,7 +86,7 @@ export async function readPatternRegistry() {
  *     skill: <skill-name>
  */
 export async function readEvaluationRegistry() {
-  const text = await readRepoText("evaluations/manifest.yml").catch(() => "");
+  const text = await readRepoText("evals/manifest.yml").catch(() => "");
   if (!text) return [];
   const lines = text.split(/\r?\n/);
   const entries = [];
@@ -96,7 +96,7 @@ export async function readEvaluationRegistry() {
     const pathMatch = lines[i + 1]?.match(/^    path: (.+)$/);
     const skillMatch = lines[i + 2]?.match(/^    skill: ([A-Za-z0-9-]+)$/);
     if (!pathMatch || !skillMatch) {
-      throw new Error(`evaluations/manifest.yml: incomplete entry at line ${i + 1}`);
+      throw new Error(`evals/manifest.yml: incomplete entry at line ${i + 1}`);
     }
     entries.push({ id: idMatch[1], path: pathMatch[1], skill: skillMatch[1] });
     i += 2;
