@@ -1,8 +1,0 @@
-id: frontend-generated-code-contract
-version: 1
-prompt: Change an API schema and regenerate frontend code without manually editing generated output.
-checks:
-  - repository evidence
-  - functional behavior
-  - focused tests
-  - scope control
