@@ -23,11 +23,11 @@ material. Buyers pay for the following added value, **not** for
 exclusivity:
 
 1. **Curation** — a single versioned snapshot whose `skill-manifest.yml`,
-   `patterns/PATTERN_MANIFEST.yml`, `evaluations/manifest.yml`, and
+   `patterns/PATTERN_MANIFEST.yml`, `evals/manifest.yml`, and
    `benchmarks/manifest.yml` are mutually consistent and pass the full
    CI validator suite.
 2. **Packaging** — a single archive that preserves the directory layout
-   (`skills/`, `patterns/`, `evaluations/`, `benchmarks/`, `router/`,
+   (`skills/`, `patterns/`, `evals/`, `benchmarks/`, `router/`,
    `docs/`, `bin/install`) instead of unrelated per-skill archives.
 3. **Validation** — the bundle contract test (`test/bundle-contract.test.mjs`)
    and the bundle builder (`scripts/build-bundle.mjs`) verify the
