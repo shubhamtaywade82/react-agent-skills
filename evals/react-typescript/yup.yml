@@ -1,0 +1,8 @@
+id: yup-contract
+version: 1
+prompt: Repair Yup-backed validation while preserving nullable, optional, transform and form resolver semantics.
+checks:
+  - repository evidence
+  - functional behavior
+  - focused tests
+  - adapter-specific contract
