@@ -1,0 +1,8 @@
+id: frontend-storage-contract
+version: 1
+prompt: Migrate persisted browser state with validation, versioning and corrupt-state recovery.
+checks:
+  - repository evidence
+  - functional behavior
+  - security/accessibility where relevant
+  - focused tests
