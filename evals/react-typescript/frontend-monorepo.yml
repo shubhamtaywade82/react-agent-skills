@@ -1,0 +1,8 @@
+id: frontend-monorepo-contract
+version: 1
+prompt: Model a workspace as a dependency and build graph, preserve package boundaries and verify affected consumers.
+checks:
+  - repository evidence
+  - functional behavior
+  - focused tests
+  - scope control
