@@ -1,0 +1,33 @@
+id: typescript-configuration-contract
+coverage: static-only
+version: 1
+title: TypeScript Configuration Contract
+category: react-typescript
+source: react-agent-skills-core-v1
+skills:
+  - typescript-configuration
+patterns:
+  - typescript-config-isolated-change
+prompt: |
+  Tighten a TypeScript compiler option for one project without changing unrelated projects that share a base configuration.
+constraints:
+  required_boundary: typescript-configuration
+checks:
+  - functional
+  - tests
+  - contract
+  - scope_control
+cases:
+  - name: isolated-option
+    input: Change a compiler option at the smallest correct configuration scope.
+    expected:
+      typescript-config-isolated-change: limited to the owning project
+  - name: effective-config
+    input: Compare effective configuration across affected dev test and build paths.
+    expected:
+      verification: effective settings are checked across execution modes
+grading:
+  functional: Build and type semantics remain correct.
+  tests: Affected projects are verified.
+  contract: Configuration ownership is explicit.
+  scope_control: Global strictness is not weakened to hide local errors.
