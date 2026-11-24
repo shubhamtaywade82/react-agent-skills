@@ -1,0 +1,33 @@
+id: react-async-ui-contract
+coverage: static-only
+version: 1
+title: React Async UI Contract
+category: react-typescript
+source: react-agent-skills-core-v1
+skills:
+  - react-async-ui
+patterns:
+  - react-async-refresh-preserves-data
+prompt: |
+  Design explicit UI behavior for initial loading refresh empty error retry and mutation states without destroying usable stale data.
+constraints:
+  required_boundary: react-async-ui
+checks:
+  - functional
+  - tests
+  - accessibility
+  - scope_control
+cases:
+  - name: refresh
+    input: Keep usable data visible while a background refresh is in progress.
+    expected:
+      react-async-refresh-preserves-data: refresh state is distinct from initial load
+  - name: failure-recovery
+    input: Recover from a failed request without hiding the last valid result when it remains safe to show.
+    expected:
+      behavior: retry and recovery state are explicit
+grading:
+  functional: Async UI states match the interaction contract.
+  tests: Loading, refresh, empty, failure, retry, and mutation states are covered.
+  accessibility: Status changes remain perceivable and actionable.
+  scope_control: Async-state changes stay inside the owning boundary.
