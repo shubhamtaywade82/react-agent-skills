@@ -1,0 +1,34 @@
+id: react-routing-contract-v2
+coverage: static-only
+version: 1
+title: React Routing Contract
+category: react-typescript
+source: react-agent-skills-core-v1
+skills:
+  - react-routing
+patterns:
+  - browser-url-navigation-contract
+  - frontend-url-input-validation
+prompt: |
+  Add a deep-linkable route with validated URL state while preserving browser history and authorization semantics.
+constraints:
+  required_boundary: react-routing
+checks:
+  - functional
+  - tests
+  - security
+  - contract
+cases:
+  - name: deep-link
+    input: Encode durable page state in the URL so reload and direct navigation preserve it.
+    expected:
+      browser-url-navigation-contract: URL state is explicit
+  - name: validation
+    input: Reject malformed query values before they reach domain logic or navigation.
+    expected:
+      frontend-url-input-validation: untrusted URL data is constrained
+grading:
+  functional: Navigation and deep links remain correct.
+  tests: Reload and back-forward semantics are covered.
+  security: Untrusted URL inputs are validated.
+  contract: URL state has an explicit owner.
