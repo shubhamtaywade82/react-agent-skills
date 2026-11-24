@@ -1,0 +1,8 @@
+id: datadog-frontend-contract
+version: 1
+prompt: Change Datadog browser monitoring without leaking sensitive form data or breaking release correlation.
+checks:
+  - repository evidence
+  - functional behavior
+  - focused tests
+  - platform-specific contract
