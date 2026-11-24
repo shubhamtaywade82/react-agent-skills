@@ -52,7 +52,7 @@ Commit: `3ce8a2bbfef174d83c161ff7399d47742289c4e6`
 - typescript-public-api-boundary
 - typescript-runtime-schema-boundary
 
-## Dedicated evaluations — 9
+## Dedicated evals — 9
 
 - typescript-core-contract.yml
 - typescript-type-design-contract.yml
