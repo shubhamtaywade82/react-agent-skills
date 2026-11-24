@@ -2,6 +2,14 @@
 
 ## Unreleased
 
+### Enrichment band 4: the 3x eval-corpus tier
+
+- Enriched to production depth: `typescript-runtime-contracts` (env + storage boundaries with schema-derived types), `react-component-engineering` (discriminated dialog-variant example, composition over configuration), `react-hooks-effects` (subscription hook + AbortController race fix), `react-state-management` (reducer-owned invariants, split context, URL-owned state), `typescript-module-design` (exports-map surface, cycle detection and the extract-downward fix), `typescript-migration` (ratchet config, unknown-at-boundary slice conversion, measured trend), `frontend-styling-layout` (intrinsic grid, interaction states, reduced motion, z-index policy), `frontend-dependency-management` (decision ladder, Intl-over-dependency example, lockfile discipline), `frontend-production` (immutable assets vs runtime config, cache matrix, version health endpoint, rollback rehearsal), `frontend-security` (SRI-pinned third-party scripts, centralized CSRF carriage, headers as code), `react-routing` (validated params, allowlisted returnTo, URL as single owner), `react-error-resilience` (failure taxonomy, bounded idempotency-aware retry, boundary scoping).
+- Scaffold descriptions preserved verbatim — the discovery benchmark stays 59/59 without tuning.
+
+## Old
+
+
 ### Enrichment band 3: the 4x eval-corpus tier
 
 - Enriched to production depth: `typescript-api-contracts` (transport vs domain types, zod boundary validation, discriminated error envelope with retryable/terminal/permission classes, full endpoint example), `typescript-configuration` (strict base + app/node splits, bundler vs node18 resolution trap, emit-semantics flags, tsconfig composition example), `browser-security-dom-safety` (source→transform→sink mapping, URL/postMessage/HTML-choke-point contracts with adversarial examples), `auth-session-boundaries` (authN/authZ/presentation split, httpOnly-first credential policy, single-flight refresh with 401/403 split, complete logout checklist).
