@@ -1,0 +1,35 @@
+id: react-security-contract
+coverage: security-review
+version: 1
+title: React Security Contract
+category: react-typescript
+source: react-agent-skills-core-v1
+skills:
+  - react-security
+  - frontend-security
+patterns:
+  - security-html-sanitization-boundary
+  - security-open-redirect-boundary
+prompt: |
+  Review a React feature that renders external content and navigates using URL input and ensure browser trust boundaries remain explicit.
+constraints:
+  required_boundary: react-security
+checks:
+  - functional
+  - tests
+  - security
+  - contract
+cases:
+  - name: content
+    input: Render external rich text through an explicit safe boundary.
+    expected:
+      security-html-sanitization-boundary: unsafe HTML is isolated
+  - name: navigation
+    input: Constrain dynamic navigation targets to safe destinations.
+    expected:
+      security-open-redirect-boundary: redirect target validation is explicit
+grading:
+  functional: Required user-facing behavior remains available.
+  tests: Adversarial inputs have regression coverage.
+  security: Untrusted content and navigation are constrained.
+  contract: React concerns and browser security concerns have explicit ownership.
