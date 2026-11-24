@@ -1,0 +1,35 @@
+id: react-hooks-effects-contract
+coverage: static-only
+version: 1
+title: React Hooks and Effects Contract
+category: react-typescript
+source: ruby-agent-skills/react-state-effects-v1
+skills:
+  - react-hooks-effects
+patterns:
+  - react-effect-synchronization
+  - react-hook-dependency
+prompt: |
+  Fix a React effect that derives state from another state value and races with an async refresh.
+  Inspect the repository before choosing the implementation shape. Keep effects focused on external synchronization, preserve existing conventions, and add focused verification.
+constraints:
+  required_boundary: react-hooks-effects
+checks:
+  - functional
+  - tests
+  - contract
+  - scope_control
+cases:
+  - name: derived-state-removal
+    input: Fix a React effect that derives state from another state value.
+    expected:
+      react-effect-synchronization: derived values are computed during render or via event logic rather than a redundant effect
+  - name: async-race
+    input: Fix an async refresh effect that can apply stale results after dependencies change.
+    expected:
+      react-hook-dependency: dependencies and cancellation or stale-response handling are explicit
+grading:
+  functional: The resulting behavior satisfies the task contract.
+  tests: Verification covers the race and dependency-sensitive behavior.
+  contract: Effects synchronize with external systems and do not duplicate derived state.
+  scope_control: No unrelated framework or build migration is introduced.
