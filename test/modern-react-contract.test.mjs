@@ -20,7 +20,7 @@ test("modern React skills expose operational lifecycle sections", async () => {
 });
 
 test("modern React evaluation contracts exist", async () => {
-  const manifest = await readFile(new URL("evaluations/manifest.yml", root), "utf8");
+  const manifest = await readFile(new URL("evals/manifest.yml", root), "utf8");
   for (const id of ["react-19-modern-apis-contract","react-actions-forms-contract","react-compiler-contract","react-server-security-contract"]) {
     assert.match(manifest, new RegExp("  - id: " + id));
   }
