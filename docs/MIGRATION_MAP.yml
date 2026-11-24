@@ -45,7 +45,7 @@ patterns:
     - browser/security/session patterns
     - production/dependency/E2E/observability patterns
 
-evaluations:
+evals:
   source_count: 9
   destination_count: 39
   split_evaluations:

@@ -1,0 +1,137 @@
+# Cross-pack contract snapshot: ruby-agent-skills
+#
+# Pins the companion repository's public skill inventory so that name
+# collisions with this pack (react-agent-skills) are a checked contract
+# instead of an undocumented accident. The companion pack is a separate
+# repository that moves independently; this snapshot is deliberately
+# data-only, and nothing in this repository executes against the companion
+# at validation time.
+#
+# Refresh procedure:
+#
+#   1. Resolve the companion's pinned tag to its commit and list the
+#      companion's skills/ directory at that commit.
+#   2. Update companion_commit, captured_at, and skills below.
+#   3. Re-run the v3 cross-pack verifier (bin/cross-pack-verify.mjs) and
+#      update documented_name_collisions to the recomputed intersection.
+
+companion_repository: shubhamtaywade82/ruby-agent-skills
+companion_commit: "1a3553b31e04d9842f1a7b2a2a4a21c222a27918"  # = tag v1.5.0, the pinned ref
+captured_at: "2026-11-24"
+skills:
+  # Full inventory of the companion's 104 skills at the pinned
+  # tag, so the collision intersection below is computed from the complete
+  # set (ruby-agent-skills ships deprecated scaffolds — react-*, agent-*,
+  # typescript-* names — that collide with this pack's names; ruby's own
+  # registry marks every one companion_wins).
+  - agent-workflow  # deprecated ruby copy; this pack owns the name
+  - ai-code-review
+  - change-review
+  - planning-interview
+  - planning-spec
+  - planning-tickets
+  - planning-tracker
+  - planning-wayfinder
+  - rails-action-cable
+  - rails-action-controller
+  - rails-action-mailbox
+  - rails-action-mailer
+  - rails-action-text
+  - rails-action-view
+  - rails-active-job
+  - rails-active-model
+  - rails-active-record
+  - rails-active-storage
+  - rails-active-support
+  - rails-api-integration
+  - rails-application-bootstrap
+  - rails-architecture
+  - rails-asset-build-engineering
+  - rails-associations
+  - rails-authentication
+  - rails-authorization
+  - rails-caching
+  - rails-cross-boundary-authorization-security
+  - rails-data-modeling
+  - rails-database-engineering
+  - rails-distributed-systems
+  - rails-encryption-credentials-engineering
+  - rails-engines-railties-engineering
+  - rails-event-driven-messaging
+  - rails-external-stream-ingestion
+  - rails-generators
+  - rails-hotwire
+  - rails-i18n
+  - rails-incident-engineering
+  - rails-initialization-configuration-engineering
+  - rails-node-integration
+  - rails-observability
+  - rails-operational-tasks-maintenance
+  - rails-performance
+  - rails-production-runtime
+  - rails-rack-middleware-engineering
+  - rails-react-integration
+  - rails-release-engineering
+  - rails-reliability-engineering
+  - rails-routing
+  - rails-security
+  - rails-security-engineering
+  - rails-serialization-globalid-engineering
+  - rails-staff-principal-architecture
+  - rails-state-machine-engineering
+  - rails-test-engineering
+  - rails-validations
+  - rails-zeitwerk
+  - react-accessibility-performance
+  - react-architecture  # deprecated ruby copy; this pack owns the name
+  - react-component-engineering  # deprecated ruby copy; this pack owns the name
+  - react-data-fetching  # deprecated ruby copy; this pack owns the name
+  - react-state-effects
+  - react-testing-engineering  # deprecated ruby copy; this pack owns the name
+  - rubocop
+  - ruby-api-design
+  - ruby-blocks-procs-lambdas
+  - ruby-boolean-logic
+  - ruby-clean-code
+  - ruby-collections
+  - ruby-concurrency
+  - ruby-control-flow
+  - ruby-core
+  - ruby-data-types
+  - ruby-debugging
+  - ruby-dependency-injection
+  - ruby-domain-modeling
+  - ruby-enumerables
+  - ruby-financial-data-integrity
+  - ruby-gem-development
+  - ruby-gems-io-services
+  - ruby-llm-integration
+  - ruby-metaprogramming
+  - ruby-method-design
+  - ruby-modules-mixins
+  - ruby-object-composition
+  - ruby-oop
+  - ruby-performance
+  - ruby-poro
+  - ruby-runtime-compatibility
+  - ruby-service-objects
+  - ruby-tdd-refactoring
+  - ruby-toolchain
+  - stack-minimality
+  - stack-minimality-audit
+  - stack-minimality-debt
+  - stack-minimality-evidence
+  - stack-minimality-help
+  - stack-minimality-review
+  - trading-execution-safety
+  - trading-market-data-and-backtesting
+  - typescript-core-engineering  # deprecated ruby copy; this pack owns the name
+  - typescript-runtime-contracts  # deprecated ruby copy; this pack owns the name
+  - typescript-type-design  # deprecated ruby copy; this pack owns the name
+documented_name_collisions: [agent-workflow, react-architecture, react-component-engineering, react-data-fetching, react-testing-engineering, typescript-core-engineering, typescript-runtime-contracts, typescript-type-design]  # ruby's registry marks these companion_wins (deprecated there); installs keep this pack after ruby-agent-skills (docs/FULLSTACK_COMPOSITION.md).
+seam_owners:
+  - boundary: react-client-to-rails-backend
+    this_pack_seam: react-rails-integration
+    companion_pack_seam: rails-react-integration
+    primary_language_this_side: typescript
+    primary_language_companion_side: ruby

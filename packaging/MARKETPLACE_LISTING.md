@@ -35,7 +35,7 @@ guard them.
 | --- | --- | --- |
 | Skills (`skills/<name>/SKILL.md`) | 127 | Each with activation, inspection, decision, implementation, anti-patterns, review, and verification sections. |
 | Reusable patterns (`patterns/<group>/<name>.md`) | 60 | Cross-cutting engineering patterns cited by skills and evals. |
-| Evaluation contracts (`evaluations/react-typescript/*.yml`) | 110 | Prompt + checks per skill; used by `scripts/fixture-evaluator.mjs`. |
+| Evaluation contracts (`evals/react-typescript/*.yml`) | 110 | Prompt + checks per skill; used by `scripts/fixture-evaluator.mjs`. |
 | Benchmark cases (`benchmarks/manifest.yml`) | 102 | Includes 8 fixture-backed executable scenarios. |
 | Contract tests (`test/*.test.mjs`) | 14 | Structural, manifest, discovery, installer, efficiency, and platform-adapter contracts. |
 | Validators (`scripts/validate*.mjs`) | 6 | Manifest, benchmarks, fixtures, discovery, plus the bundle builder. |
@@ -57,7 +57,7 @@ guard them.
 - **Toolchain** — Vite, Rspack, Rsbuild, Next.js, Astro, biome, ESLint, Prettier, TypeScript config.
 - **Production & observability** — Sentry, Datadog, New Relic, OpenTelemetry, service workers, PWA.
 - **Deployment adapters** — Vercel, Netlify, Cloudflare, AWS, GitHub Pages, Docker/K8s.
-- **Agent evaluation** — multi-turn scoring, adversarial evaluations, behavior scoring, discovery benchmarks.
+- **Agent evaluation** — multi-turn scoring, adversarial evals, behavior scoring, discovery benchmarks.
 
 ### Installation
 

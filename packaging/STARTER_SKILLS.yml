@@ -7,7 +7,7 @@
 #   4. Representative — demonstrates the SKILL.md + references/ + scripts/ shape.
 #
 # The starter bundle is a strict subset of the full bundle. It must never
-# contain skills, patterns, or evaluations that are not present in the
+# contain skills, patterns, or evals that are not present in the
 # canonical GitHub repository. When the full bundle is rebuilt, the starter
 # bundle is rebuilt from the same source.
 #

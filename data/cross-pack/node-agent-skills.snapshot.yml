@@ -1,0 +1,57 @@
+# Cross-pack contract snapshot: node-agent-skills
+#
+# Pins the companion repository's public skill inventory so that name
+# collisions with this pack (react-agent-skills) are a checked contract
+# instead of an undocumented accident. The companion pack is a separate
+# repository that moves independently; this snapshot is deliberately
+# data-only, and nothing in this repository executes against the companion
+# at validation time.
+#
+# Refresh procedure:
+#
+#   1. Resolve the companion's pinned tag to its commit and list the
+#      companion's skills/ directory at that commit.
+#   2. Update companion_commit, captured_at, and skills below.
+#   3. Re-run the v3 cross-pack verifier (bin/cross-pack-verify.mjs) and
+#      update documented_name_collisions to the recomputed intersection.
+
+companion_repository: shubhamtaywade82/node-agent-skills
+companion_commit: "9d74c751fd..."  # = tag v0.11.0, the pinned ref (first immutable release: band-6x enrichment + infra surfaces)
+captured_at: "2026-11-24"
+skills:
+  # This pack (react-agent-skills) owns no `node-`-prefixed skill names and
+  # every node-agent-skills skill carries the `node-` prefix (documented pack
+  # contract), so the collision intersection is empty by construction. The
+  # list below is the seam plus a representative spread of the companion's
+  # 322 skills, kept for routing reference; the companion pack's
+  # skill-manifest.yml is authoritative.
+  - node-api-deprecation
+  - node-architecture
+  - node-async-concurrency
+  - node-auth-security
+  - node-database-engineering
+  - node-event-driven-architecture
+  - node-external-integrations
+  - node-http-engineering
+  - node-llm-observability
+  - node-migrations
+  - node-observability
+  - node-openapi
+  - node-production-runtime
+  - node-react-integration
+  - node-rest-api-design
+  - node-ruby-integration
+  - node-runtime-validation
+  - node-skill-packaging
+  - node-testing
+  - node-transactional-outbox
+  - node-transactions
+  - node-typescript-contracts
+  # ... remaining `node-`-prefixed skills omitted (prefix contract above).
+documented_name_collisions: []  # zero overlap: this pack owns no `node-` names.
+seam_owners:
+  - boundary: react-client-to-node-backend
+    this_pack_seam: react-node-integration
+    companion_pack_seam: node-react-integration
+    primary_language_this_side: typescript
+    primary_language_companion_side: typescript

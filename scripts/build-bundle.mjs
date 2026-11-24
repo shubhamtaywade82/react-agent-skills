@@ -3,7 +3,7 @@
 // Produces dist/react-agent-skills-bundle-<version>.tgz and a sibling
 // .manifest.json describing the contents. The bundle is a single
 // archive that preserves the canonical directory layout (skills/,
-// patterns/, evaluations/, benchmarks/, router/, docs/, bin/install,
+// patterns/, evals/, benchmarks/, router/, docs/, bin/install,
 // AGENTS.md, skill-manifest.yml, LICENSE, packaging/LICENSE_ADDENDUM.md,
 // packaging/MARKETPLACE_LISTING.md, scripts/validate*.mjs).
 //
@@ -87,7 +87,7 @@ const ROOT_DIRS = [
   "router",
   "skills",
   "patterns",
-  "evaluations",
+  "evals",
   "benchmarks",
   "docs",
   "test",
@@ -121,7 +121,7 @@ const SHIPPED_PACKAGING = [
 try {
   const skills = await readSkillRegistry();
   const patterns = await readPatternRegistry();
-  const evaluations = await readEvaluationRegistry();
+  const evals = await readEvaluationRegistry();
   const benchmarks = await readBenchmarkRegistry();
   const version = await readBundleVersion();
   const sourceCommit = readSourceCommit();
@@ -172,7 +172,7 @@ try {
     inventory: {
       skills: skills.length,
       patterns: patterns.length,
-      evaluations: evaluations.length,
+      evals: evals.length,
       benchmarkCases: benchmarks.cases,
       benchmarkFixtures: benchmarks.fixtures,
     },
@@ -253,7 +253,7 @@ try {
   console.log(`Manifest ${manifestPath}`);
   console.log(
     `Inventory: ${skills.length} skills, ${patterns.length} patterns, ` +
-      `${evaluations.length} evaluations, ${benchmarks.cases} benchmark cases ` +
+      `${evals.length} evals, ${benchmarks.cases} benchmark cases ` +
       `(${benchmarks.fixtures} fixtures).`,
   );
 } catch (err) {

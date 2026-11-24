@@ -1,6 +1,6 @@
 ---
 name: agent-evaluation-engineering
-description: Design agent evaluations that separate execution success from correctness, scope discipline, safety and recovery behavior.
+description: Design agent evals that separate execution success from correctness, scope discipline, safety and recovery behavior.
 ---
 
 # Agent Evaluation Engineering

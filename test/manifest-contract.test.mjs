@@ -31,7 +31,7 @@ test("pattern registry is present and every registered pattern is real", async (
 });
 
 test("evaluation registry references real, registered skills and complete contracts", async () => {
-  const manifest = await readFile(new URL("evaluations/manifest.yml", root), "utf8");
+  const manifest = await readFile(new URL("evals/manifest.yml", root), "utf8");
   const skillManifest = await readFile(new URL("skill-manifest.yml", root), "utf8");
   const skillNames = new Set([...skillManifest.matchAll(/^  - name: ([A-Za-z0-9-]+)$/gm)].map(([, name]) => name));
   const lines = manifest.split(/\r?\n/);

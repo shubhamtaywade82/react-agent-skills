@@ -47,9 +47,9 @@ what the bundle contract test reads, so it must be present and valid.
 ### What the builders do
 
 1. Read the canonical registries (`skill-manifest.yml`,
-   `patterns/PATTERN_MANIFEST.yml`, `evaluations/manifest.yml`,
+   `patterns/PATTERN_MANIFEST.yml`, `evals/manifest.yml`,
    `benchmarks/manifest.yml`).
-2. Copy the registered skills, patterns, evaluations, and benchmarks
+2. Copy the registered skills, patterns, evals, and benchmarks
    into a staging directory.
 3. Copy `AGENTS.md`, `bin/install`, `router/`, `docs/`, `LICENSE`,
    `packaging/LICENSE_ADDENDUM.md`, `packaging/MARKETPLACE_LISTING.md`,

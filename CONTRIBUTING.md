@@ -19,7 +19,7 @@ When adding, renaming, or removing a skill, also update:
 
 - `skill-manifest.yml` (canonical registry, read by `scripts/validate.mjs` and the bundle builders);
 - `packaging/STARTER_SKILLS.yml` if the skill should ship in the free starter bundle;
-- `evaluations/manifest.yml` if the skill ships an evaluation contract;
+- `evals/manifest.yml` if the skill ships an evaluation contract;
 - `benchmarks/manifest.yml` if the skill ships a benchmark case.
 
 The bundle contract test (`test/bundle-contract.test.mjs`) catches drift between the registries and the bundle staging tree, but it does not auto-fix. When it fails, fix the source of truth, not the test.

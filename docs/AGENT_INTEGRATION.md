@@ -10,7 +10,7 @@ Keep the repository available to the coding agent and expose:
 - router/ROUTING.md
 - skills/
 - patterns/
-- evaluations/
+- evals/
 - benchmarks/
 
 When the host supports the Agent Skills standard, let native discovery use `SKILL.md` frontmatter (`name` + `description`) first. The agent should load one primary skill plus only the secondary skills required by actual repository evidence.

@@ -7,7 +7,7 @@
 // bin/install, packaging/LICENSE_ADDENDUM.md, packaging/STARTER_SKILLS.yml).
 //
 // It does NOT ship:
-//   - evaluations/
+//   - evals/
 //   - benchmarks/
 //   - patterns/ (patterns are pulled in only if a starter skill's
 //     references/ cites them; the starter skills are intentionally
@@ -253,11 +253,11 @@ try {
     builtAt,
     inventory: {
       skills: starterNames.length,
-      // Starter bundle intentionally ships no patterns, evaluations,
+      // Starter bundle intentionally ships no patterns, evals,
       // or benchmarks. Buyers who need them must upgrade to the
       // complete bundle.
       patterns: 0,
-      evaluations: 0,
+      evals: 0,
       benchmarkCases: 0,
       benchmarkFixtures: 0,
     },

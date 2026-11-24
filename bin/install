@@ -12,7 +12,7 @@ Install the React + TypeScript skill pack into PATH.
 Default: ~/.local/share/agent-skills/react-agent-skills
 
 The installed directory contains AGENTS.md, the skill manifest/router,
-skills, patterns, evaluations, benchmarks, and documentation.
+skills, patterns, evals, benchmarks, and documentation.
 USAGE
 }
 
@@ -45,7 +45,7 @@ cp "$ROOT/skill-manifest.yml" "$STAGING/skill-manifest.yml"
 # Copy optional directories. The complete bundle ships all of these;
 # the free starter bundle ships only a subset (skills, router, docs).
 # Use [ -d ] so a missing directory does not fail the install.
-for dir in router skills patterns evaluations benchmarks docs; do
+for dir in router skills patterns evals benchmarks docs; do
   if [ -d "$ROOT/$dir" ]; then
     cp -R "$ROOT/$dir" "$STAGING/$dir"
   fi

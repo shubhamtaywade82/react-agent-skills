@@ -4,9 +4,16 @@ on:
   push:
   pull_request:
 
+# Superseded runs on the same ref are cancelled instead of racing conclusions
+# (mirrors node-agent-skills' hardened workflows).
+concurrency:
+  group: validate-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   validate:
     runs-on: ubuntu-latest
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@v5
       - uses: actions/setup-node@v5
@@ -27,6 +34,9 @@ jobs:
 
       - run: node --test test/*.test.mjs
       - run: node scripts/validate.mjs
+      # v3 cross-pack contract: companions, snapshots, collision registries,
+      # seam primaries (offline — no companion clone needed).
+      - run: node bin/cross-pack-verify.mjs
       - run: node scripts/validate-benchmarks.mjs
       - run: node scripts/validate-fixtures.mjs
       - run: node scripts/skill-discovery-evaluator.mjs --check

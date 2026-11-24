@@ -43,7 +43,7 @@ When the backend pack is not installed, finish the client work and report the ba
 
 ## Commit discipline
 
-Keep commits scoped to one contract surface (skills, routing, evaluations, packaging, or docs). Update `CHANGELOG.md` under `## Unreleased` in the same commit that changes behavior. Run `npm test` and `npm run validate` before pushing.
+Keep commits scoped to one contract surface (skills, routing, evals, packaging, or docs). Update `CHANGELOG.md` under `## Unreleased` in the same commit that changes behavior. Run `npm test` and `npm run validate` before pushing.
 
 ## What this pack is NOT
 

@@ -203,7 +203,7 @@ The four React/TypeScript-specific patterns under the cross-cutting `stack-minim
 
 ## Evaluation taxonomy
 
-The source has **9 dedicated React/TypeScript evaluations**:
+The source has **9 dedicated React/TypeScript evals**:
 
 1. `typescript-core-engineering`
 2. `typescript-type-design`
@@ -217,7 +217,7 @@ The source has **9 dedicated React/TypeScript evaluations**:
 
 Migration rule:
 - preserve every source evaluation;
-- split combined evaluations when the target skill boundary is split;
+- split combined evals when the target skill boundary is split;
 - add new cases for every new skill before declaring the new taxonomy complete.
 
 Expected split:
