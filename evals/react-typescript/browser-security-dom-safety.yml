@@ -1,0 +1,34 @@
+id: browser-security-dom-safety-contract
+coverage: security-review
+version: 1
+title: Browser DOM Safety Contract
+category: react-typescript
+source: react-agent-skills-core-v1
+skills:
+  - browser-security-dom-safety
+patterns:
+  - browser-postmessage-origin
+  - frontend-url-input-validation
+prompt: |
+  Secure a browser message handler and dynamic navigation inputs against malicious origins and URL content.
+constraints:
+  required_boundary: browser-security-dom-safety
+checks:
+  - functional
+  - tests
+  - security
+  - scope_control
+cases:
+  - name: message-origin
+    input: Accept messages only from a trusted origin and validate their payload.
+    expected:
+      browser-postmessage-origin: origin and payload are independently checked
+  - name: url-input
+    input: Validate query-driven redirect and path values before navigation.
+    expected:
+      frontend-url-input-validation: untrusted URL data is constrained
+grading:
+  functional: Trusted browser interactions continue to work.
+  tests: Malicious and malformed cases are covered.
+  security: Origin and URL boundaries are enforced.
+  scope_control: Dangerous sinks remain isolated.
